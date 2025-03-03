@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Start</title>
-
-     <link rel="stylesheet" href="">
-</head>
-
-<body>
+<?php
 
 
-     <h1></h1>
+// start session
+session_start();
 
-</body>
+// constant config
 
-</html>
+
+// root path project
+const BASE_PATH = __DIR__;
+
+// current domain
+
+const CURRENT_DOMAIN = currentDomain().'/php_news/';
+
+const DISPLAY_ERROR = true;
+
+const DB_HOST = '127.0.0.1';
+const DB_USERNAME = 'root';
+const DB_DATABASE = 'php_news';
+const DB_PASSWORD = '1289..//';
+
+
