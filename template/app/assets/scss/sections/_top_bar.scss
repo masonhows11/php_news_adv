@@ -1,0 +1,97 @@
+/*----------------------------
+    Top Bar
+----------------------------*/
+
+.topbar-area {
+    background: transparent;
+
+    &.style-01 {
+        background: var(--heading-color);
+    }
+}
+
+.searchbar-area {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    &.style-01 {
+        justify-content: flex-end;
+        padding: 14px 0px;
+    }
+
+    .left-contnet {
+        .logo-wrapper {
+            max-width: 190px;
+        }
+    }
+
+    .right-contnet {
+        display: flex;
+
+        .date-item {
+            p {
+                font-size: 14px;
+                line-height: 2;
+                font-family: var(--body-font);
+                font-weight: 500;
+                color: var(--heading-color);
+                margin-bottom: 0;
+                position: relative;
+                z-index: 0;
+                margin-right: 20px;
+                padding-right: 20px;
+
+                &.style-01 {
+                    color: #fff;
+
+                    &::after {
+                        border-right: 2px solid #fff;
+                    }
+                }
+
+                i {
+                    margin-right: 6px;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 1;
+                    left: 50%;
+                    top: 7px;
+                    transform: translateX(-50%);
+                    border-right: 1px solid #707070;
+                    width: 100%;
+                    height: 50%;
+                }
+
+            }
+        }
+
+        .social-wrapper {
+            display: flex;
+
+            span {
+                font-size: 14px;
+                line-height: 2;
+                font-family: var(--body-font);
+                font-weight: 500;
+                color: var(--heading-color);
+                margin-right: 10px;
+
+                &.style-01 {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+// Author Section Styling Here
+.author-section-area {
+    position: relative;
+    z-index: 0;
+    margin-top: 80px;
+
+    .about-shape {
+        position: absolute;
+        z-index: -1;
+        bottom: -45px;
+        left: 27%;
+    }
+
+    .thumbnail {
+        &.style-01 {
+            img {
+                border-radius: 0px;
+            }
+        }
+
+        img {
+            border-radius: 8px;
+        }
+    }
+}
+
+.author-content-wrap {
+    margin-top: 35px;
+
+    .author-details {
+        border-bottom: 1px solid #E9E9E9;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+
+        .author-name {
+            font-size: 28px;
+            line-height: 1.8;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 0;
+        }
+
+        .designation {
+            font-size: 16px;
+            line-height: 1.8;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0;
+        }
+    }
+
+    .about {
+        P {
+            font-size: 16px;
+            line-height: 1.8;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: var(--heading-color);
+            margin-bottom: 0;
+
+            &:first-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .contact {
+        background: transparent linear-gradient(91deg, #E9E9E9 0%, #85858514 86%, #75757500 100%) 0% 0% no-repeat padding-box;
+        padding: 25px 0px 25px 30px;
+        margin-top: 33px;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                font-size: 16px;
+                line-height: 1.8;
+                font-family: var(--heading-font);
+                font-weight: 700;
+                color: #131313;
+
+                span {
+                    color: var(--secondary-color);
+                }
+
+                +li {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    .social-share {
+        margin-top: 33px;
+    }
+}

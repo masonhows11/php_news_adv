@@ -1,0 +1,136 @@
+// Products Single Items Styling Here 
+.product-single-item {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 30px;
+
+    &:hover {
+        .icon {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .thumbnail {
+        background: #F9FCFF;
+        border-radius: 6px;
+        position: relative;
+        z-index: 0;
+        padding: 20px;
+
+        img {
+            min-height: 226px;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s all ease;
+        opacity: 0;
+        visibility: hidden;
+
+        a {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            background: var(--secondary-color);
+            display: inline-block;
+            border-radius: 50%;
+            font-size: 17px;
+            color: $white;
+
+            &:first-child {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    .content {
+        margin-top: 20px;
+
+        .product-name {
+            font-size: 18px;
+            line-height: 1.64;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            margin-bottom: 0;
+            color: #10221B;
+            transition: .3s all ease;
+
+            &:hover {
+                color: var(--secondary-color);
+            }
+        }
+
+        .price {
+            font-size: 16px;
+            line-height: 1.64;
+            font-family: var(--body-font);
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.sorthing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #DFDFDF;
+    border-radius: 8px;
+    padding: 25px 30px 25px 30px;
+    margin-bottom: 40px;
+
+    .content {
+        p {
+            font-size: 16px;
+            line-height: 1.65;
+            font-family: var(--body-font);
+            font-weight: 500;
+            color: #414141;
+            margin-bottom: 0;
+        }
+    }
+
+    .nice-select {
+        height: 20px;
+        line-height: 9px;
+        border: 0;
+        background-image: none;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        &.open {
+            &::after {
+                transform: rotate(-180deg);
+                margin-top: -6px;
+            }
+        }
+
+        &::after {
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid var(--paragraph-color);
+            border-bottom: none;
+            transform: rotate(0);
+            margin-top: -4px;
+            right: 8px;
+        }
+
+        .current {
+            font-size: 16px;
+            font-family: var(--body-font);
+            font-weight: 500;
+            color: #414141;
+        }
+    }
+}

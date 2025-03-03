@@ -1,0 +1,82 @@
+// Life Style Section Styling Here
+.life-style-section {
+    position: relative;
+    z-index: 0;
+    margin-top: 50px;
+    background: #FBFBFD;
+    padding: 80px 0px 50px 0px;
+}
+
+.life-style-slider-wrap {
+    position: relative;
+    z-index: 0;
+
+    .life-style-slider {
+        .slide-arrow {
+            position: absolute;
+            z-index: 9;
+            right: 40px;
+            top: 210px;
+            transform: translateY(-50%);
+        }
+
+        .next-arrow {
+            background: transparent;
+            border: none;
+            padding: 0;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            border: 1px solid $white;
+            color: $white;
+            border-radius: 50%;
+            font-size: 17px;
+            transition: .3s all ease;
+
+            i {
+                transition: .3s all ease;
+            }
+
+            &:hover {
+                i {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .prev-arrow {
+            background: transparent;
+            border: none;
+            padding: 0;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            border: 1px solid $white;
+            color: $white;
+            border-radius: 50%;
+            margin-top: 65px;
+            font-size: 17px;
+            transition: .3s all ease;
+
+            i {
+                transition: .3s all ease;
+            }
+
+            &:hover {
+                i {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

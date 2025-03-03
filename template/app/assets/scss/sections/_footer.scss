@@ -1,0 +1,49 @@
+/*-------------------------
+    Footer Area
+-------------------------*/
+.footer-area {
+    position: sticky;
+    bottom: 0;
+    z-index: 0;
+
+    @media only screen and (max-width: 991px) {
+        position: relative;
+    }
+}
+
+.footer-top {
+    background-color: #131313;
+    border-bottom: 1px solid rgba(114, 108, 148, .2);
+
+    &.style-01 {
+        background-color: #131313;
+        border-bottom: none;
+    }
+}
+
+.copyright-area {
+    background-color: #131313;
+
+    .copyright-area-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0px 30px 0px;
+
+        &.style-01 {
+            padding: 10px 0px 40px 0px;
+        }
+
+        .logo-wrapper {
+            max-width: 190px;
+        }
+
+        .copyright {
+            font-size: 14px;
+            line-height: 1.7;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: #B9B9B9;
+        }
+    }
+}

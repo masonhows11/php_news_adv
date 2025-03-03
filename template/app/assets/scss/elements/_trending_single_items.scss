@@ -1,0 +1,75 @@
+// Trending Single Items Styling Here
+.trending-section-area {
+    margin-top: 30px;
+}
+
+
+.top-news-ticker {
+    font-size: 14px;
+    line-height: 35px;
+    height: 35px;
+    padding: 0;
+    position: relative;
+    display: flex;
+
+    .icon {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        background: rgba(41, 98, 255, 0.15);
+        border-radius: 50%;
+        font-size: 18px;
+        color: var(--secondary-color);
+    }
+
+    .title {
+        font-size: 13px;
+        line-height: 2.8;
+        font-family: var(--heading-font);
+        font-weight: 600;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        color: var(--heading-color);
+        margin-left: 10px;
+        padding-right: 15px;
+
+        &.style-01 {
+            color: $white;
+        }
+    }
+
+    .top-news-ticker-runner {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        flex: 1;
+
+        &.style-01 {
+            a {
+                color: #fff;
+            }
+        }
+
+        a {
+            display: inline-block;
+            margin-left: 10px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 13px;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: #707070;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 11px;
+                right: -18px;
+                width: 2px;
+                height: 14px;
+                background-color: #707070;
+            }
+        }
+    }
+}

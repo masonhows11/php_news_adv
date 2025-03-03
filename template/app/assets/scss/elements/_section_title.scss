@@ -1,0 +1,142 @@
+/*-------------------------
+    Section Title
+-------------------------*/
+
+.theme-heading-title {
+    margin-bottom: 38px;
+
+    &.white {
+        .subtitle {
+            color: var(--main-color-one);
+        }
+
+        .title {
+            color: $white;
+        }
+
+        p {
+            color: rgba($white, .7);
+        }
+
+        .section-para {
+            color: rgba($white, .7);
+        }
+    }
+
+    .title {
+        font-size: 28px;
+        line-height: 1.2;
+        font-weight: 700;
+        font-family: var(--heading-font);
+        color: var(--heading-color);
+        margin-bottom: 0px;
+
+        span {
+            color: var(--main-color-one);
+            position: relative;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+
+    .subtitle {
+        font-size: 16px;
+        font-family: var(--heading-font);
+        font-weight: 600;
+        line-height: 1.6;
+        color: var(--secondary-color);
+    }
+
+    &[style="text-align:left"] {
+        .subtitle {
+            &.shape {
+                justify-content: initial;
+            }
+        }
+    }
+
+    span {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: var(--body-font);
+        color: var(--main-color-one);
+    }
+
+    p {
+        color: #19232D;
+    }
+}
+
+.section-bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 730px;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.section-bg-02 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 630px;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.76);
+    }
+}
+
+@keyframes moveInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

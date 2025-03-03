@@ -1,0 +1,46 @@
+/*-------------------------
+    Icon Box Item
+-------------------------*/
+.single-icon-box {
+  background-color: $white;
+  text-align: center;
+  padding: 35px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: .3s all ease;
+  margin-bottom: 30px;
+
+  &.active {
+    filter: drop-shadow(0 10px 30px rgba(25, 88, 216, 0.12));
+  }
+
+  &:hover {
+    filter: drop-shadow(0 10px 30px rgba(25, 88, 216, 0.12));
+  }
+
+  .icon {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    background: var(--secondary-color);
+    border-radius: 6px;
+    font-size: 35px;
+    color: $white;
+    margin: auto;
+    margin-bottom: 22px;
+  }
+
+  .content {
+    span {
+      font-size: 16px;
+      line-height: 1.6;
+      font-family: var(--body-font);
+      font-weight: 500;
+      color: #161616;
+      display: block;
+    }
+  }
+}

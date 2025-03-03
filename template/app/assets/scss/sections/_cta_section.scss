@@ -1,0 +1,40 @@
+// Call to Action Section Area
+.call-to-section-area {
+	position: relative;
+	z-index: 0;
+	background: var(--secondary-color);
+	padding: 40px 0px 40px 0px;
+	margin-top: 50px;
+
+	&.style-01 {
+		margin-top: 0;
+	}
+
+	&.bg-image {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		mix-blend-mode: multiply;
+	}
+}
+
+.call-to-action-02 {
+	position: relative;
+	z-index: 0;
+	margin-top: 50px;
+
+	img {
+		border-radius: 6px;
+	}
+}
+
+.call-to-action-03 {
+	position: relative;
+	z-index: 0;
+	margin-top: 80px;
+
+	img {
+		border-radius: 6px;
+		width: 100%;
+	}
+}

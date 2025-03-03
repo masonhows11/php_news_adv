@@ -1,0 +1,123 @@
+/*-----------------------------
+    Accordion Item
+-----------------------------*/
+
+.accordion-wrapper {
+    .card {
+        +.card {
+            margin-top: 20px;
+        }
+        border: none;
+        background-color: #fff;
+        border-radius: 4px;
+        transition: .7s all ease;
+        .card-header {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            a {
+                display: block;
+                font-size: 16px;
+                line-height: 28px;
+                font-weight: 600;
+                font-family: var(--body-font);
+                color: var(--heading-color);
+                padding: 20px 20px 20px 65px;
+                cursor: pointer;
+                position: relative;
+                &:after {
+                    position: absolute;
+                    left: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    background: #030519;
+                    color: var(--main-color-one);
+                    border-radius: 4px;
+                    content: "\f067";
+                    font-family: "fontawesome";
+                }
+                &[aria-expanded="true"] {
+                    &:after {
+                        content: "\f067";
+                    }
+                }
+            }
+        }
+        .card-body {
+            padding: 20px 30px;
+            border-top: 1px dashed #D5D5D5;
+            font-size: 16px;
+            line-height: 28px;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: var(--heading-color);
+            transition: .7s alternate;
+        }
+    }
+}
+
+.accordion-wrapper-02 {
+    .card {
+        +.card {
+            margin-top: 20px;
+        }
+        border: none;
+        background-color: #fff;
+        border: 1px solid var(--main-color-one);
+        border-radius: 6px;
+        transition: .7s all ease;
+        .card-header {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            a {
+                display: block;
+                font-size: 20px;
+                line-height: 30px;
+                font-weight: 600;
+                font-family: var(--heading-font);
+                color: var(--heading-color);
+                padding: 20px 20px 20px 25px;
+                cursor: pointer;
+                position: relative;
+                transition: .7s all ease;
+                &:after {
+                    position: absolute;
+                    right: 40px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: var(--main-color-one);
+                    content: "\f054";
+                    font-family: "fontawesome";
+                }
+                &[aria-expanded="true"] {
+                    background: var(--main-color-one);
+                    transition: .7s all ease;
+                    &:after {
+                        content: "\f078";
+                        color: var(--heading-color);
+                    }
+                }
+            }
+        }
+        .card-body {
+            background: var(--main-color-one);
+            padding: 0px 20px 25px 25px;
+            border-top: 0px;
+            font-size: 16px;
+            line-height: 28px;
+            font-family: var(--body-font);
+            font-weight: 400;
+            color: #323232;
+            transition: .7s alternate;
+            .faq-img {
+                margin-top: 15px;
+                border-radius: 6px;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+/*----------------------------
+    Info Bar
+----------------------------*/
+.info-items-wrap {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: block;
+
+    +li {
+      margin-top: 15px;
+    }
+  }
+}
+
+.info-item {
+  display: flex;
+
+  .icon {
+    font-size: 16px;
+    color: var(--secondary-color);
+  }
+
+  .content {
+    margin-left: 12px;
+
+    .title {
+      font-size: 16px;
+      line-height: 1.4;
+      font-family: var(--body-font);
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0;
+    }
+  }
+}
