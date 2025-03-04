@@ -20,8 +20,12 @@ const DB_USERNAME = 'root';
 const DB_DATABASE = 'php_news';
 const DB_PASSWORD = '1289..//';
 
-//// helpers
+// include database & make connect
+//require "Database/Database.php";
+//$conn = new \Database\Database();
 
+
+//// helpers
 function protocol(): string
 {
     return stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
