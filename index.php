@@ -162,7 +162,7 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
 
 }
 
-uri('admin/category/create', 'adminCategory', 'create');
+// uri('admin/category/create', 'adminCategory', 'create');
 
 
 function dd($var)
