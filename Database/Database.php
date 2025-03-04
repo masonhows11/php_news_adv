@@ -67,17 +67,63 @@ class Database
         try {
 
             $state = $this->connection->prepare(
-                "INSERT INTO ". $table ."(". implode(', ',$columns) ." ,created_at) VALUES  (:".implode(', :',$values).",now());"
-                );
+                "INSERT INTO " . $table . "(" . implode(', ', $columns) . " ,created_at) VALUES  (:" . implode(', :', $values) . ",now());"
+            );
 
             // to create associative array for key => value
             // use array_combine
-            $state->execute(array_combine($columns,$values));
-            return  true;
+            $state->execute(array_combine($columns, $values));
+            return true;
         } catch (PDOException $e) {
             # code...
             // echo "Error " . $e->getMessage();
-            return  false;
+            return false;
+        }
+    }
+
+
+    public function update($table, $id, $columns, $values): bool
+    {
+
+        try {
+
+            $sql = "UPDATE" . $table . "SET";
+            foreach (array_combine($columns, $values) as $key => $value) {
+                if ($value) {
+                    $sql .= " `" . $key . "` = ? ,";
+                } else {
+                    $sql .= " `" . $key . "` = NULL ,";
+                }
+            }
+            $sql .= " updated_at = now()";
+            $sql .= "WHERE id = ? ";
+            $state = $this->connection->prepare();
+
+            // to create associative array for key => value
+            // use array_combine
+            $state = $this->connection->prepare($sql);
+            $state->execute(array_merge(array_filter(array_values($values)), [$id]));
+            return true;
+        } catch (PDOException $e) {
+            # code...
+            // echo "Error " . $e->getMessage();
+            return false;
+        }
+    }
+
+
+    public function delete($table, $id): bool
+    {
+        try {
+
+            $sql = "DELETE FROM " . $table . " WHERE id = ?";
+            $state = $this->connection->prepare($sql);
+            $state->execute([$id]);
+
+            return true;
+
+        } catch (PDOException $exception) {
+            return false;
         }
     }
 }
