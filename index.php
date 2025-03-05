@@ -26,7 +26,7 @@ const DB_PASSWORD = '1289..//';
 // require "Database/CreateDB.php";
 // $db = new CreateDB();
 // $db->run();
-
+require "activities/Admin/AdminCategory.php";
 
 //// helpers
 function protocol(): string
@@ -149,7 +149,9 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
     }
     // create new obj from class/controller belongs to current route
     // then execute
+
     $object = new $controller;
+
     call_user_func_array( array($object,$method),$parameters);
     exit();
 }
@@ -166,8 +168,18 @@ function dd($var)
 // reserved uri/routes
 // Admin is namespace in AdminCategory class
 uri('admin/category', 'Admin\AdminCategory', 'index');
+
 uri('admin/category/create', 'Admin\AdminCategory', 'create');
-uri('admin/category/store', 'Admin\AdminCategory', 'store','post');
+uri('admin/category/store', 'Admin\AdminCategory', 'store','POST');
+
+uri('admin/category/show/{id}', 'Admin\AdminCategory', 'show');
+
+uri('admin/category/edit/{id}', 'Admin\AdminCategory', 'edit');
+uri('admin/category/update/{id}', 'Admin\AdminCategory', 'update','POST');
+
+uri('admin/category/delete/{id}', 'Admin\AdminCategory', 'delete');
+
+echo "404 - Page not found";
 
 
 
