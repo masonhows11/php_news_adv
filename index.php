@@ -23,6 +23,9 @@ const DB_PASSWORD = '1289..//';
 // include database & make connect
 // require "Database/Database.php";
 // $conn = new \Database\Database();
+// require "Database/CreateDB.php";
+// $db = new CreateDB();
+// $db->run();
 
 
 //// helpers

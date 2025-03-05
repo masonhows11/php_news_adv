@@ -126,4 +126,19 @@ class Database
             return false;
         }
     }
+
+    // create database table
+    public function createTable($query)
+    {
+        try {
+
+            $this->connection->exec($query);
+            return true;
+
+        } catch (PDOException $exception)
+        {
+            echo "Error :" . $exception->getMessage();
+            exit();
+        }
+    }
 }
