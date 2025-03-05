@@ -27,7 +27,7 @@ const DB_PASSWORD = '1289..//';
 // $db = new CreateDB();
 // $db->run();
 require "activities/Admin/AdminCategory.php";
-
+require "activities/Admin/AdminHome.php";
 //// helpers
 function protocol(): string
 {
