@@ -1,12 +1,12 @@
-<footer class="app-footer"> <!--begin::To the end-->
-    <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end--> <!--begin::Copyright--> <strong>
-        Copyright &copy; 2014-2024&nbsp;
-        <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+<footer class="app-footer">
+    <div class="float-end d-none d-sm-inline">پنل ادمین</div><strong>
+        Copyright &copy; 1403 - <?= date('Y') ?>
+        <a href="https://adminlte.io" class="text-decoration-none">خبرنامه</a>.
     </strong>
-    All rights reserved.
-    <!--end::Copyright-->
-</footer> <!--end::Footer-->
-</div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
+   تمام حقوق محفوظ است
+
+</footer>
+</div>
 <script src="<?= assets('public/admin_assets/js/overlayscrollbars.browser.es6.min.js') ?>" crossorigin="anonymous"></script>
 <script src="<?= assets('public/admin_assets/js/popper.min.js') ?>"  crossorigin="anonymous"></script>
 <script src="<?= assets('public/admin_assets/js/bootstrap.bundle.min.js') ?>"  crossorigin="anonymous"></script>
