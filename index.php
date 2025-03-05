@@ -13,6 +13,7 @@ const BASE_PATH = __DIR__;
 // current domain
 // define("CURRENT_DOMAIN", currentDomain() . '/php_news/');
 define("CURRENT_DOMAIN", currentDomain());
+
 const DISPLAY_ERROR = true;
 
 const DB_HOST = '127.0.0.1';
@@ -26,8 +27,7 @@ const DB_PASSWORD = '1289..//';
 // require "Database/CreateDB.php";
 // $db = new CreateDB();
 // $db->run();
-require "activities/Admin/AdminCategory.php";
-require "activities/Admin/AdminHome.php";
+
 //// helpers
 function protocol(): string
 {
@@ -47,8 +47,10 @@ function currentURL(): string
 
 function assets($path): string
 {
-    $domain = trim(BASE_PATH . '/ ');
-    return $domain . '/' . trim($path . '/ .');
+    return trim(CURRENT_DOMAIN , '/ ') .'/'. trim($path , '/ ');
+    // return trim(BASE_PATH , '/ ') .'/'. trim($path , '/ ');
+    // $domain = trim(BASE_PATH , '/ ') ;
+    // return $domain .'/'. trim($path , '/ ');
 
 }
 
@@ -164,9 +166,12 @@ function dd($var)
     exit();
 }
 
+
+require "activities/Admin/AdminCategory.php";
+require "activities/Admin/Home.php";
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
-uri('admin', 'Admin\AdminHome', 'index');
+uri('admin', 'Admin\Home', 'index');
 // Admin is namespace in AdminCategory class
 uri('admin/category', 'Admin\AdminCategory', 'index');
 
