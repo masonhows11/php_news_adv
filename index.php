@@ -111,29 +111,23 @@ function flashMessage($name, $value = null)
 // mini routing system
 function uri($route = null, $controller = null, $method = null, $requestMethodType = 'GET')
 {
-
     // current url array
     $current_url = explode('?', currentURL())[0];
     $current_url = str_replace(CURRENT_DOMAIN, ' ', $current_url);
     $current_url = trim($current_url, '/ ');
     $current_url_array = explode('/', $current_url);
     $current_url_array = array_filter($current_url_array);
-
     // reserved url array
     $reservedUrl = trim($route, '/ ');
     $reservedUrlArray = explode('/', $reservedUrl);
     $reservedUrlArray = array_filter($reservedUrlArray);
-
     // compare current_url_array & reservedUrlArray
     if (sizeof($current_url_array) != sizeof($reservedUrlArray) || methodType() != $requestMethodType) {
-
         return false;
     }
-
     // admin/category/create/{id} reserved
     // admin/category/create/2 get from request
     // find the parameter like id = 2
-
     $parameters = [];
     // find parameter with curly bracket in route
     // like {id} {slug}
@@ -143,42 +137,38 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
         // $reservedUrlArray[$key][strlen($reservedUrlArray[$key]) - 1] to get last character
         if ($reservedUrlArray[$key][0] == "{" && $reservedUrlArray[$key][strlen($reservedUrlArray[$key]) - 1] == "}")
         {
-
           array_push( $parameters,$reservedUrlArray[$key]);
-
           // compare each item route must be same
         } elseif ($reservedUrlArray[$key] !== $current_url_array[$key]) {
             return false;
         }
-
     }
-
-
     if(methodType() == "POST"){
-
         $request = isset($_FILES) ? array_merge($_POST,$_FILES) : $_POST;
         $parameters = array_merge([$request],$parameters);
     }
-
     // create new obj from class/controller belongs to current route
     // then execute
     $object = new $controller;
     call_user_func_array( array($object,$method),$parameters);
     exit();
-
-
 }
-
-// uri('admin/category/create', 'adminCategory', 'create');
 
 
 function dd($var)
 {
-
     echo "<pre/>";
     var_dump($var);
     exit();
 }
+
+// uri('admin/category/create', 'adminCategory', 'create'); example
+// reserved uri/routes
+// Admin is namespace in AdminCategory class
+uri('admin/category', 'Admin\AdminCategory', 'index');
+uri('admin/category/create', 'Admin\AdminCategory', 'create');
+uri('admin/category/store', 'Admin\AdminCategory', 'store','post');
+
 
 
 
