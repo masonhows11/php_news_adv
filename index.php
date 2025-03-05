@@ -169,22 +169,47 @@ function dd($var)
 
 
 require "activities/Admin/AdminCategory.php";
+require "activities/Admin/AdminPosts.php";
+require "activities/Admin/AdminComments.php";
+require "activities/Admin/AdminBanners.php";
+
 require "activities/Admin/Home.php";
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
 uri('admin', 'Admin\Home', 'index');
 // Admin is namespace in AdminCategory class
+
+//// categories
 uri('admin/category', 'Admin\AdminCategory', 'index');
 
 uri('admin/category/create', 'Admin\AdminCategory', 'create');
 uri('admin/category/store', 'Admin\AdminCategory', 'store','POST');
-
-uri('admin/category/show/{id}', 'Admin\AdminCategory', 'show');
-
 uri('admin/category/edit/{id}', 'Admin\AdminCategory', 'edit');
 uri('admin/category/update/{id}', 'Admin\AdminCategory', 'update','POST');
-
 uri('admin/category/delete/{id}', 'Admin\AdminCategory', 'delete');
+
+//// posts
+uri('admin/posts', 'Admin\AdminPosts', 'index');
+uri('admin/post/create', 'Admin\AdminPosts', 'create');
+uri('admin/post/store', 'Admin\AdminPosts', 'store','POST');
+uri('admin/post/edit/{id}', 'Admin\AdminPosts', 'edit');
+uri('admin/post/update/{id}', 'Admin\AdminPosts', 'update','POST');
+uri('admin/post/delete/{id}', 'Admin\AdminPosts', 'delete');
+
+//// comments
+uri('admin/comments', 'Admin\AdminComments', 'index');
+uri('admin/comment/edit/{id}', 'Admin\AdminComments', 'edit');
+uri('admin/comment/update/{id}', 'Admin\AdminComments', 'update','POST');
+uri('admin/comment/delete/{id}', 'Admin\AdminComments', 'delete');
+
+
+//// banners
+uri('admin/banners', 'Admin\AdminBanners', 'index');
+uri('admin/banner/create', 'Admin\AdminBanners', 'create');
+uri('admin/banner/store', 'Admin\AdminBanners', 'store','POST');
+uri('admin/banner/edit/{id}', 'Admin\AdminBanners', 'edit');
+uri('admin/banner/update/{id}', 'Admin\AdminBanners', 'update','POST');
+uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 
 echo "404 - Page not found";
 
