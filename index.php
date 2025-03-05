@@ -56,8 +56,9 @@ function assets($path): string
 
 function url($path): string
 {
-    $domain = trim(BASE_PATH . '/ ');
-    return $domain . '/' . trim($path . '/ .');
+    return trim(CURRENT_DOMAIN , '/ ') .'/'. trim($path , '/ ');
+    //$domain = trim(BASE_PATH . '/ ');
+    //return $domain . '/' . trim($path . '/ .');
 
 }
 
