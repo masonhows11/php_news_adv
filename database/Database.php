@@ -11,7 +11,7 @@ class Database
 {
 
 
-    private $connection;
+    private PDO $connection;
 
     private array $options = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -53,6 +53,7 @@ class Database
                 $state->execute($values);
             }
             return $state->fetchAll();
+
         } catch (PDOException $e) {
             # code...
             // echo "Error " . $e->getMessage();

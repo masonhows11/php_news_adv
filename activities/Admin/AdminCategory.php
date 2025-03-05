@@ -3,6 +3,8 @@
 
 
 namespace Admin;
+use database\Database;
+
 require "AdminBase.php";
 
 
@@ -11,6 +13,8 @@ class AdminCategory extends AdminBase
 
     public function index()
     {
+        $db = new Database();
+        $categories = $db->select('SELECT * FROM categories ORDER BY `id` DESC ');
         require_once (BASE_PATH.'/template/admin/category/index.php');
     }
 

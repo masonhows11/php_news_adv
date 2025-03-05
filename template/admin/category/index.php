@@ -34,6 +34,55 @@
             <div class="row">
                 <h1>صفحه دسته بندی ها</h1>
             </div>
+            <div class="row">
+                <?php if (!empty($categories)): ?>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p class="h5 mt-2"><strong>  دسته بندی ها</strong></p>
+                                    </div>
+                                    <div class="col-lg-6 d-flex justify-content-end">
+                                        <a href="create.php" class="btn btn-outline-primary">دسته بندی جدید</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table mt-2">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">عنوان</th>
+                                <th scope="col">عملیات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($categories as $category): ?>
+                                <tr>
+                                    <td><?= $category['id'] ?></td>
+                                    <td><?= $category['title'] ?></td>
+                                    <td>
+                                        <a href="<?= url("admin/pages/changeStatus.php?type=category&id=".$category['id']) ?>" class="btn
+                                            <?= $category['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $category['status'] == 0 ? 'غیر فعال' : 'فعال' ?>
+                                        </a>
+                                        <a href="<?= url("admin/pages/category/edit.php?type=category&id=".$category['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/pages/delete.php?type=category&action=delete&id=".$category['id']) ?>" class="btn btn-outline-danger">حذف</a>
+
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php else: ?>
+                    <div class="alert alert-danger">
+                        اطلاعاتی ای برای نمایش وجود ندارد
+                    </div>
+                <?php endif ?>
+            </div>
+
 
         </div>
     </div>

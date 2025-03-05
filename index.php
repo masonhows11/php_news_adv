@@ -22,7 +22,7 @@ const DB_DATABASE = 'php_news';
 const DB_PASSWORD = '1289..//';
 
 // include database & make connect
-// require "Database/Database.php";
+ require "database/Database.php";
 // $conn = new \Database\Database();
 // require "Database/CreateDB.php";
 // $db = new CreateDB();
