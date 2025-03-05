@@ -9,10 +9,9 @@
                 <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                            داشبورد
-                            <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                   <!-- <ul class="nav nav-treeview">
                         <li class="nav-item"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
                                 <p>داشبورد v1</p>
                             </a> </li>
@@ -22,7 +21,7 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                 <p>داشبورد v3</p>
                             </a> </li>
-                    </ul>
+                    </ul>-->
                 </li>
                 <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>
