@@ -2,7 +2,7 @@
 
 namespace Admin;
 
-class AdminCategory
+class AdminCategory extends Admin
 {
 
     public function index()
