@@ -4,7 +4,7 @@ namespace Admin;
 
 use JetBrains\PhpStorm\NoReturn;
 
-class Admin
+class AdminBase
 {
 
     public function __construct()

@@ -166,6 +166,7 @@ function dd($var)
 
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
+uri('admin', 'Admin\AdminHome', 'index');
 // Admin is namespace in AdminCategory class
 uri('admin/category', 'Admin\AdminCategory', 'index');
 

@@ -1,8 +1,12 @@
 <?php
 
-namespace Admin;
 
-class AdminCategory extends Admin
+
+namespace Admin;
+require "AdminBase.php";
+
+
+class AdminCategory extends AdminBase
 {
 
     public function index()
