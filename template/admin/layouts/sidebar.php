@@ -50,15 +50,15 @@
                         <p>دسته بندی ها</p>
                     </a>
                 </li>
-                <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                <li class="nav-item"> <a href="<?= url('admin/posts') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>پست ها</p>
                     </a>
                 </li>
-                <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                <li class="nav-item"> <a href="<?= url('admin/comments') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>دیدگاه ها</p>
                     </a>
                 </li>
-                <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                <li class="nav-item"> <a href="<?= url('admin/banners') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>بنرها</p>
                     </a>
                 </li>
