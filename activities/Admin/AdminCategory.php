@@ -11,7 +11,7 @@ class AdminCategory extends AdminBase
 
     public function index()
     {
-        echo "admin category index method";
+        require_once (BASE_PATH.'/template/admin/category/index.php');
     }
 
     public function show()

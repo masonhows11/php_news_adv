@@ -1,11 +1,11 @@
 <?php
 
 namespace Admin;
-
-use JetBrains\PhpStorm\NoReturn;
-
 class AdminBase
 {
+
+    private string $currentDomain;
+    private string $basePath;
 
     public function __construct()
     {
@@ -13,13 +13,13 @@ class AdminBase
         $this->basePath = BASE_PATH;
     }
 
-    #[NoReturn] protected function redirect($url): void
+     protected function redirect($url): void
     {
         header('Location: ' . trim($this->currentDomain, '/ ') . '/' . trim($url));
         exit();
     }
 
-    #[NoReturn] protected function redirectBack($url): void
+    protected function redirectBack($url): void
     {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();

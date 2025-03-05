@@ -30,7 +30,7 @@
     </div>
     <div class="app-content">
         <div class="container-fluid">
-            
+
             <div class="row">
 
             </div>
