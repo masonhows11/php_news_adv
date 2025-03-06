@@ -44,7 +44,7 @@
                                         <p class="h5 mt-2"><strong>  دسته بندی ها</strong></p>
                                     </div>
                                     <div class="col-lg-6 d-flex justify-content-end">
-                                        <a href="create.php" class="btn btn-outline-primary">دسته بندی جدید</a>
+                                        <a href="<?= url('admin/category/create') ?>" class="btn btn-outline-primary">دسته بندی جدید</a>
                                     </div>
                                 </div>
                             </div>

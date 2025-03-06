@@ -17,19 +17,18 @@ class AdminCategory extends AdminBase
         $categories = $db->select('SELECT * FROM categories ORDER BY `id` DESC ');
         require_once (BASE_PATH.'/template/admin/category/index.php');
     }
-
-    public function show()
-    {
-        echo "admin category show method";
-    }
     public function create()
     {
-        echo "admin category create method";
+
+        require_once (BASE_PATH.'/template/admin/category/create.php');
     }
 
-    public function store()
+    public function store($request)
     {
-        echo "admin category store method";
+        //  dd(array_values($request));
+        $db = new Database();
+        $db->insert('categories',array_keys($request),array_values($request));
+        $this->redirect('admin/category');
     }
 
     public function edit()
