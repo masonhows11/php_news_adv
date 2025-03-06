@@ -1,8 +1,8 @@
 <?php
 
 
-
 namespace Admin;
+
 use database\Database;
 
 require "AdminBase.php";
@@ -15,19 +15,20 @@ class AdminCategory extends AdminBase
     {
         $db = new Database();
         $categories = $db->select('SELECT * FROM categories ORDER BY `id` DESC ');
-        require_once (BASE_PATH.'/template/admin/category/index.php');
+        require_once(BASE_PATH . '/template/admin/category/index.php');
     }
+
     public function create()
     {
 
-        require_once (BASE_PATH.'/template/admin/category/create.php');
+        require_once(BASE_PATH . '/template/admin/category/create.php');
     }
 
     public function store($request)
     {
-        //  dd(array_values($request));
+
         $db = new Database();
-        $db->insert('categories',array_keys($request),array_values($request));
+        $db->insert('categories', array_keys($request), $request);
         $this->redirect('admin/category');
     }
 
