@@ -62,7 +62,7 @@ class Database
     }
 
 
-    public function insert($table, $columns, $values): bool
+    public function insert($table, $columns, $values)
     {
 
         try {
