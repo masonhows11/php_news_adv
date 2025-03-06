@@ -67,9 +67,7 @@ class Database
 
         try {
 
-            $state =
-                $this->connection
-                 ->prepare("INSERT INTO " . $table . "(" . implode(', ', $columns)." ,created_at) VALUES  ( :" . implode(', :', $columns) . " , now());");
+            $state = $this->connection->prepare("INSERT INTO " . $table . "(" . implode(', ', $columns)." ,created_at) VALUES  ( :" . implode(', :', $columns) . " , now());");
             // to create associative array for key => value
             // use array_combine
 
@@ -77,7 +75,6 @@ class Database
             return true;
         } catch (PDOException $e) {
             # code...
-            // echo "Error " . $e->getMessage();
             return "Error " . $e->getMessage();
         }
     }
