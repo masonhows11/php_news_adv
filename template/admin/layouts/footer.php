@@ -11,6 +11,7 @@
 <script src="<?= assets('public/admin_assets/js/popper.min.js') ?>"  crossorigin="anonymous"></script>
 <script src="<?= assets('public/admin_assets/js/bootstrap.bundle.min.js') ?>"  crossorigin="anonymous"></script>
 <script src="<?= assets('public/admin_assets/js/adminlte.js') ?>"></script>
+<script src="<?= assets('public/admin_assets/plugins/Ckeditor/ckeditor.js') ?>"></script>
 <script>
     const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
     const Default = {
