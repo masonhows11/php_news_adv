@@ -8,7 +8,7 @@ class AdminPosts
     public function index()
     {
         $db = new Database();
-        $posts = $db->select('SELECT * FROM categories ORDER BY `id` DESC ')->fetchAll();
+        $posts = $db->select('SELECT * FROM posts ORDER BY `id` DESC ')->fetchAll();
         require_once (BASE_PATH.'/template/admin/posts/index.php');
     }
 
@@ -31,7 +31,8 @@ class AdminPosts
 
 
         $db = new Database();
-        $category = $db->select('SELECT * FROM posts WHERE id = ?;',[$id])->fetch();
+        $categories = $db->select('SELECT * FROM categories ORDER BY `id` ASC ')->fetchAll();
+        $post = $db->select('SELECT * FROM posts WHERE id = ?;',[$id])->fetch();
         require_once(BASE_PATH . '/template/admin/posts/edit.php');
     }
 

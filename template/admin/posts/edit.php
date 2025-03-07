@@ -35,28 +35,28 @@
                 <h1>صفحه پست ها</h1>
             </div>
             <div class="row">
-                <form method="post" action="edit.php?type=post&id=<?= $post->id ?>" enctype="multipart/form-data">
+                <form method="post" action="<?= url('admin/post/update/'.$post['id']) ?>" enctype="multipart/form-data">
 
 
-                    <input type="hidden" name="id" value="<?= $post->id ?>">
+                    <input type="hidden" name="id" value="<?= $post['id'] ?>">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">عنوان</label>
                                 <input type="text" name="title" class="form-control" id="title"
-                                       value="<?= $post->title ?>">
+                                       value="<?= $post['title'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">نویسنده</label>
                                 <input type="text" name="author" class="form-control" id="author"
-                                       value="<?= $post->author ?>">
+                                       value="<?= $post['author'] ?>">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">توضیحات</label>
                                 <textarea name="body" rows="5" cols="5"
-                                          class="form-control"><?= $post->body ?></textarea>
+                                          class="form-control"><?= $post['body'] ?></textarea>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -74,20 +74,20 @@
                                 <?php endif; ?>
                             </select>
                         </div>
-                        <div class="col-lg-6">
-                            <?php if (!empty($post->image)): ?>
-                                <?php  if(file_exists(BASE_PATH."uploads/posts/".$post->image)): ?>
+                       <!-- <div class="col-lg-6">
+                            <?php /*if (!empty($post->image)): */?>
+                                <?php /* if(file_exists(BASE_PATH."uploads/posts/".$post->image)): */?>
                                     <div class="card" style="width: 18rem;">
-                                        <img src="<?= url("uploads/posts/".$post->image ) ?>" class="card-img-top" alt="<?= $post->image ?>">
+                                        <img src="<?php /*= url("uploads/posts/".$post->image ) */?>" class="card-img-top" alt="<?php /*= $post->image */?>">
                                         <div class="card-body">
-                                            <p class="card-text " style="direction:ltr"><?= $post->image ?></p>
+                                            <p class="card-text " style="direction:ltr"><?php /*= $post->image */?></p>
                                         </div>
                                     </div>
-                                <?php endif; ?>
-                            <?php else: ?>
-                                <img src="<?= url('admin/assets/no-picture-available.jpg') ?>" alt="no image exists">
-                            <?php endif; ?>
-                        </div>
+                                <?php /*endif; */?>
+                            <?php /*else: */?>
+                                <img src="<?php /*= url('admin/assets/no-picture-available.jpg') */?>" alt="no image exists">
+                            <?php /*endif; */?>
+                        </div>-->
                     </div>
 
                     <div class="mb-3 mt-3">

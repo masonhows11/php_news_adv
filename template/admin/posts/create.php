@@ -35,7 +35,7 @@
                 <h1>صفحه پست ها</h1>
             </div>
             <div class="row">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" action="<?= url('admin/post/store') ?>" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">عنوان</label>
