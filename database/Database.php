@@ -86,7 +86,9 @@ class Database
 
         try {
 
-            $sql = "UPDATE" . $table . "SET";
+            // space in sql query it is very, very important
+            // any mistake in syntax query no working
+            $sql = "UPDATE " . $table . " SET";
             foreach (array_combine($columns, $values) as $key => $value) {
                 if ($value) {
                     $sql .= " `" . $key . "` = ? ,";
@@ -96,7 +98,6 @@ class Database
             }
             $sql .= " updated_at = now()";
             $sql .= "WHERE id = ? ";
-            $state = $this->connection->prepare();
 
             // to create associative array for key => value
             // use array_combine

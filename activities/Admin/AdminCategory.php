@@ -41,16 +41,17 @@ class AdminCategory extends AdminBase
         require_once(BASE_PATH . '/template/admin/category/edit.php');
     }
 
-    public function update($id)
+    public function update($request,$id)
     {
+        //dd($id);
         $db = new Database();
-
+        $result = $db->update('categories',$id,array_keys($request),$request);
         $this->redirect('admin/category');
     }
 
     public function delete($id)
     {
-        
+
         $db = new Database();
         $db->delete('categories',$id);
         $this->redirect('admin/category');

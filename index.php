@@ -155,7 +155,10 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
 
     $object = new $controller;
 
-    call_user_func_array( array($object,$method),$parameters);
+    // the id or any parameter pass here
+    // like
+    // public function delete($id){}
+    call_user_func_array(array($object,$method),$parameters);
     exit();
 }
 
