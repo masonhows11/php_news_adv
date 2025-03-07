@@ -28,11 +28,11 @@ class AdminBase
 
     protected function saveImage($image, $address, $name = null): false|string
     {
-        if ($image) {
-            $image_ext = explode('/', $image['type'][1]);
+        if ($name) {
+            $image_ext = explode('/', $image['type'])[1];
             $image_name = $name . '.' . $image_ext;
         } else {
-            $image_ext = explode('/', $image['type'][1]);
+            $image_ext = explode('/', $image['type'])[1];
             $image_name = date("Y-m-d-h-i-s") . '.' . $image_ext;
         }
 

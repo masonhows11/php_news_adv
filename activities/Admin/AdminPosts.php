@@ -1,6 +1,7 @@
 <?php
 
 namespace Admin;
+
 use database\Database;
 
 class AdminPosts extends AdminBase
@@ -9,7 +10,7 @@ class AdminPosts extends AdminBase
     {
         $db = new Database();
         $posts = $db->select('SELECT * FROM posts ORDER BY `id` DESC ')->fetchAll();
-        require_once (BASE_PATH.'/template/admin/posts/index.php');
+        require_once(BASE_PATH . '/template/admin/posts/index.php');
     }
 
     public function create()
@@ -22,18 +23,24 @@ class AdminPosts extends AdminBase
     public function store($request)
     {
 
-        $realTimeStamp = substr($request['published_at'],0,10);
-        $request['published_at'] = date("Y-m-d H:i:s",(int)$realTimeStamp);
+        $realTimeStamp = substr($request['published_at'], 0, 10);
+        $request['published_at'] = date("Y-m-d H:i:s", (int)$realTimeStamp);
         $db = new Database();
-        if($request['categories_id'] != null )
-        {
-            $request['image'] = $this->saveImage($request['image'],'post_image');
-            if($request['image']){
-                $request = array_merge($request,['user_id' => 1]);
+        if ($request['categories_id'] != null) {
+            $request['image'] = $this->saveImage($request['image'], 'post_image');
+            if ($request['image'])
+            {
+                $request = array_merge($request, ['user_id' => 1]);
+                $db->insert('posts', array_keys($request), $request);
+                $this->redirect('admin/posts');
+            } else {
+                $this->redirect('admin/posts');
             }
+        } else {
+            $this->redirect('admin/posts');
         }
-        $db->insert('posts', array_keys($request), $request);
-        $this->redirect('admin/posts');
+
+
     }
 
     public function edit($id)
@@ -42,29 +49,29 @@ class AdminPosts extends AdminBase
 
         $db = new Database();
         $categories = $db->select('SELECT * FROM categories ORDER BY `id` ASC ')->fetchAll();
-        $post = $db->select('SELECT * FROM posts WHERE id = ?;',[$id])->fetch();
+        $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
         require_once(BASE_PATH . '/template/admin/posts/edit.php');
     }
 
-    public function update($request,$id)
+    public function update($request, $id)
     {
         //dd($id);
         $db = new Database();
-        $db->update('posts',$id,array_keys($request),$request);
+        $db->update('posts', $id, array_keys($request), $request);
         $this->redirect('admin/posts');
     }
 
 
     public function changeStatus()
     {
-        
+
     }
 
     public function delete($id)
     {
 
         $db = new Database();
-        $db->delete('posts',$id);
+        $db->delete('posts', $id);
         $this->redirect('admin/posts');
     }
 }
