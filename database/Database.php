@@ -52,7 +52,8 @@ class Database
 
                 $state->execute($values);
             }
-            return $state->fetchAll();
+            $result = $state;
+            return $result;
 
         } catch (PDOException $e) {
             # code...
