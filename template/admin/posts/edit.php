@@ -32,66 +32,66 @@
         <div class="container-fluid">
 
             <div class="row">
-                <h1>صفحه پست ها</h1>
+                <h1>ویرایش پست</h1>
             </div>
             <div class="row">
-                <form method="post" action="<?= url('admin/post/update/'.$post['id']) ?>" enctype="multipart/form-data">
+                <form  method="post" action="<?= url('admin/post/update/'.$post['id']) ?>"  enctype="multipart/form-data">
 
-
-                    <input type="hidden" name="id" value="<?= $post['id'] ?>">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">عنوان</label>
-                                <input type="text" name="title" class="form-control" id="title"
-                                       value="<?= $post['title'] ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">نویسنده</label>
-                                <input type="text" name="author" class="form-control" id="author"
-                                       value="<?= $post['author'] ?>">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">توضیحات</label>
-                                <textarea name="body" rows="5" cols="5"
-                                          class="form-control"><?= $post['body'] ?></textarea>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="input-group mb-3 mt-3">
-                                <input type="file" name="image" class="form-control" id="inputGroupFile02">
-                                <label class="input-group-text" for="inputGroupFile02">آپلود</label>
-                            </div>
-
-                            <label for="exampleInputPassword1" class="form-label">دسته بندی</label>
-                            <select name="category_id" class="form-select" aria-label="Default select example">
-                                <?php if (!empty($categories)): ?>
-                                    <?php foreach ($categories as $category): ?>
-                                        <option value="<?= $category->id ?>" <?= $post->category_id == $category->id ? 'selected' : '' ?> ><?= $category->title ?></option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
-                        </div>
-                       <!-- <div class="col-lg-6">
-                            <?php /*if (!empty($post->image)): */?>
-                                <?php /* if(file_exists(BASE_PATH."uploads/posts/".$post->image)): */?>
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="<?php /*= url("uploads/posts/".$post->image ) */?>" class="card-img-top" alt="<?php /*= $post->image */?>">
-                                        <div class="card-body">
-                                            <p class="card-text " style="direction:ltr"><?php /*= $post->image */?></p>
-                                        </div>
-                                    </div>
-                                <?php /*endif; */?>
-                            <?php /*else: */?>
-                                <img src="<?php /*= url('admin/assets/no-picture-available.jpg') */?>" alt="no image exists">
-                            <?php /*endif; */?>
-                        </div>-->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">عنوان</label>
+                        <input type="text" name="title" class="form-control" id="title" value="<?= $post['title'] ?>" required>
+                    </div>
+                    <div class="form-text text-danger">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="summary" class="form-label">خلاسه</label>
+                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required><?= $post['summary'] ?></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="body" class="form-label">توضیحات</label>
+                        <textarea name="body" id="body" rows="5" cols="5" class="form-control" required><?= $post['body'] ?></textarea>
+                    </div>
+                    <div class="form-text text-danger">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="author" class="form-label">نویسنده</label>
+                        <input type="text" name="author" class="form-control" id="author" value="<?= $post['author'] ?>" required>
+                    </div>
+                    <div class="form-text text-danger">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="published_at" class="form-label">تاریخ انتشار</label>
+                        <input type="text" name="published_at" class="form-control d-none" id="published_at">
+                        <input type="text"  class="form-control" id="published_at_view" required>
+                    </div>
+
+                    <label for="category_id" class="form-label">دسته بندی</label>
+                    <select class="form-select" name="categories_id" aria-label="Default select example" required>
+                        <option value="">یک دسته بندی انتخاب کنید</option>
+                        <?php if (!empty($categories)): ?>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?= $category['id'] ?>" <?= $post['categories_id'] == $category['id'] ? 'selected' : '' ?> ><?= $category['title'] ?></option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </select>
+                    <div class="form-text text-danger">
+                    </div>
+
+                    <div class="input-group mb-3 mt-3">
+                        <input type="file" name="image" class="form-control" id="image" required>
+                        <label class="input-group-text" for="image">آپلود</label>
+                    </div>
+                    <div class="form-text text-danger">
+                    </div>
+
+
                     <div class="mb-3 mt-3">
-                        <button type="submit" name="update" class="btn btn-primary">بروز رسانی</button>
+                        <button type="submit"  class="btn btn-primary">ذخیره</button>
                     </div>
 
                 </form>

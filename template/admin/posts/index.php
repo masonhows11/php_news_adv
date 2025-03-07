@@ -57,7 +57,7 @@
                                 <th scope="col">عنوان</th>
                                 <th scope="col">توضیحات</th>
 <!--                                <th scope="col">دسته بندی</th>-->
-<!--                                <th scope="col">تصویر</th>-->
+                               <th scope="col">تصویر</th>
                                 <th scope="col">نویسنده</th>
                                 <th scope="col">عملیات</th>
                             </tr>
@@ -69,23 +69,21 @@
                                     <td><?= $post['title'] ?></td>
                                     <td><?= substr($post['body'],0,21).'...' ?></td>
                                     <!--                                    <td>--><?php //= $post['category_name'] ?><!--</td>-->
-                                    <!-- <td>
-                                        <?php /*if (!empty($post->image)): */?>
-                                            <?php /*if (file_exists(BASE_PATH . "uploads/posts/" . $post->image)): */?>
-                                                <img class="img-size-64 img-thumbnail" src="<?php /*= url("uploads/posts/" . $post->image) */?>" alt="">
-                                            <?php /*endif; */?>
-                                        <?php /*else: */?>
-                                            <img src="<?php /*= url('admin/assets/no-picture-available.jpg') */?>" alt="no image exists">
-                                        <?php /*endif; */?>
-                                    </td>-->
+                                   <td>
+                                        <?php if (!empty($post['image']) && file_exists(BASE_PATH.'/'.$post['image']) ): ?>
+                                                <img class="img-size-64 img-thumbnail" src="<?=  assets($post['image']) ?>" alt="post-image">
+                                        <?php else: ?>
+                                            <img class="img-size-64 img-thumbnail" src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>" alt="no image exists">
+                                        <?php endif; ?>
+                                    </td>
                                     <td><?= $post['author'] ?></td>
                                     <td>
                                         <a href="<?= url("admin/post/changeStatus/".$post['id']) ?>"
                                            class="btn <?= $post['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
                                             <?= $post['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
                                         </a>
-                                        <a href="<?= url("admin/posts/edit/".$post['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/posts/delete/".$post['id']) ?>" class="btn btn-outline-danger">
+                                        <a href="<?= url("admin/post/edit/".$post['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/post/delete/".$post['id']) ?>" class="btn btn-outline-danger">
                                             حذف
                                         </a>
                                     </td>

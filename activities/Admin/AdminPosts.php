@@ -52,7 +52,6 @@ class AdminPosts extends AdminBase
     public function edit($id)
     {
 
-
         $db = new Database();
         $categories = $db->select('SELECT * FROM categories ORDER BY `id` ASC ')->fetchAll();
         $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
@@ -61,7 +60,7 @@ class AdminPosts extends AdminBase
 
     public function update($request, $id)
     {
-        //dd($id);
+
         $db = new Database();
         $db->update('posts', $id, array_keys($request), $request);
         $this->redirect('admin/posts');
