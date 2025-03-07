@@ -22,8 +22,16 @@ class AdminPosts extends AdminBase
     public function store($request)
     {
 
-        dd($request);
+        $realTimeStamp = substr($request['published_at'],0,10);
+        $request['published_at'] = date("Y-m-d H:i:s",(int)$realTimeStamp);
         $db = new Database();
+        if($request['categories_id'] != null )
+        {
+            $request['image'] = $this->saveImage($request['image'],'post_image');
+            if($request['image']){
+                $request = array_merge($request,['user_id' => 1]);
+            }
+        }
         $db->insert('posts', array_keys($request), $request);
         $this->redirect('admin/posts');
     }
