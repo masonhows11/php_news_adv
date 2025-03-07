@@ -14,7 +14,8 @@ class AdminPosts
 
     public function create()
     {
-
+        $db = new Database();
+        $categories = $db->select('SELECT * FROM categories ORDER BY `id` ASC ')->fetchAll();
         require_once(BASE_PATH . '/template/admin/posts/create.php');
     }
 
@@ -40,7 +41,7 @@ class AdminPosts
     {
         //dd($id);
         $db = new Database();
-        $result = $db->update('posts',$id,array_keys($request),$request);
+        $db->update('posts',$id,array_keys($request),$request);
         $this->redirect('admin/posts');
     }
 
@@ -54,7 +55,7 @@ class AdminPosts
     {
 
         $db = new Database();
-        $db->delete('categories',$id);
+        $db->delete('posts',$id);
         $this->redirect('admin/posts');
     }
 }

@@ -63,7 +63,7 @@
                         <option value="">یک دسته بندی انتخاب کنید</option>
                         <?php if (!empty($categories)): ?>
                             <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category->id ?>"> <?= $category->title ?> </option>
+                                <option value="<?= $category['id'] ?>"> <?= $category['title'] ?> </option>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </select>

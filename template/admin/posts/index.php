@@ -57,7 +57,7 @@
                                 <th scope="col">عنوان</th>
                                 <th scope="col">توضیحات</th>
 <!--                                <th scope="col">دسته بندی</th>-->
-                                <th scope="col">تصویر</th>
+<!--                                <th scope="col">تصویر</th>-->
                                 <th scope="col">نویسنده</th>
                                 <th scope="col">عملیات</th>
                             </tr>

@@ -197,7 +197,7 @@ uri('admin/post/create', 'Admin\AdminPosts', 'create');
 uri('admin/post/store', 'Admin\AdminPosts', 'store','POST');
 uri('admin/post/edit/{id}', 'Admin\AdminPosts', 'edit');
 uri('admin/post/update/{id}', 'Admin\AdminPosts', 'update','POST');
-uri('admin/post/changeStatus','Admin/changeStatus','POST');
+uri('admin/post/changeStatus','Admin\changeStatus','POST');
 uri('admin/post/delete/{id}', 'Admin\AdminPosts', 'delete');
 
 //// comments
