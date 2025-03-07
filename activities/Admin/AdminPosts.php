@@ -1,6 +1,7 @@
 <?php
 
 namespace Admin;
+use database\Database;
 
 class AdminPosts
 {
@@ -40,6 +41,12 @@ class AdminPosts
         $db = new Database();
         $result = $db->update('posts',$id,array_keys($request),$request);
         $this->redirect('admin/posts');
+    }
+
+
+    public function changeStatus()
+    {
+        
     }
 
     public function delete($id)

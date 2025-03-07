@@ -65,10 +65,10 @@
                             <tbody>
                             <?php foreach ($posts as $post): ?>
                                 <tr>
-                                    <td><?= $post->id ?></td>
-                                    <td><?= $post->title ?></td>
-                                    <td><?= substr($post->body,0,21).'...' ?></td>
-                                    <td><?= $post->category_name ?></td>
+                                    <td><?= $post['id'] ?></td>
+                                    <td><?= $post['title'] ?></td>
+                                    <td><?= substr($post['body'],0,21).'...' ?></td>
+                                    <td><?= $post['category_name'] ?></td>
                                    <!-- <td>
                                         <?php /*if (!empty($post->image)): */?>
                                             <?php /*if (file_exists(BASE_PATH . "uploads/posts/" . $post->image)): */?>
@@ -80,12 +80,12 @@
                                     </td>-->
                                     <td><?= $post->author ?></td>
                                     <td>
-                                        <a href="<?= url("admin/pages/changeStatus.php?type=post&id=$post->id") ?>"
+                                        <a href="<?= url("admin/post/changeStatus/".$post['id']) ?>"
                                            class="btn <?= $post->status == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
                                             <?= $post->status == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
                                         </a>
-                                        <a href="<?= url("admin/pages/posts/edit.php?type=post&id=$post->id") ?>" class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/pages/delete.php?type=post&action=delete&id=$post->id") ?>" class="btn btn-outline-danger">
+                                        <a href="<?= url("admin/posts/edit".$post['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/posts/delete/".$post['id']) ?>" class="btn btn-outline-danger">
                                             حذف
                                         </a>
                                     </td>
