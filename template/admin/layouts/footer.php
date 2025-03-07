@@ -19,6 +19,8 @@
         CKEDITOR.replace('body');
     })
 </script>
+<script src="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-date.min.js') ?>"></script>
+<script src="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-datepicker.min.js') ?>"></script>
 <script>
     const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
     const Default = {

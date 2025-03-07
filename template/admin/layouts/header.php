@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= assets('public/admin_assets/css/apexcharts.css') ?>" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= assets('public/admin_assets/css/jsvectormap.min.css') ?>"  crossorigin="anonymous">
     <link rel="stylesheet" href="<?= assets('public/admin_assets/assets/fonts/font_iran.css') ?>">
+    <link rel="stylesheet" href="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-datepicker.min.css') ?>">
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary" style="font-family:iransansdn,sans-serif">
