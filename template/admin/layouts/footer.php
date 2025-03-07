@@ -14,6 +14,12 @@
 <script src="<?= assets('public/admin_assets/js/adminlte.js') ?>"></script>
 <script src="<?= assets('public/admin_assets/plugins/Ckeditor/ckeditor.js') ?>"></script>
 <script>
+    $(document).ready(function (){
+        CKEDITOR.replace('summary');
+        CKEDITOR.replace('body');
+    })
+</script>
+<script>
     const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
     const Default = {
         scrollbarTheme: "os-theme-light",
@@ -35,6 +41,6 @@
             });
         }
     });
-</script> <!--end::OverlayScrollbars Configure--> <!-- OPTIONAL SCRIPTS --> <!-- sortablejs -->
-</body><!--end::Body-->
+</script>
+</body>
 </html>

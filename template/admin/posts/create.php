@@ -51,7 +51,7 @@
 
                     <div class="mb-3">
                         <label for="body" class="form-label">توضیحات</label>
-                        <textarea name="body" rows="5" cols="5" class="form-control"></textarea>
+                        <textarea name="body" id="body" rows="5" cols="5" class="form-control"></textarea>
                     </div>
                     <div class="form-text text-danger">
                     </div>
