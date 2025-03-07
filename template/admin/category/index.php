@@ -67,8 +67,8 @@
                                             <?= $category['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
                                             <?= $category['status'] == 0 ? 'غیر فعال' : 'فعال' ?>
                                         </a>
-                                        <a href="<?= url("admin/pages/category/edit.php?type=category&id=".$category['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/pages/delete.php?type=category&action=delete&id=".$category['id']) ?>" class="btn btn-outline-danger">حذف</a>
+                                        <a href="<?= url("admin/category/edit/".$category['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/category/delete/".$category['id']) ?>" class="btn btn-outline-danger">حذف</a>
 
                                     </td>
                                 </tr>
