@@ -3,7 +3,7 @@
 namespace Admin;
 use database\Database;
 
-class AdminPosts
+class AdminPosts extends AdminBase
 {
     public function index()
     {

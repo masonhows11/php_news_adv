@@ -45,6 +45,11 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="summary" class="form-label">خلاسه</label>
+                        <textarea name="body" id="summary" rows="5" cols="5" class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
                         <label for="body" class="form-label">توضیحات</label>
                         <textarea name="body" rows="5" cols="5" class="form-control"></textarea>
                     </div>
@@ -58,8 +63,15 @@
                     <div class="form-text text-danger">
                     </div>
 
+
+                    <div class="mb-3">
+                        <label for="published_at" class="form-label">تاریخ انتشار</label>
+                        <input type="text" name="published_at" class="form-control" id="published_at">
+                        <input type="text"  class="form-control" id="published_at_view">
+                    </div>
+
                     <label for="category_id" class="form-label">دسته بندی</label>
-                    <select class="form-select" name="category_id" aria-label="Default select example">
+                    <select class="form-select" name="categories_id" aria-label="Default select example">
                         <option value="">یک دسته بندی انتخاب کنید</option>
                         <?php if (!empty($categories)): ?>
                             <?php foreach ($categories as $category): ?>
