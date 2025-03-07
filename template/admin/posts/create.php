@@ -39,26 +39,26 @@
 
                     <div class="mb-3">
                         <label for="title" class="form-label">عنوان</label>
-                        <input type="text" name="title" class="form-control" id="title">
+                        <input type="text" name="title" class="form-control" id="title" required>
                     </div>
                     <div class="form-text text-danger">
                     </div>
 
                     <div class="mb-3">
                         <label for="summary" class="form-label">خلاسه</label>
-                        <textarea name="body" id="summary" rows="5" cols="5" class="form-control"></textarea>
+                        <textarea name="body" id="summary" rows="5" cols="5" class="form-control" required></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="body" class="form-label">توضیحات</label>
-                        <textarea name="body" id="body" rows="5" cols="5" class="form-control"></textarea>
+                        <textarea name="body" id="body" rows="5" cols="5" class="form-control" required></textarea>
                     </div>
                     <div class="form-text text-danger">
                     </div>
 
                     <div class="mb-3">
                         <label for="author" class="form-label">نویسنده</label>
-                        <input type="text" name="author" class="form-control" id="author">
+                        <input type="text" name="author" class="form-control" id="author" required>
                     </div>
                     <div class="form-text text-danger">
                     </div>
@@ -66,12 +66,12 @@
 
                     <div class="mb-3">
                         <label for="published_at" class="form-label">تاریخ انتشار</label>
-                        <input type="text" name="published_at" class="form-control" id="published_at">
-                        <input type="text"  class="form-control" id="published_at_view">
+                        <input type="text" name="published_at" class="form-control d-none" id="published_at">
+                        <input type="text"  class="form-control" id="published_at_view" required>
                     </div>
 
                     <label for="category_id" class="form-label">دسته بندی</label>
-                    <select class="form-select" name="categories_id" aria-label="Default select example">
+                    <select class="form-select" name="categories_id" aria-label="Default select example" required>
                         <option value="">یک دسته بندی انتخاب کنید</option>
                         <?php if (!empty($categories)): ?>
                             <?php foreach ($categories as $category): ?>
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="input-group mb-3 mt-3">
-                        <input type="file" name="image" class="form-control" id="inputGroupFile02">
+                        <input type="file" name="image" class="form-control" id="inputGroupFile02" required>
                         <label class="input-group-text" for="inputGroupFile02">آپلود</label>
                     </div>
                     <div class="form-text text-danger">

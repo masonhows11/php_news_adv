@@ -12,15 +12,28 @@
 <script src="<?= assets('public/admin_assets/js/popper.min.js') ?>"  crossorigin="anonymous"></script>
 <script src="<?= assets('public/admin_assets/js/bootstrap.bundle.min.js') ?>"  crossorigin="anonymous"></script>
 <script src="<?= assets('public/admin_assets/js/adminlte.js') ?>"></script>
+<script src="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-date.min.js') ?>"></script>
+<script src="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-datepicker.min.js') ?>"></script>
 <script src="<?= assets('public/admin_assets/plugins/Ckeditor/ckeditor.js') ?>"></script>
 <script>
     $(document).ready(function (){
         CKEDITOR.replace('summary');
         CKEDITOR.replace('body');
+
+        $("#published_at_view").persianDatepicker({
+            toolbox:{
+                calendarSwitch: {
+                    enabled:true
+                }
+            },
+            observer: true,
+            format: 'YYYY-MM-DD HH:mm:ss',
+            altField: '#published_at'
+
+        })
     })
 </script>
-<script src="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-date.min.js') ?>"></script>
-<script src="<?= assets('public/admin_assets/plugins/Persian_Date_Picker/persian-datepicker.min.js') ?>"></script>
+
 <script>
     const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
     const Default = {
