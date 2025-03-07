@@ -38,7 +38,6 @@ class AdminCategory extends AdminBase
 
         $db = new Database();
         $category = $db->select('SELECT * FROM categories WHERE id = ?;',[$id])->fetch();
-        dd($category);
         require_once(BASE_PATH . '/template/admin/category/edit.php');
     }
 
@@ -51,7 +50,7 @@ class AdminCategory extends AdminBase
 
     public function delete($id)
     {
-        dd($id);
+        
         $db = new Database();
         $db->delete('categories',$id);
         $this->redirect('admin/category');

@@ -38,7 +38,7 @@ class Database
     }
 
 
-    public function select($sql, $values = null): false|array
+    public function select($sql, $values = null)
     {
         try {
 
