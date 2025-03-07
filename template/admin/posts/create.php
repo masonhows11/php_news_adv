@@ -91,7 +91,7 @@
 
 
                     <div class="mb-3 mt-3">
-                        <button type="submit" name="create" class="btn btn-primary">ذخیره</button>
+                        <button type="submit"  class="btn btn-primary">ذخیره</button>
                     </div>
 
                 </form>

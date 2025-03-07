@@ -26,13 +26,14 @@ class AdminCategory extends AdminBase
     public function store($request)
     {
         $db = new Database();
+        // Columns that are present in the query but not in the table
+        // will prevent the query from executing correctly.
         $db->insert('categories', array_keys($request), $request);
         $this->redirect('admin/category');
     }
 
     public function edit($id)
     {
-
 
         $db = new Database();
         $category = $db->select('SELECT * FROM categories WHERE id = ?;',[$id])->fetch();

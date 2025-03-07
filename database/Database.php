@@ -68,9 +68,11 @@ class Database
 
         try {
 
-            $state = $this->connection->prepare("INSERT INTO " . $table . "(" . implode(', ', $columns)." ,created_at) VALUES  ( :" . implode(', :', $columns) . " , now());");
+          $state = $this->connection
+                    ->prepare("INSERT INTO " . $table . "(" . implode(', ', $columns)." ,created_at) VALUES  ( :" . implode(', :', $columns) . " , now());");
             // to create associative array for key => value
             // use array_combine
+
 
             $state->execute(array_combine($columns, $values));
             return true;

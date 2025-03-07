@@ -33,7 +33,7 @@ class AdminBase
             $image_name = $name . '.' . $image_ext;
         } else {
             $image_ext = explode('/', $image['type'])[1];
-            $image_name = date("Y-m-d-h-i-s") . '.' . $image_ext;
+            $image_name = date("Y-m-d-H-i-s") . '.' . $image_ext;
         }
 
         $image_temp = $image['tmp_name'];

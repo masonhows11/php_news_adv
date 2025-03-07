@@ -28,15 +28,21 @@ class AdminPosts extends AdminBase
         $db = new Database();
         if ($request['categories_id'] != null) {
             $request['image'] = $this->saveImage($request['image'], 'post_image');
-            if ($request['image'])
-            {
+            if ($request['image']) {
+
+                // Columns that are present in the query but not in the table
+                // will prevent the query from executing correctly.
                 $request = array_merge($request, ['user_id' => 1]);
-                $db->insert('posts', array_keys($request), $request);
+                $res = $db->insert('posts', array_keys($request), $request);
+                dd($res);
                 $this->redirect('admin/posts');
+
             } else {
+                dd('hi 1');
                 $this->redirect('admin/posts');
             }
         } else {
+            dd('hi 2');
             $this->redirect('admin/posts');
         }
 
