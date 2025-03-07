@@ -6,35 +6,47 @@ class AdminPosts
 {
     public function index()
     {
+        $db = new Database();
+        $posts = $db->select('SELECT * FROM categories ORDER BY `id` DESC ')->fetchAll();
         require_once (BASE_PATH.'/template/admin/posts/index.php');
     }
 
-    public function show()
-    {
-        echo "admin category show method";
-    }
     public function create()
     {
-        echo "admin category create method";
+
+        require_once(BASE_PATH . '/template/admin/posts/create.php');
     }
 
-    public function store()
+    public function store($request)
     {
-        echo "admin category store method";
+
+        $db = new Database();
+        $db->insert('posts', array_keys($request), $request);
+        $this->redirect('admin/posts');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        echo "admin category edit method";
+
+
+        $db = new Database();
+        $category = $db->select('SELECT * FROM posts WHERE id = ?;',[$id])->fetch();
+        require_once(BASE_PATH . '/template/admin/posts/edit.php');
     }
 
-    public function update()
+    public function update($request,$id)
     {
-        echo "admin category update method";
+        //dd($id);
+        $db = new Database();
+        $result = $db->update('posts',$id,array_keys($request),$request);
+        $this->redirect('admin/posts');
     }
 
-    public function delete()
+    public function delete($id)
     {
-        echo "admin category delete method";
+
+        $db = new Database();
+        $db->delete('categories',$id);
+        $this->redirect('admin/posts');
     }
 }
