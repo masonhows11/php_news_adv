@@ -140,9 +140,9 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
         // $reservedUrlArray[$key][strlen($reservedUrlArray[$key]) - 1] to get last character
         if ($reservedUrlArray[$key][0] == "{" && $reservedUrlArray[$key][strlen($reservedUrlArray[$key]) - 1] == "}")
         {
-          array_push( $parameters,$reservedUrlArray[$key]);
+          array_push( $parameters,$current_url_array[$key]);
           // compare each item route must be same
-        } elseif ($reservedUrlArray[$key] !== $current_url_array[$key]) {
+        } elseif ($current_url_array[$key] !== $reservedUrlArray[$key]) {
             return false;
         }
     }

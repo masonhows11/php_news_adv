@@ -63,12 +63,12 @@
                                     <td><?= $category['id'] ?></td>
                                     <td><?= $category['title'] ?></td>
                                     <td>
-                                        <a href="<?= url("admin/pages/changeStatus.php?type=category&id=".$category['id']) ?>" class="btn
+                                        <a href="<?= url('admin/category/changeStatus/'.$category['id']) ?>" class="btn
                                             <?= $category['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
                                             <?= $category['status'] == 0 ? 'غیر فعال' : 'فعال' ?>
                                         </a>
-                                        <a href="<?= url("admin/category/edit/".$category['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/category/delete/".$category['id']) ?>" class="btn btn-outline-danger">حذف</a>
+                                        <a href="<?= url('admin/category/edit/'.$category['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url('admin/category/delete/'.$category['id']) ?>" class="btn btn-outline-danger">حذف</a>
 
                                     </td>
                                 </tr>

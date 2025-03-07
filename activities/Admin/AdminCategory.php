@@ -35,22 +35,23 @@ class AdminCategory extends AdminBase
     public function edit($id)
     {
 
-        dd($id);
+
         $db = new Database();
-        $category = $db->select('SELECT * FROM categories WHERE id = ?;',[$id])->fetch();
+        $category = $db->select('SELECT * FROM categories WHERE id = ?;',[$id]);
+        dd($category[0]);
         require_once(BASE_PATH . '/template/admin/category/edit.php');
     }
 
-    public function update()
+    public function update($id)
     {
         $db = new Database();
-        echo "admin category update method";
+
         $this->redirect('admin/category');
     }
 
-    public function delete($parameters)
+    public function delete($id)
     {
-        dd($parameters);
+        dd($id);
         $db = new Database();
         $db->delete('categories',$id);
         $this->redirect('admin/category');
