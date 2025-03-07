@@ -22,6 +22,7 @@ class AdminPosts extends AdminBase
     public function store($request)
     {
 
+        dd($request);
         $db = new Database();
         $db->insert('posts', array_keys($request), $request);
         $this->redirect('admin/posts');

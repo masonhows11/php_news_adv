@@ -20,13 +20,11 @@ class AdminCategory extends AdminBase
 
     public function create()
     {
-
         require_once(BASE_PATH . '/template/admin/category/create.php');
     }
 
     public function store($request)
     {
-
         $db = new Database();
         $db->insert('categories', array_keys($request), $request);
         $this->redirect('admin/category');

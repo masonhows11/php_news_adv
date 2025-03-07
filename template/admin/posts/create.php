@@ -32,10 +32,10 @@
         <div class="container-fluid">
 
             <div class="row">
-                <h1>صفحه پست ها</h1>
+                <h1>پست جدید</h1>
             </div>
             <div class="row">
-                <form method="post" action="<?= url('admin/post/store') ?>" enctype="multipart/form-data">
+                <form action="<?= url('admin/post/store') ?>"  method="post" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">عنوان</label>
@@ -46,7 +46,7 @@
 
                     <div class="mb-3">
                         <label for="summary" class="form-label">خلاسه</label>
-                        <textarea name="body" id="summary" rows="5" cols="5" class="form-control" required></textarea>
+                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required></textarea>
                     </div>
 
                     <div class="mb-3">
