@@ -83,7 +83,7 @@ class Database
     }
 
 
-    public function update($table, $id, $columns, $values): bool
+    public function update($table, $id, $columns, $values)
     {
 
         try {
@@ -99,11 +99,11 @@ class Database
                 }
             }
             $sql .= " updated_at = now()";
-            $sql .= "WHERE id = ? ";
+            $sql .= " WHERE id = ? ";
 
             // to create associative array for key => value
             // use array_combine
-            $state = $this->connection->prepare($sql);
+           return $state = $this->connection->prepare($sql);
             $state->execute(array_merge(array_filter(array_values($values)), [$id]));
             return true;
         } catch (PDOException $e) {

@@ -62,7 +62,8 @@ class AdminPosts extends AdminBase
     {
 
         $db = new Database();
-        $db->update('posts', $id, array_keys($request), $request);
+        $res = $db->update('posts', $id, array_keys($request), $request);
+        dd($res);
         $this->redirect('admin/posts');
     }
 
@@ -75,7 +76,13 @@ class AdminPosts extends AdminBase
     public function delete($id)
     {
 
+
+
         $db = new Database();
+        $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
+        if($post['image'] != null){
+            $this->removeImage($post['image']);
+        }
         $db->delete('posts', $id);
         $this->redirect('admin/posts');
     }
