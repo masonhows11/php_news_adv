@@ -61,8 +61,15 @@ class AdminPosts extends AdminBase
         ////
         $db = new Database();
         ////
-        if ($request['categories_id'] != null) {
-            $request['image'] = $this->saveImage($request['image'], 'post_image');
+        if ($request['categories_id'] != null)
+        {
+
+            // if user upload new image
+            if($request['image']['tmp_name'] != null){
+                $post =  $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
+                $this->removeImage($post['image']);
+                $request['image'] = $this->saveImage($request['image'], 'post_image');
+            }
             if ($request['image']) {
 
                 // Columns that are present in the query but not in the table
