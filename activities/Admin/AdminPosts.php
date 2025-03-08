@@ -71,16 +71,17 @@ class AdminPosts extends AdminBase
             } else {
                 unset($request['image']);
             }
+            // Columns that are present in the query but not in the table
+            // will prevent the query from executing correctly.
+            $request = array_merge($request, ['user_id' => 1]);
+            $res = $db->update('posts', $id, array_keys($request), $request);
+            $this->redirect('admin/posts');
 
         } else {
-            
+
             $this->redirect('admin/posts');
         }
-        // Columns that are present in the query but not in the table
-        // will prevent the query from executing correctly.
-        $request = array_merge($request, ['user_id' => 1]);
-        $res = $db->update('posts', $id, array_keys($request), $request);
-        $this->redirect('admin/posts');
+
     }
 
 
