@@ -86,7 +86,12 @@
                         <input type="file" name="image" class="form-control" id="image" >
                         <label class="input-group-text" for="image">آپلود</label>
                     </div>
-                    <div class="form-text text-danger">
+                    <div class="input-group mb-3 mt-3">
+                        <?php if (!empty($post['image']) && file_exists(BASE_PATH.'/'.$post['image']) ): ?>
+                            <img class="img-size-64 img-thumbnail" src="<?=  assets($post['image']) ?>" alt="post-image">
+                        <?php else: ?>
+                            <img class="img-size-64 img-thumbnail" src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>" alt="no image exists">
+                        <?php endif; ?>
                     </div>
 
 
