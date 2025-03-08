@@ -67,8 +67,8 @@
                                 <tr>
                                     <td><?= $post['id'] ?></td>
                                     <td><?= $post['title'] ?></td>
-                                    <td><?= substr($post['body'],0,21).'...' ?></td>
-                                    <!--                                    <td>--><?php //= $post['category_name'] ?><!--</td>-->
+                                    <td><?= substr($post['body'],0,31).'...' ?></td>
+                                    <!-- <td>--><?php //= $post['category_name'] ?><!--</td>-->
                                    <td>
                                         <?php if (!empty($post['image']) && file_exists(BASE_PATH.'/'.$post['image']) ): ?>
                                                 <img class="img-size-64 img-thumbnail" src="<?=  assets($post['image']) ?>" alt="post-image">
