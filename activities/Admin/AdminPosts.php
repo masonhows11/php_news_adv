@@ -34,15 +34,15 @@ class AdminPosts extends AdminBase
                 // will prevent the query from executing correctly.
                 $request = array_merge($request, ['user_id' => 1]);
                 $res = $db->insert('posts', array_keys($request), $request);
-                dd($res);
+              //  dd($res);
                 $this->redirect('admin/posts');
 
             } else {
-                dd('hi 1');
+               /// dd('hi 1');
                 $this->redirect('admin/posts');
             }
         } else {
-            dd('hi 2');
+           // dd('hi 2');
             $this->redirect('admin/posts');
         }
 

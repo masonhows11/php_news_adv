@@ -103,7 +103,7 @@ class Database
 
             // to create associative array for key => value
             // use array_combine
-           return $state = $this->connection->prepare($sql);
+            $state = $this->connection->prepare($sql);
             $state->execute(array_merge(array_filter(array_values($values)), [$id]));
             return true;
         } catch (PDOException $e) {
