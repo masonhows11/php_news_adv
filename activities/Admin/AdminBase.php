@@ -51,13 +51,16 @@ class AdminBase
     }
 
 
-    protected function removeImage($path): void
+    protected function removeImage($path)
     {
 
         // $path = trim($this->basePath,'/ ').'/'.trim($path,'/ ');
-        $path = trim($this->currentDomain,'/ ').'/'.trim($path,'/ ');
+        // $path = trim($this->currentDomain,'/ ').'/'.trim($path,'/ ');
+        $path = trim($path,'/ ');
         if(file_exists($path)){
-            unlink($path);
+             unlink($path);
+        }else{
+            return  'false';
         }
     }
 

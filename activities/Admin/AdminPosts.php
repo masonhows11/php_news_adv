@@ -33,16 +33,12 @@ class AdminPosts extends AdminBase
                 // Columns that are present in the query but not in the table
                 // will prevent the query from executing correctly.
                 $request = array_merge($request, ['user_id' => 1]);
-                $res = $db->insert('posts', array_keys($request), $request);
-              //  dd($res);
+                $db->insert('posts', array_keys($request), $request);
                 $this->redirect('admin/posts');
-
             } else {
-               /// dd('hi 1');
                 $this->redirect('admin/posts');
             }
         } else {
-           // dd('hi 2');
             $this->redirect('admin/posts');
         }
 
@@ -81,6 +77,7 @@ class AdminPosts extends AdminBase
         $db = new Database();
         $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
         if($post['image'] != null){
+            
             $this->removeImage($post['image']);
         }
         $db->delete('posts', $id);
