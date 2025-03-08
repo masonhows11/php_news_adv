@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="input-group mb-3 mt-3">
-                        <input type="file" name="image" class="form-control" id="image" required>
+                        <input type="file" name="image" class="form-control" id="image" >
                         <label class="input-group-text" for="image">آپلود</label>
                     </div>
                     <div class="form-text text-danger">

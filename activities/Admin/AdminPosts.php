@@ -56,11 +56,26 @@ class AdminPosts extends AdminBase
 
     public function update($request, $id)
     {
-
+        $realTimeStamp = substr($request['published_at'], 0, 10);
+        $request['published_at'] = date("Y-m-d H:i:s", (int)$realTimeStamp);
+        ////
         $db = new Database();
-        $res = $db->update('posts', $id, array_keys($request), $request);
-        dd($res);
-        $this->redirect('admin/posts');
+        ////
+        if ($request['categories_id'] != null) {
+            $request['image'] = $this->saveImage($request['image'], 'post_image');
+            if ($request['image']) {
+
+                // Columns that are present in the query but not in the table
+                // will prevent the query from executing correctly.
+                $request = array_merge($request, ['user_id' => 1]);
+                $res = $db->update('posts', $id, array_keys($request), $request);
+                $this->redirect('admin/posts');
+            } else {
+                $this->redirect('admin/posts');
+            }
+        } else {
+            $this->redirect('admin/posts');
+        }
     }
 
 
@@ -71,13 +86,10 @@ class AdminPosts extends AdminBase
 
     public function delete($id)
     {
-
-
-
         $db = new Database();
         $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
         if($post['image'] != null){
-            
+
             $this->removeImage($post['image']);
         }
         $db->delete('posts', $id);
