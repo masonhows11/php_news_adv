@@ -62,7 +62,13 @@ class AdminBanners extends AdminBase
     public function delete($id)
     {
         $db = new Database();
-        $db->delete('categories',$id);
+        $post = $db->select('SELECT * FROM banners WHERE id = ?;', [$id])->fetch();
+        if ($post['image'] != null) {
+
+            $this->removeImage($post['image']);
+        }
+
+        $db->delete('banners',$id);
         $this->redirect('admin/banners');
     }
 }
