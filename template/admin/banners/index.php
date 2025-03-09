@@ -56,6 +56,16 @@
                                     <td><?= $banner['id'] ?></td>
                                     <td><?= $banner['url'] ?></td>
                                     <td>
+                                        <?php if (!empty($banner['image']) && file_exists(BASE_PATH . '/' . $banner['image'])): ?>
+                                            <img class="img-size-64 img-thumbnail" src="<?= assets($banner['image']) ?>"
+                                                 alt="post-image">
+                                        <?php else: ?>
+                                            <img class="img-size-64 img-thumbnail"
+                                                 src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>"
+                                                 alt="no image exists">
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
                                         <a href="<?= url("admin/banner/changeStatus/" . $banner['id']) ?>"
                                            class="btn <?= $banner['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
                                             <?= $banner['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>

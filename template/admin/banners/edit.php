@@ -31,9 +31,10 @@
 
 
                     <div class="mb-3">
-                        <label for="summary" class="form-label">خلاسه</label>
-                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required></textarea>
+                        <label for="url" class="form-label">آدرس (url)</label>
+                        <input name="url" id="url"  class="form-control" required>
                     </div>
+
 
                     <div class="input-group mb-3 mt-3">
                         <input type="file" name="image" class="form-control" id="image" required>

@@ -22,18 +22,29 @@ class AdminBanners extends AdminBase
 
     public function store($request)
     {
-        $db = new Database();
         // Columns that are present in the query but not in the table
         // will prevent the query from executing correctly.
-        $db->insert('banners', array_keys($request), $request);
-        $this->redirect('admin/category');
+
+        $db = new Database();
+
+        // save image
+        $request['image'] = $this->saveImage($request['image'], 'banners');
+        if($request['image'])
+        {
+            $db->insert('banners', array_keys($request), $request);
+            $this->redirect('admin/banners');
+        }else {
+            $this->redirect('admin/banners');
+        }
+
+
     }
 
     public function edit($id)
     {
         $db = new Database();
         $banner = $db->select('SELECT * FROM banners WHERE id = ?;',[$id])->fetch();
-        require_once(BASE_PATH . '/template/admin/banner/edit.php');
+        require_once(BASE_PATH . '/template/admin/banners/edit.php');
     }
 
     public function update($request,$id)
