@@ -4,7 +4,7 @@ namespace Admin;
 
 use database\Database;
 
-require "AdminBase.php";
+// require "AdminBase.php";
 class AdminBanners extends AdminBase
 {
     public function index()
@@ -41,6 +41,11 @@ class AdminBanners extends AdminBase
         $db = new Database();
         $result = $db->update('banners',$id,array_keys($request),$request);
         $this->redirect('admin/banners');
+    }
+
+    public function changeStatus()
+    {
+
     }
 
     public function delete($id)

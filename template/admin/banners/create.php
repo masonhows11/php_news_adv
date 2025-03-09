@@ -1,18 +1,9 @@
 <?php include(BASE_PATH.'/template/admin/layouts/header.php') ?>
-
 <?php include(BASE_PATH.'/template/admin/layouts/subheader.php') ?>
-
-
-<!--begin::Sidebar-->
 <?php include(BASE_PATH.'/template/admin/layouts/sidebar.php') ?>
-
-<!--end::Sidebar-->
-
-<!--end::App Main-->
-
-<main class="app-main"> <!--begin::App Content Header-->
-    <div class="app-content-header"> <!--begin::Container-->
-        <div class="container-fluid"> <!--begin::Row-->
+<main class="app-main">
+    <div class="app-content-header">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
                     <h3 class="mb-0">Dashboard</h3>
@@ -42,6 +33,5 @@
     </div>
 </main>
 
-<!--begin::Footer-->
 <?php include(BASE_PATH . '/template/admin/layouts/footer.php') ?>
 
