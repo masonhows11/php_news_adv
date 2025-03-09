@@ -80,7 +80,7 @@
                                                  alt="no image exists">
                                         <?php endif; ?>
                                     </td>
-                                    <td><?= $post['author'] ?></td>
+                                    <td><?= $post['user_name'] ?></td>
                                     <td>
                                         <a href="<?= url("admin/post/changeStatus/" . $post['id']) ?>"
                                            class="btn <?= $post['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
