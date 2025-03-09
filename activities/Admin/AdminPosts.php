@@ -10,7 +10,9 @@ class AdminPosts extends AdminBase
     {
         $db = new Database();
         // $posts = $db->select('SELECT * FROM posts ORDER BY `id` DESC ')->fetchAll();
-        $posts = $db->select("SELECT posts.*, categories.title AS category_name FROM posts LEFT JOIN categories on posts.categories_id = categories.id")->fetchAll();
+        // $posts = $db->select("SELECT posts.*, categories.title AS category_name FROM posts LEFT JOIN categories on posts.categories_id = categories.id")->fetchAll();
+        $posts = $db->select("SELECT posts.*, categories.title AS category_name , 
+        users.name As user_name  FROM posts LEFT JOIN categories on posts.categories_id = categories.id LEFT JOIN users on posts.user_id = users.id ")->fetchAll();
         require_once(BASE_PATH . '/template/admin/posts/index.php');
     }
 
