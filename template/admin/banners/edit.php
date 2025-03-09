@@ -26,8 +26,30 @@
                 <h1>ویرایش بنر</h1>
             </div>
             <div class="row">
+                <form action="<?= url('admin/banner/updated/'.$banner['id']) ?>"  method="post" enctype="multipart/form-data">
 
+
+
+                    <div class="mb-3">
+                        <label for="summary" class="form-label">خلاسه</label>
+                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required></textarea>
+                    </div>
+
+                    <div class="input-group mb-3 mt-3">
+                        <input type="file" name="image" class="form-control" id="image" required>
+                        <label class="input-group-text" for="image">آپلود</label>
+                    </div>
+                    <div class="form-text text-danger">
+                    </div>
+
+
+                    <div class="mb-3 mt-3">
+                        <button type="submit"  class="btn btn-primary">ذخیره</button>
+                    </div>
+
+                </form>
             </div>
+
         </div>
     </div>
 </main>
