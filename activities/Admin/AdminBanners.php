@@ -5,7 +5,7 @@ namespace Admin;
 use database\Database;
 
 require "AdminBase.php";
-class AdminBanners
+class AdminBanners extends AdminBase
 {
     public function index()
     {
