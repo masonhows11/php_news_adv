@@ -50,6 +50,17 @@ class AdminBanners extends AdminBase
     public function update($request,$id)
     {
         $db = new Database();
+
+        // if user upload new image
+        if ($request['image']['tmp_name'] != null) {
+            $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
+            $this->removeImage($post['image']);
+            $request['image'] = $this->saveImage($request['image'], 'post_image');
+        } else {
+            unset($request['image']);
+        }
+
+        $request = array_merge($request, ['user_id' => 1]);
         $result = $db->update('banners',$id,array_keys($request),$request);
         $this->redirect('admin/banners');
     }
