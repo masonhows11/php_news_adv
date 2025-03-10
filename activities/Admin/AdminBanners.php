@@ -71,27 +71,17 @@ class AdminBanners extends AdminBase
 
         if ($banner['status'] == 1) {
 
-            $result = $banner;
-            $result['status'] = 0;
 
-            // dd($result);
-            // dd('status 0');
-            // dd(array_values($result));
+            $db->update('banners', $id, ['status'], [2]);
 
-            $db->update('banners', $id, array_keys($result), $result);
+        } elseif($banner['status'] == 2) {
 
-        } elseif($banner['status'] == 0) {
 
-            $result = $banner;
-            $result['status'] = 1;
 
-            // dd(array_values($result));
-            // dd($result);
-            // dd('status 1');
-
-            $db->update('banners', $id, array_keys($result), $result);
+            $db->update('banners', $id, ['status'], [1]);
 
         }
+
 
 
         $this->redirect('admin/banners');

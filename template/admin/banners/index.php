@@ -67,8 +67,8 @@
                                     </td>
                                     <td>
                                         <a href="<?= url("admin/banner/changeStatus/" . $banner['id']) ?>"
-                                           class="btn <?= $banner['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
-                                            <?= $banner['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
+                                           class="btn <?= $banner['status'] == 1 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $banner['status'] == 1 ? 'منتشر نشده' : 'منتشر شده' ?>
                                         </a>
                                         <a href="<?= url("admin/banner/edit/" . $banner['id']) ?>"
                                            class="btn btn-outline-secondary">ویرایش</a>
