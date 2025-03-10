@@ -26,13 +26,26 @@
                 <h1>ویرایش بنر</h1>
             </div>
             <div class="row">
-                <form action="<?= url('admin/banner/updated/'.$banner['id']) ?>"  method="post" enctype="multipart/form-data">
+                <form action="<?= url('admin/banner/update/'.$banner['id']) ?>"  method="post" enctype="multipart/form-data">
 
 
 
                     <div class="mb-3">
                         <label for="url" class="form-label">آدرس (url)</label>
-                        <input name="url" id="url"  class="form-control" required>
+                        <input name="url" id="url"  class="form-control" value="<?= $banner['url'] ?>" required>
+                    </div>
+
+                    <div class="mb-3">
+
+                        <?php if (!empty($banner['image']) && file_exists(BASE_PATH . '/' . $banner['image'])): ?>
+                            <img class="img-size-64 img-thumbnail" src="<?= assets($banner['image']) ?>"
+                                 alt="post-image">
+                        <?php else: ?>
+                            <img class="img-size-64 img-thumbnail"
+                                 src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>"
+                                 alt="no image exists">
+                        <?php endif; ?>
+
                     </div>
 
 

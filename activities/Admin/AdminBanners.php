@@ -53,21 +53,27 @@ class AdminBanners extends AdminBase
 
         // if user upload new image
         if ($request['image']['tmp_name'] != null) {
-            $post = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
+            $post = $db->select('SELECT * FROM banners WHERE id = ?;', [$id])->fetch();
             $this->removeImage($post['image']);
-            $request['image'] = $this->saveImage($request['image'], 'post_image');
+            $request['image'] = $this->saveImage($request['image'], 'banners');
         } else {
             unset($request['image']);
         }
-
-        $request = array_merge($request, ['user_id' => 1]);
-        $result = $db->update('banners',$id,array_keys($request),$request);
+        $db->update('banners',$id,array_keys($request),$request);
         $this->redirect('admin/banners');
     }
 
-    public function changeStatus()
+    public function changeStatus($id)
     {
-
+        $db = new Database();
+        $post = $db->select('SELECT * FROM banners WHERE id = ?;', [$id])->fetch();
+        if ($post['status'] === 0 )
+        {
+            $db->update('banners',$id,"status",1);
+        }else{
+            $db->update('banners',$id,"status",0);
+        }
+        $this->redirect('admin/banners');
     }
 
     public function delete($id)
