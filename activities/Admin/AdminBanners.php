@@ -69,26 +69,26 @@ class AdminBanners extends AdminBase
 
         $banner = $db->select('SELECT * FROM banners WHERE id = ?;', [$id])->fetch();
 
-        if ($banner['status'] === 1) {
+        if ($banner['status'] == 1) {
 
             $result = $banner;
             $result['status'] = 0;
 
             // dd($result);
-            // dd( 'status 0');
+            // dd('status 0');
             // dd(array_values($result));
 
             $db->update('banners', $id, array_keys($result), $result);
 
-        } elseif($banner['status'] === 0) {
+        } elseif($banner['status'] == 0) {
 
             $result = $banner;
             $result['status'] = 1;
 
             // dd(array_values($result));
             // dd($result);
-            // dd( 'status 1');
-            
+            // dd('status 1');
+
             $db->update('banners', $id, array_keys($result), $result);
 
         }
