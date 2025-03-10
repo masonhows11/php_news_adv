@@ -212,6 +212,7 @@ uri('admin/banners', 'Admin\AdminBanners', 'index');
 uri('admin/banner/create', 'Admin\AdminBanners', 'create');
 uri('admin/banner/store', 'Admin\AdminBanners', 'store','POST');
 uri('admin/banner/edit/{id}', 'Admin\AdminBanners', 'edit');
+uri('admin/banner/changeStatus/{id}', 'Admin\AdminBanners', 'changeStatus');
 uri('admin/banner/update/{id}', 'Admin\AdminBanners', 'update','POST');
 uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 
