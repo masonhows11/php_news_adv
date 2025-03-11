@@ -44,7 +44,10 @@
 
 
                 <li class="nav-header">منو</li>
-
+                <li class="nav-item"> <a href="<?= url('admin/users') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                        <p>کاربران</p>
+                    </a>
+                </li>
                 <li class="nav-item"> <a href="<?= url('admin/category') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>دسته بندی ها</p>
                     </a>

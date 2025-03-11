@@ -67,7 +67,7 @@
                     <div class="mb-3">
                         <label for="published_at" class="form-label">تاریخ انتشار</label>
                         <input type="text" name="published_at" class="form-control d-none" id="published_at">
-                        <input type="text"  class="form-control" id="published_at_view" required>
+                        <input type="text"  class="form-control" id="published_at_view" value="<?= $post['published_at'] ?>" required>
                     </div>
 
                     <label for="category_id" class="form-label">دسته بندی</label>

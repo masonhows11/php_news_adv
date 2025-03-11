@@ -25,6 +25,8 @@
                 calendarSwitch: {
                     enabled:true
                 }
+            },timePicker: { // enable time to set new time h/m/s
+              enabled: true
             },
             observer: true,
             format: 'YYYY-MM-DD HH:mm:ss',

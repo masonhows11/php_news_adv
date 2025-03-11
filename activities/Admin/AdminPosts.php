@@ -59,6 +59,9 @@ class AdminPosts extends AdminBase
 
     public function update($request, $id)
     {
+        // change timezone for fixed time hour/minute/seconds
+        date_default_timezone_set('iran');
+
         $realTimeStamp = substr($request['published_at'], 0, 10);
         $request['published_at'] = date("Y-m-d H:i:s", (int)$realTimeStamp);
         ////

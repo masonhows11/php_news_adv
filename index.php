@@ -216,6 +216,8 @@ uri('admin/banner/changeStatus/{id}', 'Admin\AdminBanners', 'changeStatus');
 uri('admin/banner/update/{id}', 'Admin\AdminBanners', 'update','POST');
 uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 
+// users
+
 echo "404 - Page not found";
 
 
