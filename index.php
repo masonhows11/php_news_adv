@@ -4,6 +4,17 @@
 // start session
 session_start();
 
+// add autoload class
+spl_autoload_register(function ($className){
+
+    // all thing this method
+    // load/include requirement class when needed
+    $path = BASE_PATH.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR;
+    include $path.$className.'php';
+
+});
+
+
 //// constant config
 
 // root path project
@@ -29,6 +40,10 @@ const DB_PASSWORD = '1289..//';
 // $db->run();
 
 //// helpers
+function customJalali($str)
+{
+    return jdate($str);
+}
 function protocol(): string
 {
     return stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
