@@ -4,10 +4,10 @@ if (! function_exists('jdate')) {
 
     /**
      * @param string $str
-     * @return \Morilog\Jalali\Jalalian
+     * @return string
      */
     function jdate($str = null)
     {
-        return \Morilog\Jalali\Jalalian::forge($str);
+        return src\Jalalian::forge($str)->format('%B %d, %Y');
     }
 }

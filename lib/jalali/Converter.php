@@ -1,9 +1,9 @@
 <?php
 
-namespace Morilog\Jalali;
+namespace jalali\converter;
 
 use Carbon\Exceptions\UnitException;
-use Date;
+use Cassandra\Date;
 
 /**
  * Trait Converter.

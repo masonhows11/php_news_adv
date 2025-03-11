@@ -1,8 +1,9 @@
 <?php
 
-namespace Morilog\Jalali;
+namespace src;
 
 use Carbon\Carbon;
+use Morilog\Jalali\Gregorian;
 
 /**
  * Class jDateTime
