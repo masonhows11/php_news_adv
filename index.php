@@ -175,7 +175,7 @@ require "activities/Admin/AdminCategory.php";
 require "activities/Admin/AdminPosts.php";
 require "activities/Admin/AdminComments.php";
 require "activities/Admin/AdminBanners.php";
-
+require "activities/Admin/AdminUsers.php";
 require "activities/Admin/Home.php";
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
@@ -217,6 +217,9 @@ uri('admin/banner/update/{id}', 'Admin\AdminBanners', 'update','POST');
 uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 
 // users
+uri('admin/users', 'Admin\AdminUsers', 'index');
+uri('admin/user/edit', 'Admin\AdminUsers', 'index');
+uri('admin/users/update', 'Admin\AdminUsers', 'index','POST');
 
 echo "404 - Page not found";
 
