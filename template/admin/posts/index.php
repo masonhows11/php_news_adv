@@ -83,8 +83,8 @@
                                     <td><?= $post['user_name'] ?></td>
                                     <td>
                                         <a href="<?= url("admin/post/changeStatus/" . $post['id']) ?>"
-                                           class="btn <?= $post['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
-                                            <?= $post['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
+                                           class="btn <?= $post['status'] == 2 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $post['status'] == 2 ? 'منتشر نشده' : 'منتشر شده' ?>
                                         </a>
                                         <a href="<?= url("admin/post/edit/" . $post['id']) ?>"
                                            class="btn btn-outline-secondary">ویرایش</a>

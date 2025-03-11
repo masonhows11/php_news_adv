@@ -25,11 +25,13 @@ class AdminUsers extends AdminBase
     public function update($request, $id)
     {
         $db = new Database();
+        $user = $db->select('SELECT * FROM users WHERE id = ?;', [$id])->fetch();
         $this->redirect('admin/users');
     }
 
     public function access($id)
     {
+       
         $db = new Database();
         $user = $db->select('SELECT * FROM users WHERE id = ?;', [$id])->fetch();
         if (empty($user)) {

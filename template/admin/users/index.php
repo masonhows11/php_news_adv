@@ -52,15 +52,11 @@
                                     <td><?= $user['created_at'] ?></td>
                                     <td>
                                         <a href="<?= url("admin/user/access/" . $user['id']) ?>"
-                                           class="btn <?= $user['permission'] == 'user' ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            class="btn <?= $user['permission'] == 'user' ? 'btn-outline-danger' : ' btn-outline-success' ?>">
                                             <?= $user['permission'] == 'user' ? 'is user' : 'is admin' ?>
                                         </a>
-                                        <a href="<?= url("admin/user/edit/" . $user['id']) ?>"
-                                           class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/user/delete/" . $user['id']) ?>"
-                                           class="btn btn-outline-danger">
-                                            حذف
-                                        </a>
+                                        <a href="<?= url("admin/user/edit/" . $user['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/user/delete/" . $user['id']) ?>" class="btn btn-outline-danger">حذف</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

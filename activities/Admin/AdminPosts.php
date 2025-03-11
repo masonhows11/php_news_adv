@@ -91,9 +91,29 @@ class AdminPosts extends AdminBase
     }
 
 
-    public function changeStatus()
+    public function changeStatus($id)
     {
+        $db = new Database();
 
+
+        $banner = $db->select('SELECT * FROM posts WHERE id = ?;', [$id])->fetch();
+
+        if ($banner['status'] == 1) {
+
+
+            $db->update('posts', $id, ['status'], [2]);
+
+        } elseif($banner['status'] == 2) {
+
+
+
+            $db->update('posts', $id, ['status'], [1]);
+
+        }
+
+
+
+        $this->redirect('admin/posts');
     }
 
     public function delete($id)

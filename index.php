@@ -197,7 +197,7 @@ uri('admin/post/create', 'Admin\AdminPosts', 'create');
 uri('admin/post/store', 'Admin\AdminPosts', 'store','POST');
 uri('admin/post/edit/{id}', 'Admin\AdminPosts', 'edit');
 uri('admin/post/update/{id}', 'Admin\AdminPosts', 'update','POST');
-uri('admin/post/changeStatus','Admin\changeStatus','POST');
+uri('admin/post/changeStatus/{id}','Admin\AdminPosts','changeStatus');
 uri('admin/post/delete/{id}', 'Admin\AdminPosts', 'delete');
 
 //// comments
@@ -218,10 +218,11 @@ uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 
 // users
 uri('admin/users', 'Admin\AdminUsers', 'index');
-uri('admin/user/edit', 'Admin\AdminUsers', 'edit');
-uri('admin/users/update', 'Admin\AdminUsers', 'update','POST');
-uri('admin/user/access', 'Admin\AdminUsers', 'access');
-uri('admin/user/delete', 'Admin\AdminUsers', 'delete');
+uri('admin/user/edit/{id}', 'Admin\AdminUsers', 'edit');
+uri('admin/users/update/{id}', 'Admin\AdminUsers', 'update','POST');
+uri('admin/user/access/{id}', 'Admin\AdminUsers', 'access');
+uri('admin/user/delete/{id}', 'Admin\AdminUsers', 'delete');
+
 echo "404 - Page not found";
 
 
