@@ -36,21 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-6 ">
-                                    <p class="h5 mt-2"><strong>مقالات اخیر</strong></p>
-                                </div>
-                                <div class="col-lg-6 d-flex justify-content-end">
-                                    <a href="<?= url('admin/post/create') ?>" class="btn btn-outline-primary">مقاله
-                                        جدید</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <?php if (!empty($posts)): ?>
+                    <?php if (!empty($users)): ?>
                         <table class="table mt-2">
                             <thead>
                             <tr>
@@ -64,31 +50,31 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($posts as $post): ?>
+                            <?php foreach ($users as $user): ?>
                                 <tr>
-                                    <td><?= $post['id'] ?></td>
-                                    <td><?= $post['title'] ?></td>
-                                    <td><?= substr($post['body'], 0, 31) . '...' ?></td>
-                                    <td><?= $post['category_name'] ?></td>
+                                    <td><?= $user['id'] ?></td>
+                                    <td><?= $user['title'] ?></td>
+                                    <td><?= substr($user['body'], 0, 31) . '...' ?></td>
+                                    <td><?= $user['category_name'] ?></td>
                                     <td>
-                                        <?php if (!empty($post['image']) && file_exists(BASE_PATH . '/' . $post['image'])): ?>
-                                            <img class="img-size-64 img-thumbnail" src="<?= assets($post['image']) ?>"
-                                                 alt="post-image">
+                                        <?php if (!empty($user['image']) && file_exists(BASE_PATH . '/' . $user['image'])): ?>
+                                            <img class="img-size-64 img-thumbnail" src="<?= assets($user['image']) ?>"
+                                                 alt="user-image">
                                         <?php else: ?>
                                             <img class="img-size-64 img-thumbnail"
                                                  src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>"
                                                  alt="no image exists">
                                         <?php endif; ?>
                                     </td>
-                                    <td><?= $post['user_name'] ?></td>
+                                    <td><?= $user['user_name'] ?></td>
                                     <td>
-                                        <a href="<?= url("admin/post/changeStatus/" . $post['id']) ?>"
-                                           class="btn <?= $post['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
-                                            <?= $post['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
+                                        <a href="<?= url("admin/user/changeStatus/" . $user['id']) ?>"
+                                           class="btn <?= $user['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $user['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
                                         </a>
-                                        <a href="<?= url("admin/post/edit/" . $post['id']) ?>"
+                                        <a href="<?= url("admin/user/edit/" . $user['id']) ?>"
                                            class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/post/delete/" . $post['id']) ?>"
+                                        <a href="<?= url("admin/user/delete/" . $user['id']) ?>"
                                            class="btn btn-outline-danger">
                                             حذف
                                         </a>
