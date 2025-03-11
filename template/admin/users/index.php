@@ -41,11 +41,8 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">عنوان</th>
-                                <th scope="col">توضیحات</th>
-                                <th scope="col">دسته بندی</th>
-                                <th scope="col">تصویر</th>
-                                <th scope="col">نویسنده</th>
+                                <th scope="col">نام کاربری</th>
+                                <th scope="col">ایمیل</th>
                                 <th scope="col">عملیات</th>
                             </tr>
                             </thead>
@@ -53,39 +50,15 @@
                             <?php foreach ($users as $user): ?>
                                 <tr>
                                     <td><?= $user['id'] ?></td>
-                                    <td><?= $user['title'] ?></td>
-                                    <td><?= substr($user['body'], 0, 31) . '...' ?></td>
-                                    <td><?= $user['category_name'] ?></td>
-                                    <td>
-                                        <?php if (!empty($user['image']) && file_exists(BASE_PATH . '/' . $user['image'])): ?>
-                                            <img class="img-size-64 img-thumbnail" src="<?= assets($user['image']) ?>"
-                                                 alt="user-image">
-                                        <?php else: ?>
-                                            <img class="img-size-64 img-thumbnail"
-                                                 src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>"
-                                                 alt="no image exists">
-                                        <?php endif; ?>
-                                    </td>
-                                    <td><?= $user['user_name'] ?></td>
-                                    <td>
-                                        <a href="<?= url("admin/user/changeStatus/" . $user['id']) ?>"
-                                           class="btn <?= $user['status'] == 0 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
-                                            <?= $user['status'] == 0 ? 'منتشر نشده' : 'منتشر شده' ?>
-                                        </a>
-                                        <a href="<?= url("admin/user/edit/" . $user['id']) ?>"
-                                           class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/user/delete/" . $user['id']) ?>"
-                                           class="btn btn-outline-danger">
-                                            حذف
-                                        </a>
-                                    </td>
+                                    <td><?= $user['name'] ?></td>
+                                    <td><?= $user['email'] ?></td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>
                         </table>
                     <?php else: ?>
                         <div class="alert alert-danger mt-4">
-                            مقاله ای برای نمایش وجود ندارد
+                            کاربری برای نمایش وجود ندارد
                         </div>
                     <?php endif ?>
                 </div>

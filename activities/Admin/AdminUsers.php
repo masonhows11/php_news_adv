@@ -11,7 +11,7 @@ class AdminUsers extends AdminBase
     {
         $db = new Database();
         $users = $db->select('SELECT * FROM users ORDER BY `id` ASC')->fetch();
-        require "template/admin/users/index.php";
+        require_once(BASE_PATH."/template/admin/users/index.php");
 
     }
 
@@ -19,7 +19,7 @@ class AdminUsers extends AdminBase
     {
         $db = new Database();
         $user = $db->select('SELECT * FROM users WHERE id = ?;', [$id])->fetch();
-        require "template/admin/users/edit.php";
+        require_once(BASE_PATH."/template/admin/users/edit.php");
     }
 
     public function update($request,$id)
