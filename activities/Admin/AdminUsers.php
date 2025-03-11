@@ -35,6 +35,13 @@ class AdminUsers extends AdminBase
         if (empty($user)) {
             $this->redirectBack();
         }
+        if ($user['permission'] == 'user') {
+            $db->update('users', $id, ['permission'], ['admin']);
+        } else {
+            $db->update('users', $id, ['permission'], ['user']);
+        }
+        $this->redirect('admin/users');
+
 
     }
 
