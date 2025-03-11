@@ -36,6 +36,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">نام کاربری</th>
+                                <th scope="col">نام کامل</th>
                                 <th scope="col">ایمیل</th>
                                 <th scope="col">مجوزها</th>
                                 <th scope="col">تاریخ ایجاد</th>
@@ -47,6 +48,7 @@
                                 <tr>
                                     <td><?= $user['id'] ?></td>
                                     <td><?= $user['name'] ?></td>
+                                    <td><?= $user['first_name'] .' '. $user['last_name'] ?></td>
                                     <td><?= $user['email'] ?></td>
                                     <td><?= $user['permission'] ?></td>
                                     <td><?= $user['created_at'] ?></td>

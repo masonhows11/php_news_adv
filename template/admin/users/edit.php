@@ -45,7 +45,7 @@
 
                     <div class="mb-3">
                         <label for="email" class="form-label">ایمیل</label>
-                        <input name="email"  id="email" class="form-control" value="<?= $user['email'] ?>">
+                        <input name="email" type="email" id="email" class="form-control" value="<?= $user['email'] ?>">
                     </div>
 
                     <div class="mb-3">
@@ -54,15 +54,15 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="last_name" class="form-label">نام حانوادگی</label>
+                        <label for="last_name" class="form-label">نام خانوادگی</label>
                         <input name="last_name" id="last_name"  class="form-control" value="<?= $user['last_name'] ?>">
                     </div>
 
 
-                    <div class="mb-3">
-                        <label for="password" class="form-label">پسوورد</label>
-                        <input type="password" class="form-control" id="password" name="password" >
-                    </div>
+<!--                    <div class="mb-3">-->
+<!--                        <label for="password" class="form-label">پسوورد</label>-->
+<!--                        <input type="password" class="form-control" id="password" name="password" >-->
+<!--                    </div>-->
 
 
                     <div class="mb-3 mt-3">
