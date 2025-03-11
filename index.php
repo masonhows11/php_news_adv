@@ -218,9 +218,10 @@ uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 
 // users
 uri('admin/users', 'Admin\AdminUsers', 'index');
-uri('admin/user/edit', 'Admin\AdminUsers', 'index');
-uri('admin/users/update', 'Admin\AdminUsers', 'index','POST');
-
+uri('admin/user/edit', 'Admin\AdminUsers', 'edit');
+uri('admin/users/update', 'Admin\AdminUsers', 'update','POST');
+uri('admin/user/access', 'Admin\AdminUsers', 'access');
+uri('admin/user/delete', 'Admin\AdminUsers', 'delete');
 echo "404 - Page not found";
 
 

@@ -2,17 +2,11 @@
 
 <?php include(BASE_PATH . '/template/admin/layouts/subheader.php') ?>
 
-
-<!--begin::Sidebar-->
 <?php include(BASE_PATH . '/template/admin/layouts/sidebar.php') ?>
 
-<!--end::Sidebar-->
-
-<!--end::App Main-->
-
-<main class="app-main"> <!--begin::App Content Header-->
-    <div class="app-content-header"> <!--begin::Container-->
-        <div class="container-fluid"> <!--begin::Row-->
+<main class="app-main">
+    <div class="app-content-header">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
                     <h3 class="mb-0">Dashboard</h3>
@@ -43,6 +37,8 @@
                                 <th scope="col">#</th>
                                 <th scope="col">نام کاربری</th>
                                 <th scope="col">ایمیل</th>
+                                <th scope="col">مجوزها</th>
+                                <th scope="col">تاریخ ایجاد</th>
                                 <th scope="col">عملیات</th>
                             </tr>
                             </thead>
@@ -52,6 +48,20 @@
                                     <td><?= $user['id'] ?></td>
                                     <td><?= $user['name'] ?></td>
                                     <td><?= $user['email'] ?></td>
+                                    <td><?= $user['permission'] ?></td>
+                                    <td><?= $user['created_at'] ?></td>
+                                    <td>
+                                        <a href="<?= url("admin/user/access/" . $user['id']) ?>"
+                                           class="btn <?= $user['permission'] == 'user' ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $user['permission'] == 'user' ? 'is user' : 'is admin' ?>
+                                        </a>
+                                        <a href="<?= url("admin/user/edit/" . $user['id']) ?>"
+                                           class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/user/delete/" . $user['id']) ?>"
+                                           class="btn btn-outline-danger">
+                                            حذف
+                                        </a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>

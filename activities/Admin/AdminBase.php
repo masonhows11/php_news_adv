@@ -19,7 +19,7 @@ class AdminBase
         exit();
     }
 
-    protected function redirectBack($url): void
+    protected function redirectBack($url = null): void
     {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();
