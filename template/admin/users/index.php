@@ -51,7 +51,7 @@
                                     <td><?= $user['first_name'] .' '. $user['last_name'] ?></td>
                                     <td><?= $user['email'] ?></td>
                                     <td><?= $user['permission'] ?></td>
-                                    <td><?= customJalali($user['created_at']) ?></td>
+                                    <td><?= jdate($user['created_at']) ?></td>
                                     <td>
                                         <a href="<?= url("admin/user/access/" . $user['id']) ?>"
                                             class="btn <?= $user['permission'] == 'user' ? 'btn-outline-danger' : ' btn-outline-success' ?>">

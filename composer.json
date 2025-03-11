@@ -1,0 +1,16 @@
+{
+    "name": "naeem/php_news",
+    "description": "php news sample",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "mason.hows11",
+            "email": "mason.hows11@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "morilog/jalali": "3.*"
+    }
+}

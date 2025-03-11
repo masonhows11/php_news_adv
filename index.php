@@ -2,21 +2,21 @@
 
 
 // start session
-use jalali\Jalalian;
+
 
 session_start();
 
 // add autoload class
-spl_autoload_register(function ($className){
-
-    // all thing this method
-    // load/include requirement class when needed
-    $path = BASE_PATH.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR;
-    // $className = str_replace('\\',DIRECTORY_SEPARATOR,$className);
-    include $path.$className.'.php';
-
-});
-
+//spl_autoload_register(function ($className){
+//
+//    // all thing this method
+//    // load/include requirement class when needed
+//    $path = BASE_PATH.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR;
+//    // $className = str_replace('\\',DIRECTORY_SEPARATOR,$className);
+//    include $path.$className.'.php';
+//
+//});
+include "vendor/autoload.php";
 
 //// constant config
 
@@ -43,10 +43,7 @@ const DB_PASSWORD = '1289..//';
 // $db->run();
 
 //// helpers
-function customJalali($str): string
-{
-     return Jalalian::forge($str)->format('%B %d, %Y');
-}
+
 function protocol(): string
 {
     return stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
