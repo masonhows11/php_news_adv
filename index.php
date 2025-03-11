@@ -219,7 +219,7 @@ uri('admin/banner/delete/{id}', 'Admin\AdminBanners', 'delete');
 // users
 uri('admin/users', 'Admin\AdminUsers', 'index');
 uri('admin/user/edit/{id}', 'Admin\AdminUsers', 'edit');
-uri('admin/users/update/{id}', 'Admin\AdminUsers', 'update','POST');
+uri('admin/user/update/{id}', 'Admin\AdminUsers', 'update','POST');
 uri('admin/user/access/{id}', 'Admin\AdminUsers', 'access');
 uri('admin/user/delete/{id}', 'Admin\AdminUsers', 'delete');
 

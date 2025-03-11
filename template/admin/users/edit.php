@@ -60,8 +60,8 @@
 
 
                     <div class="mb-3">
-                        <label for="author" class="form-label">پسوورد</label>
-                        <input type="text" name="author" class="form-control" id="author">
+                        <label for="password" class="form-label">پسوورد</label>
+                        <input type="password" class="form-control" id="password" name="password" >
                     </div>
 
 

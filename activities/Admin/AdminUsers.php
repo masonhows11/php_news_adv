@@ -24,8 +24,14 @@ class AdminUsers extends AdminBase
 
     public function update($request, $id)
     {
+       
         $db = new Database();
         $user = $db->select('SELECT * FROM users WHERE id = ?;', [$id])->fetch();
+        if(empty($user)){
+
+            $this->redirectBack();
+        }
+        $db->update('users',$id,array_keys($request),$request);
         $this->redirect('admin/users');
     }
 
