@@ -32,66 +32,36 @@
         <div class="container-fluid">
 
             <div class="row">
-                <h1>ویرایش پست</h1>
+                <h1>ویرایش کاربر</h1>
             </div>
             <div class="row">
-                <form  method="post" action="<?= url('admin/post/update/'.$post['id']) ?>"  enctype="multipart/form-data">
+                <form  method="POST" action="<?= url('admin/user/update/'.$user['id']) ?>"  enctype="multipart/form-data">
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">عنوان</label>
-                        <input type="text" name="title" class="form-control" id="title" value="<?= $post['title'] ?>" required>
-                    </div>
-                    <div class="form-text text-danger">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="summary" class="form-label">خلاسه</label>
-                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required><?= $post['summary'] ?></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="body" class="form-label">توضیحات</label>
-                        <textarea name="body" id="body" rows="5" cols="5" class="form-control" required><?= $post['body'] ?></textarea>
-                    </div>
-                    <div class="form-text text-danger">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="author" class="form-label">نویسنده</label>
-                        <input type="text" name="author" class="form-control" id="author" value="<?= $post['author'] ?>" required>
-                    </div>
-                    <div class="form-text text-danger">
+                        <label for="name" class="form-label">نام کاربری</label>
+                        <input type="text" name="name" class="form-control" id="name" value="<?= $user['name'] ?>" required>
                     </div>
 
 
                     <div class="mb-3">
-                        <label for="published_at" class="form-label">تاریخ انتشار</label>
-                        <input type="text" name="published_at" class="form-control d-none" id="published_at">
-                        <input type="text"  class="form-control" id="published_at_view" value="<?= $post['published_at'] ?>" required>
+                        <label for="email" class="form-label">ایمیل</label>
+                        <input name="email"  id="email" class="form-control" value="<?= $user['email'] ?>">
                     </div>
 
-                    <label for="category_id" class="form-label">دسته بندی</label>
-                    <select class="form-select" name="categories_id" aria-label="Default select example" required>
-                        <option value="">یک دسته بندی انتخاب کنید</option>
-                        <?php if (!empty($categories)): ?>
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category['id'] ?>" <?= $post['categories_id'] == $category['id'] ? 'selected' : '' ?> ><?= $category['title'] ?></option>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </select>
-                    <div class="form-text text-danger">
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">نام</label>
+                        <input name="first_name" id="first_name"  class="form-control" value="<?= $user['first_name'] ?>">
                     </div>
 
-                    <div class="input-group mb-3 mt-3">
-                        <input type="file" name="image" class="form-control" id="image" >
-                        <label class="input-group-text" for="image">آپلود</label>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">نام حانوادگی</label>
+                        <input name="last_name" id="last_name"  class="form-control" value="<?= $user['last_name'] ?>">
                     </div>
-                    <div class="input-group mb-3 mt-3">
-                        <?php if (!empty($post['image']) && file_exists(BASE_PATH.'/'.$post['image']) ): ?>
-                            <img class="img-size-64 img-thumbnail" src="<?=  assets($post['image']) ?>" alt="post-image">
-                        <?php else: ?>
-                            <img class="img-size-64 img-thumbnail" src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>" alt="no image exists">
-                        <?php endif; ?>
+
+
+                    <div class="mb-3">
+                        <label for="author" class="form-label">پسوورد</label>
+                        <input type="text" name="author" class="form-control" id="author">
                     </div>
 
 

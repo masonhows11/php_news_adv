@@ -31,7 +31,7 @@ class AdminUsers extends AdminBase
 
     public function access($id)
     {
-       
+
         $db = new Database();
         $user = $db->select('SELECT * FROM users WHERE id = ?;', [$id])->fetch();
         if (empty($user)) {
