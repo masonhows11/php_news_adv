@@ -49,7 +49,9 @@ class AdminUsers extends AdminBase
 
     public function delete($id)
     {
-
+        $db = new Database();
+        $db->delete('users', $id);
+        $this->redirect('admin/users');
     }
 
 }
