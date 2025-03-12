@@ -52,10 +52,22 @@
                     <div class="mb-3">
                         <label for="parent_id" class="form-label">منو والد</label>
                         <select id="parent_id" class="form-control" name="parent_id">
-                            <option value="null">انتخاب کنید</option>
+                         <!--   <?php /*if (!empty($menus)): */?>
+                                <?php /*foreach ($menus as $menu): */?>
+                                    <option value="<?php /*= $menu['id'] */?>" <?php /*= $menu['parent_id'] == $menu['id'] ? 'selected' : '' */?>><?php /*= $menu['name'] */?></option>
+                                <?php /*endforeach; */?>
+                            --><?php /*endif; */?>
+
+                            <option value="<?php if($menu['parent_id'] == '') echo 'selected' ?>">منو اصلی</option>
+
                             <?php if (!empty($menus)): ?>
-                                <?php foreach ($menus as $menu): ?>
-                                    <option value="<?= $menu['id'] ?>" <?= $menu['parent_id'] == $menu['id'] ? 'selected' : '' ?>><?= $menu['name'] ?></option>
+                                <?php foreach ($menus as $selectedMenu): ?>
+                                    <?php if($menu['id'] != $selectedMenu['id']) ?>
+                                    <option value="<?= $selectedMenu['id'] ?>" <?= $menu['parent_id'] == $selectedMenu['id'] ? 'selected' : ''?> >
+
+                                    <?= $selectedMenu['name'] ?>
+
+                                    </option>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </select>
