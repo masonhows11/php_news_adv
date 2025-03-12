@@ -25,7 +25,7 @@ class AdminMenus extends AdminBase
     public function store($request)
     {
         $db = new Database();
-        $db->insert('menus', array_keys($request), $request);
+        $db->insert('menus', array_keys(array_filter($request)), array_filter($request));
         $this->redirect('admin/menus');
     }
 

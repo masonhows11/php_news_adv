@@ -52,7 +52,7 @@
                     <div class="mb-3">
                         <label for="parent_id" class="form-label">منو والد</label>
                         <select id="parent_id" class="form-control" name="parent_id">
-                            <option value="null">انتخاب کنید</option>
+                            <option value="">منو اصلی</option>
                             <?php foreach ($menus as $menu): ?>
                                 <option value="<?= $menu['id'] ?>"><?= $menu['name'] ?></option>
                             <?php endforeach; ?>
