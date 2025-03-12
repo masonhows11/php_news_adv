@@ -192,6 +192,8 @@ require "activities/Admin/AdminComments.php";
 require "activities/Admin/AdminBanners.php";
 require "activities/Admin/AdminUsers.php";
 require "activities/Admin/Home.php";
+require "activities/Admin/AdminMenus.php";
+
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
 uri('admin', 'Admin\Home', 'index');
@@ -238,6 +240,16 @@ uri('admin/user/edit/{id}', 'Admin\AdminUsers', 'edit');
 uri('admin/user/update/{id}', 'Admin\AdminUsers', 'update','POST');
 uri('admin/user/access/{id}', 'Admin\AdminUsers', 'access');
 uri('admin/user/delete/{id}', 'Admin\AdminUsers', 'delete');
+
+// admin menus
+uri('admin/menus', 'Admin\AdminMenus', 'index');
+uri('admin/menu/create', 'Admin\AdminMenus', 'create');
+uri('admin/menu/store', 'Admin\AdminMenus', 'store','POST');
+uri('admin/menu/edit/{id}', 'Admin\AdminMenus', 'edit');
+uri('admin/menu/changeStatus/{id}', 'Admin\AdminMenus', 'changeStatus');
+uri('admin/menu/update/{id}', 'Admin\AdminMenus', 'update','POST');
+uri('admin/menu/delete/{id}', 'Admin\AdminMenus', 'delete');
+
 
 echo "404 - Page not found";
 
