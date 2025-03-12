@@ -64,6 +64,10 @@
                         <p>بنرها</p>
                     </a>
                 </li>
+                <li class="nav-item"> <a href="<?= url('admin/menus') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                        <p>منوها</p>
+                    </a>
+                </li>
 
 
             </ul> <!--end::Sidebar Menu-->
