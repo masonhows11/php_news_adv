@@ -10,7 +10,7 @@ class AdminMenus extends AdminBase
     public function index()
     {
         $db = new Database();
-        $menus = $db->select('SELECT * FROM meuns ORDER BY `id` ASC')->fetchAll();
+        $menus = $db->select('SELECT * FROM menus ORDER BY `id` ASC')->fetchAll();
         require_once(BASE_PATH . "/template/admin/menus/index.php");
     }
 
@@ -44,20 +44,20 @@ class AdminMenus extends AdminBase
     }
 
 
-    public function changeStatus($id)
-    {
-        $db = new Database();
-        $user = $db->select('SELECT * FROM menus WHERE id = ?;', [$id])->fetch();
-        if (empty($user)) {
-            $this->redirectBack();
-        }
-        if ($user['permission'] == 'user') {
-            $db->update('users', $id, ['permission'], ['admin']);
-        } else {
-            $db->update('users', $id, ['permission'], ['user']);
-        }
-        $this->redirect('admin/menus');
-    }
+    //    public function changeStatus($id)
+    //    {
+    //        $db = new Database();
+    //        $user = $db->select('SELECT * FROM menus WHERE id = ?;', [$id])->fetch();
+    //        if (empty($user)) {
+    //            $this->redirectBack();
+    //        }
+    //        if ($user['status'] == 1) {
+    //            $db->update('menus', $id, ['status'], ['1']);
+    //        } else {
+    //            $db->update('menus', $id, ['status'], ['2']);
+    //        }
+    //        $this->redirect('admin/menus');
+    //    }
 
 
     public function delete($id)

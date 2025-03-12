@@ -64,10 +64,8 @@
                             <?php foreach ($menus as $menu): ?>
                                 <tr>
                                     <td><?= $menu['id'] ?></td>
-                                    <td><?= $menu['title'] ?></td>
-
+                                    <td><?= $menu['name'] ?></td>
                                     <td><?= $menu['url'] ?></td>
-
                                     <td><?= $menu['parent_id'] ?></td>
                                     <td>
 <!--                                        <a href="--><?php //= url("admin/menu/changeStatus/" . $menu['id']) ?><!--"-->
