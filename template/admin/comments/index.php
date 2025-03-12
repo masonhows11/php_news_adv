@@ -57,9 +57,10 @@
                                     <td><?= $comment['comment'] ?></td>
                                     <td><?= $comment['status'] ?></td>
                                     <td>
+
                                         <a href="<?= url("admin/comment/approved/" . $comment['id']) ?>"
-                                           class="btn <?= $comment['status'] == 2 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
-                                            <?= $comment['status'] == 2 ? 'تایید نشده' : 'تایید شده' ?>
+                                           class="btn <?= $comment['status'] == 'unseen' ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $comment['status'] == 'unseen' ? 'تایید نشده' : 'تایید شده' ?>
                                         </a>
                                         <a href="<?= url("admin/comment/edit/" . $comment['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
                                         <a href="<?= url("admin/comment/delete/" . $comment['id']) ?>" class="btn btn-outline-danger">حذف</a>

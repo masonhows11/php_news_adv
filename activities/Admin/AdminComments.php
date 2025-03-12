@@ -26,15 +26,15 @@ class AdminComments extends AdminBase
 
         $banner = $db->select('SELECT * FROM comments WHERE id = ?;', [$id])->fetch();
 
-        if ($banner['status'] == 1) {
+        if ($banner['status'] == 'unseen') {
 
 
-            $db->update('comments', $id, ['status'], [2]);
+            $db->update('comments', $id, ['status'], ['approved']);
 
-        } elseif($banner['status'] == 2) {
+        } elseif($banner['status'] == 'approved') {
 
 
-            $db->update('comments', $id, ['status'], [1]);
+            $db->update('comments', $id, ['status'], ['unseen']);
 
         }
 

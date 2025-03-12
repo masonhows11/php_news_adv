@@ -219,6 +219,7 @@ uri('admin/post/delete/{id}', 'Admin\AdminPosts', 'delete');
 uri('admin/comments', 'Admin\AdminComments', 'index');
 uri('admin/comment/edit/{id}', 'Admin\AdminComments', 'edit');
 uri('admin/comment/update/{id}', 'Admin\AdminComments', 'update','POST');
+uri('admin/comment/approved/{id}','Admin\AdminComments','approved');
 uri('admin/comment/delete/{id}', 'Admin\AdminComments', 'delete');
 
 
