@@ -58,7 +58,7 @@
                                 <?php /*endforeach; */?>
                             --><?php /*endif; */?>
 
-                            <option value="<?php if($menu['parent_id'] == '') echo 'selected' ?>">منو اصلی</option>
+                            <option value="<?php $menu['parent_id'] == '' ? 'selected' : '' ?>">منو اصلی</option>
 
                             <?php if (!empty($menus)): ?>
                                 <?php foreach ($menus as $selectedMenu): ?>

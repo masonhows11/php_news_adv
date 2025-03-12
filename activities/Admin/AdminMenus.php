@@ -29,7 +29,7 @@ class AdminMenus extends AdminBase
     public function store($request)
     {
         $db = new Database();
-        
+
         $db->insert('menus',array_keys(array_filter($request)), array_filter($request));
         $this->redirect('admin/menus');
     }
@@ -38,7 +38,7 @@ class AdminMenus extends AdminBase
     public function edit($id)
     {
         $db = new Database();
-        $menus = $db->select('SELECT * FROM menus ORDER BY `id` ASC')->fetchAll();
+        $menus = $db->select('SELECT * FROM menus WHERE parent_id IS NULL ORDER BY `id` ASC')->fetchAll();
         $menu = $db->select('SELECT * FROM menus WHERE id = ?;', [$id])->fetch();
         require_once(BASE_PATH . "/template/admin/menus/edit.php");
     }
@@ -46,6 +46,7 @@ class AdminMenus extends AdminBase
 
     public function update($request,$id)
     {
+        //dd($request);
         $db = new Database();
         $menu = $db->select('SELECT * FROM menus WHERE id = ?;', [$id])->fetch();
         if(empty($menu)){
