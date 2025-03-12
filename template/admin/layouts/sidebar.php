@@ -68,6 +68,10 @@
                         <p>منوها</p>
                     </a>
                 </li>
+                <li class="nav-item"> <a href="<?= url('admin/setting') ?>" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                        <p>تنظیمات</p>
+                    </a>
+                </li>
 
 
             </ul> <!--end::Sidebar Menu-->
