@@ -1,10 +1,10 @@
-<?php include(BASE_PATH.'/template/admin/layouts/header.php') ?>
+<?php include(BASE_PATH . '/template/admin/layouts/header.php') ?>
 
-<?php include(BASE_PATH.'/template/admin/layouts/subheader.php') ?>
+<?php include(BASE_PATH . '/template/admin/layouts/subheader.php') ?>
 
 
 <!--begin::Sidebar-->
-<?php include(BASE_PATH.'/template/admin/layouts/sidebar.php') ?>
+<?php include(BASE_PATH . '/template/admin/layouts/sidebar.php') ?>
 
 <!--end::Sidebar-->
 
@@ -35,68 +35,37 @@
                 <h1>پست جدید</h1>
             </div>
             <div class="row">
-                <form action="<?= url('admin/post/store') ?>"  method="post" enctype="multipart/form-data">
+                <form action="<?= url('admin/menu/store') ?>" method="post" >
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">عنوان</label>
-                        <input type="text" name="title" class="form-control" id="title" required>
+                        <label for="name" class="form-label">عنوان</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
                     </div>
                     <div class="form-text text-danger">
                     </div>
 
                     <div class="mb-3">
-                        <label for="summary" class="form-label">خلاسه</label>
-                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required></textarea>
+                        <label for="url" class="form-label">آدرس</label>
+                        <input name="url" id="url" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="body" class="form-label">توضیحات</label>
-                        <textarea name="body" id="body" rows="5" cols="5" class="form-control" required></textarea>
-                    </div>
-                    <div class="form-text text-danger">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="author" class="form-label">نویسنده</label>
-                        <input type="text" name="author" class="form-control" id="author" required>
-                    </div>
-                    <div class="form-text text-danger">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="published_at" class="form-label">تاریخ انتشار</label>
-                        <input type="text" name="published_at" class="form-control d-none" id="published_at">
-                        <input type="text"  class="form-control" id="published_at_view" required>
-                    </div>
-
-                    <label for="category_id" class="form-label">دسته بندی</label>
-                    <select class="form-select" name="categories_id" aria-label="Default select example" required>
-                        <option value="">یک دسته بندی انتخاب کنید</option>
-                        <?php if (!empty($categories)): ?>
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category['id'] ?>"> <?= $category['title'] ?> </option>
+                        <label for="parent_id" class="form-label">منو والد</label>
+                        <select id="parent_id" class="form-control" name="parent_id">
+                            <option value="null">انتخاب کنید</option>
+                            <?php foreach ($menus as $menu): ?>
+                                <option value="<?= $menu['id'] ?>"><?= $menu['name'] ?></option>
                             <?php endforeach; ?>
-                        <?php endif; ?>
-                    </select>
-                    <div class="form-text text-danger">
-                    </div>
-
-                    <div class="input-group mb-3 mt-3">
-                        <input type="file" name="image" class="form-control" id="image" required>
-                        <label class="input-group-text" for="image">آپلود</label>
-                    </div>
-                    <div class="form-text text-danger">
+                        </select>
                     </div>
 
 
                     <div class="mb-3 mt-3">
-                        <button type="submit"  class="btn btn-primary">ذخیره</button>
+                        <button type="submit" class="btn btn-primary">ذخیره</button>
                     </div>
 
                 </form>
             </div>
-
 
 
         </div>

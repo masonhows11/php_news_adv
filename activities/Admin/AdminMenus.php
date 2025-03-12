@@ -16,8 +16,16 @@ class AdminMenus extends AdminBase
 
     public function create()
     {
-        require_once(BASE_PATH . "/template/admin/menus/index.php");
+        $db = new Database();
+        $menus = $db->select('SELECT * FROM menus ORDER BY `id` ASC')->fetchAll();
+        require_once(BASE_PATH . "/template/admin/menus/create.php");
+        $this->redirect('admin/menus');
+    }
 
+    public function store($request)
+    {
+        $db = new Database();
+        $db->insert('menus', array_keys($request), $request);
         $this->redirect('admin/menus');
     }
 
@@ -25,8 +33,9 @@ class AdminMenus extends AdminBase
     public function edit($id)
     {
         $db = new Database();
-        $user = $db->select('SELECT * FROM menus WHERE id = ?;', [$id])->fetch();
-        require_once(BASE_PATH . "/template/admin/menus/index.php");
+        $menus = $db->select('SELECT * FROM menus ORDER BY `id` ASC')->fetchAll();
+        $menu = $db->select('SELECT * FROM menus WHERE id = ?;', [$id])->fetch();
+        require_once(BASE_PATH . "/template/admin/menus/edit.php");
     }
 
 

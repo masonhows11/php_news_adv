@@ -66,7 +66,7 @@
                                     <td><?= $menu['id'] ?></td>
                                     <td><?= $menu['name'] ?></td>
                                     <td><?= $menu['url'] ?></td>
-                                    <td><?= $menu['parent_id'] ?></td>
+                                    <td><?= $menu['parent_id'] == null ? 'منو اصلی' : $menu['parent_id'] ?></td>
                                     <td>
 <!--                                        <a href="--><?php //= url("admin/menu/changeStatus/" . $menu['id']) ?><!--"-->
 <!--                                           class="btn --><?php //= $menu['status'] == 2 ? 'btn-outline-danger' : ' btn-outline-success' ?><!--">-->

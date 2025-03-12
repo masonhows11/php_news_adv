@@ -1,10 +1,10 @@
-<?php include(BASE_PATH.'/template/admin/layouts/header.php') ?>
+<?php include(BASE_PATH . '/template/admin/layouts/header.php') ?>
 
-<?php include(BASE_PATH.'/template/admin/layouts/subheader.php') ?>
+<?php include(BASE_PATH . '/template/admin/layouts/subheader.php') ?>
 
 
 <!--begin::Sidebar-->
-<?php include(BASE_PATH.'/template/admin/layouts/sidebar.php') ?>
+<?php include(BASE_PATH . '/template/admin/layouts/sidebar.php') ?>
 
 <!--end::Sidebar-->
 
@@ -32,71 +32,38 @@
         <div class="container-fluid">
 
             <div class="row">
-                <h1>ویرایش پست</h1>
+                <h1>ویرایش منو</h1>
             </div>
             <div class="row">
-                <form  method="post" action="<?= url('admin/post/update/'.$post['id']) ?>"  enctype="multipart/form-data">
+                <form method="post" action="<?= url('admin/menu/update/' . $menu['id']) ?>">
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">عنوان</label>
-                        <input type="text" name="title" class="form-control" id="title" value="<?= $post['title'] ?>" required>
+                        <label for="name" class="form-label">عنوان</label>
+                        <input type="text" name="name" class="form-control" id="name" value="<?= $menu['name'] ?>">
                     </div>
                     <div class="form-text text-danger">
                     </div>
 
                     <div class="mb-3">
-                        <label for="summary" class="form-label">خلاسه</label>
-                        <textarea name="summary" id="summary" rows="5" cols="5" class="form-control" required><?= $post['summary'] ?></textarea>
+                        <label for="url" class="form-label">آدرس</label>
+                        <input name="url" id="url" class="form-control" value="<?= $menu['url'] ?>">
                     </div>
 
                     <div class="mb-3">
-                        <label for="body" class="form-label">توضیحات</label>
-                        <textarea name="body" id="body" rows="5" cols="5" class="form-control" required><?= $post['body'] ?></textarea>
-                    </div>
-                    <div class="form-text text-danger">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="author" class="form-label">نویسنده</label>
-                        <input type="text" name="author" class="form-control" id="author" value="<?= $post['author'] ?>" required>
-                    </div>
-                    <div class="form-text text-danger">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="published_at" class="form-label">تاریخ انتشار</label>
-                        <input type="text" name="published_at" class="form-control d-none" id="published_at">
-                        <input type="text"  class="form-control" id="published_at_view" value="<?= $post['published_at'] ?>" required>
-                    </div>
-
-                    <label for="category_id" class="form-label">دسته بندی</label>
-                    <select class="form-select" name="categories_id" aria-label="Default select example" required>
-                        <option value="">یک دسته بندی انتخاب کنید</option>
-                        <?php if (!empty($categories)): ?>
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category['id'] ?>" <?= $post['categories_id'] == $category['id'] ? 'selected' : '' ?> ><?= $category['title'] ?></option>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </select>
-                    <div class="form-text text-danger">
-                    </div>
-
-                    <div class="input-group mb-3 mt-3">
-                        <input type="file" name="image" class="form-control" id="image" >
-                        <label class="input-group-text" for="image">آپلود</label>
-                    </div>
-                    <div class="input-group mb-3 mt-3">
-                        <?php if (!empty($post['image']) && file_exists(BASE_PATH.'/'.$post['image']) ): ?>
-                            <img class="img-size-64 img-thumbnail" src="<?=  assets($post['image']) ?>" alt="post-image">
-                        <?php else: ?>
-                            <img class="img-size-64 img-thumbnail" src="<?= assets('public/admin_assets/assets/no-picture-available.jpg') ?>" alt="no image exists">
-                        <?php endif; ?>
+                        <label for="parent_id" class="form-label">منو والد</label>
+                        <select id="parent_id" class="form-control" name="parent_id">
+                            <option value="null">انتخاب کنید</option>
+                            <?php if (!empty($menus)): ?>
+                                <?php foreach ($menus as $menu): ?>
+                                    <option value="<?= $menu['id'] ?>" <?= $menu['parent_id'] == $menu['id'] ? 'selected' : '' ?>><?= $menu['name'] ?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
                     </div>
 
 
                     <div class="mb-3 mt-3">
-                        <button type="submit"  class="btn btn-primary">ذخیره</button>
+                        <button type="submit" class="btn btn-primary">ذخیره</button>
                     </div>
 
                 </form>
