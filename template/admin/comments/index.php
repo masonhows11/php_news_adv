@@ -36,32 +36,33 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <?php if (!empty($users)): ?>
+                    <?php if (!empty($comments)): ?>
                         <table class="table mt-2">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">نام کاربری</th>
-                                <th scope="col">پست / مقاله</th>
+                                <th scope="col">پست</th>
                                 <th scope="col">متن دیدگاه</th>
                                 <th scope="col">وضعیت</th>
                                 <th scope="col">عملیات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($users as $user): ?>
+                            <?php foreach ($comments as $comment): ?>
                                 <tr>
-                                    <td><?= $user['id'] ?></td>
-                                    <td><?= $user['user_name'] ?></td>
-                                    <td><?= $user['post_title'] ?></td>
-                                    <td><?= $user['body'] ?></td>
+                                    <td><?= $comment['id'] ?></td>
+                                    <td><?= $comment['user_name'] ?></td>
+                                    <td><?= $comment['post_title'] ?></td>
+                                    <td><?= $comment['comment'] ?></td>
+                                    <td><?= $comment['status'] ?></td>
                                     <td>
-                                        <a href="<?= url("admin/comment/approved/" . $user['id']) ?>"
-                                           class="btn <?= $user['permission'] == 'user' ? 'btn-outline-danger' : ' btn-outline-success' ?>">
-                                            <?= $user['permission'] == 'user' ? 'is user' : 'is admin' ?>
+                                        <a href="<?= url("admin/comment/approved/" . $comment['id']) ?>"
+                                           class="btn <?= $comment['status'] == 2 ? 'btn-outline-danger' : ' btn-outline-success' ?>">
+                                            <?= $comment['status'] == 2 ? 'تایید نشده' : 'تایید شده' ?>
                                         </a>
-                                        <a href="<?= url("admin/comment/edit/" . $user['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
-                                        <a href="<?= url("admin/comment/delete/" . $user['id']) ?>" class="btn btn-outline-danger">حذف</a>
+                                        <a href="<?= url("admin/comment/edit/" . $comment['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/comment/delete/" . $comment['id']) ?>" class="btn btn-outline-danger">حذف</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
