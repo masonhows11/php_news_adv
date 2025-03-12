@@ -23,21 +23,19 @@ class AdminComments extends AdminBase
     {
         $db = new Database();
 
-
-        $banner = $db->select('SELECT * FROM comments WHERE id = ?;', [$id])->fetch();
-
-        if ($banner['status'] == 'unseen') {
-
+        $comment = $db->select('SELECT * FROM comments WHERE id = ?;', [$id])->fetch();
+        if(empty($comment))
+        {
+            $this->redirectBack();
+        }
+        if ($comment['status'] == 'unseen') {
 
             $db->update('comments', $id, ['status'], ['approved']);
 
-        } elseif($banner['status'] == 'approved') {
-
+        } elseif($comment['status'] == 'approved') {
 
             $db->update('comments', $id, ['status'], ['unseen']);
-
         }
-
 
         $this->redirect('admin/comments');
     }
