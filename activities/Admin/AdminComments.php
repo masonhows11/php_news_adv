@@ -2,35 +2,55 @@
 
 namespace Admin;
 
-class AdminComments
+use Database\Database;
+
+class AdminComments extends AdminBase
 {
     public function index()
     {
-        require_once (BASE_PATH.'/template/admin/comments/index.php');
+        $db = new Database();
+        $comments = $db->select("SELECT comments.*,
+        users.name AS user_name , 
+        posts.title As post_title  
+        FROM comments LEFT JOIN posts on comments.post_id = posts.id LEFT JOIN users on comments.user_id = users.id WHERE comments.status = unseen ")->fetchAll();
+
+        require_once(BASE_PATH . '/template/admin/comments/index.php');
     }
 
-    public function approved()
+    public function approved($id)
     {
+        $db = new Database();
 
-   }
 
-    public function store()
-    {
-        echo "admin category store method";
+        $banner = $db->select('SELECT * FROM comments WHERE id = ?;', [$id])->fetch();
+
+        if ($banner['status'] == 1) {
+
+
+            $db->update('comments', $id, ['status'], [2]);
+
+        } elseif($banner['status'] == 2) {
+
+
+            $db->update('comments', $id, ['status'], [1]);
+
+        }
+
+
+        $this->redirect('admin/comments');
     }
 
-    public function edit()
-    {
-        echo "admin category edit method";
-    }
 
-    public function update()
-    {
-        echo "admin category update method";
-    }
 
-    public function delete()
+    public function delete($id)
     {
-        echo "admin category delete method";
+        $db = new Database();
+        $comment = $db->select('SELECT * FROM comments WHERE id = ?;', [$id])->fetch();
+        if(empty($comment))
+        {
+            $this->redirectBack();
+        }
+        $db->delete('comments', $id);
+        $this->redirect('admin/comments');
     }
 }
