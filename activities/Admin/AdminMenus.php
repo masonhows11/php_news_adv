@@ -10,7 +10,10 @@ class AdminMenus extends AdminBase
     public function index()
     {
         $db = new Database();
-        $menus = $db->select('SELECT * FROM menus ORDER BY `id` ASC')->fetchAll();
+        // $menus = $db->select('SELECT * FROM menus ORDER BY `id` ASC')->fetchAll();
+        $menus = $db->select('SELECT  m1.*,m2.name AS parent_name 
+                                  FROM menus m1 LEFT JOIN menus m2 
+                                  ON m1.parent_id = m2.id ORDER BY `id` ASC')->fetchAll();
         require_once(BASE_PATH . "/template/admin/menus/index.php");
     }
 
@@ -25,7 +28,7 @@ class AdminMenus extends AdminBase
     public function store($request)
     {
         $db = new Database();
-        $db->insert('menus', array_keys(array_filter($request)), array_filter($request));
+        $db->insert('menus',array_keys(array_filter($request)), array_filter($request));
         $this->redirect('admin/menus');
     }
 
