@@ -27,7 +27,7 @@ class AdminSetting extends AdminBase
 
     public function update($request)
     {
-        dd($request);
+
         $db = new Database();
         $setting = $db->select('SELECT * FROM settings;')->fetch();
 

@@ -255,7 +255,7 @@ uri('admin/menu/delete/{id}', 'Admin\AdminMenus', 'delete');
 // admin setting
 uri('admin/setting', 'Admin\AdminSetting', 'index');
 uri('admin/setting/edit', 'Admin\AdminSetting', 'edit');
-uri('admin/setting/update', 'Admin\AdminSetting', 'update');
+uri('admin/setting/update', 'Admin\AdminSetting', 'update','POST');
 
 echo "404 - Page not found";
 
