@@ -35,7 +35,7 @@
                 <h1>ویرایش تنظیمات</h1>
             </div>
             <div class="row">
-                <form action="<?= url('admin/setting/update'.$setting['id']) ?>"  method="post" enctype="multipart/form-data">
+                <form action="<?= url('admin/setting/update') ?>"  method="post" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">عنوان</label>

@@ -88,7 +88,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="<?= url("admin/setting/edit/" . $setting['id']) ?>" class="btn btn-outline-secondary">ویرایش</a>
+                                        <a href="<?= url("admin/setting/edit") ?>" class="btn btn-outline-secondary">ویرایش</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
