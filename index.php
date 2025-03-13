@@ -201,12 +201,12 @@ function dd($var)
 }
 
 
+require "activities/Admin/Home.php";
 require "activities/Admin/AdminCategory.php";
 require "activities/Admin/AdminPosts.php";
 require "activities/Admin/AdminComments.php";
 require "activities/Admin/AdminBanners.php";
 require "activities/Admin/AdminUsers.php";
-require "activities/Admin/Home.php";
 require "activities/Admin/AdminMenus.php";
 require "activities/Admin/AdminSetting.php";
 require "activities/auth/Auth.php";
