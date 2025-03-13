@@ -3,6 +3,7 @@
 namespace auth;
 
 
+use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
@@ -36,7 +37,7 @@ class Auth
     }
 
 
-    private function sendMail($email,$subject,$body, array $attachment = [])
+    public function sendMail($email,$subject,$body, array $attachment = []): bool
     {
         $mail = new PHPMailer(true);
 
@@ -55,7 +56,7 @@ class Auth
 
             //Recipients
             $mail->setFrom(SENDER_MAIL, SENDER_NAME);
-//            $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
+            $mail->addAddress('mason.hows11@gmail.com', 'Mason hows');     //Add a recipient
 //            $mail->addAddress('ellen@example.com');               //Name is optional
 //            $mail->addReplyTo('info@example.com', 'Information');
 //            $mail->addCC('cc@example.com');
@@ -71,10 +72,12 @@ class Auth
             $mail->Body    = $body;
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-            return $mail->send();
-            // echo 'Message has been sent';
-        } catch (\Exception $e) {
+            $res =  $mail->send();
+            echo 'Message has been sent';
+            return $res;
+        } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            return false;
         }
     }
 

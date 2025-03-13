@@ -4,6 +4,8 @@
 // start session
 
 
+use auth\Auth;
+
 session_start();
 
 // add autoload class
@@ -36,11 +38,15 @@ const DB_DATABASE = 'php_news';
 const DB_PASSWORD = '1289..//';
 
 // mail config
-const MAIL_HOST = 'smtp.gmail.com';
+//const MAIL_HOST = 'smtp.gmail.com';
+//const SMTP_AUTH = true;
+//const MAIL_USERNAME = 'mason.hows11@gmail.com';
+//const MAIL_PASS = '.12ab**[]//zxysn.';
+const MAIL_HOST = 'sandbox.smtp.mailtrap.io';
 const SMTP_AUTH = true;
-const MAIL_USERNAME = 'mason.hows11@gmail.com';
-const MAIL_PASS = '.12ab**[]//zxysn.';
-const MAIL_PORT = 587;
+const MAIL_USERNAME = '1480411f94b162';
+const MAIL_PASS = 'ed6618069fb09d';
+const MAIL_PORT = 2525;
 const SENDER_MAIL = 'mason.hows11@gmail.com';
 const SENDER_NAME = 'mason hows';
 
@@ -205,6 +211,10 @@ require "activities/Admin/AdminMenus.php";
 require "activities/Admin/AdminSetting.php";
 require "activities/auth/Auth.php";
 
+// test send email
+$auth = new Auth();
+//$auth->sendMail('mason.hows11@gmail.com','test send','<p>test send email in php with phpMailer</p>');
+$auth->sendMail('mason.hows11@gmail.com','تست ایمیل','<p>این یک تست ارسال ایمیل در php است</p>');
 
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
