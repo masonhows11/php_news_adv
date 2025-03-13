@@ -209,13 +209,11 @@ require "activities/Admin/AdminBanners.php";
 require "activities/Admin/AdminUsers.php";
 require "activities/Admin/AdminMenus.php";
 require "activities/Admin/AdminSetting.php";
+require "activities/auth/Mail.php";
 require "activities/auth/Auth.php";
 
-// test send email
-$auth = new Auth();
-//$auth->sendMail('mason.hows11@gmail.com','test send','<p>test send email in php with phpMailer</p>');
-$auth->sendMail('mason.hows11@gmail.com','تست ایمیل','<p>این یک تست ارسال ایمیل در php است</p>');
 
+// uri('sendmail','auth\Mail','sendEmail');
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
 uri('admin', 'Admin\Home', 'index');
