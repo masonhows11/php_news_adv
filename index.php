@@ -194,6 +194,7 @@ require "activities/Admin/AdminUsers.php";
 require "activities/Admin/Home.php";
 require "activities/Admin/AdminMenus.php";
 require "activities/Admin/AdminSetting.php";
+require "activities/auth/Auth.php";
 
 
 // uri('admin/category/create', 'adminCategory', 'create'); example
