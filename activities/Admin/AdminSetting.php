@@ -17,18 +17,18 @@ class AdminSetting extends AdminBase
     }
 
 
-    public function edit($id)
+    public function edit()
     {
         $db = new Database();
-        $setting = $db->select('SELECT * FROM settings WHERE id = ?;', [$id])->fetch();
+        $setting = $db->select('SELECT * FROM settings;')->fetch();
         require_once(BASE_PATH . '/template/admin/setting/edit.php');
     }
 
 
-    public function update($request, $id)
+    public function update($request)
     {
         $db = new Database();
-        $setting = $db->select('SELECT * FROM settings WHERE id = ?;', [$id])->fetch();
+        $setting = $db->select('SELECT * FROM settings;')->fetch();
 
         if ($request['logo']['tmp_name'] != null) {
             $this->removeImage($setting['logo']);
@@ -46,7 +46,7 @@ class AdminSetting extends AdminBase
         // Columns that are present in the query but not in the table
         // will prevent the query from executing correctly.
 
-        $db->update('settings', $id, array_keys($request), $request);
+        $db->update('settings',null,array_keys($request), $request);
         $this->redirect('admin/setting');
 
     }

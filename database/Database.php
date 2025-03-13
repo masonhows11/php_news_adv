@@ -83,7 +83,7 @@ class Database
     }
 
 
-    public function update($table, $id, $columns, $values)
+    public function update($table, $id , $columns, $values)
     {
 
         try {
