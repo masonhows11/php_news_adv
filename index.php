@@ -35,6 +35,15 @@ const DB_USERNAME = 'root';
 const DB_DATABASE = 'php_news';
 const DB_PASSWORD = '1289..//';
 
+// mail config
+const MAIL_HOST = 'smtp.gmail.com';
+const SMTP_AUTH = true;
+const MAIL_USERNAME = 'mason.hows11@gmail.com';
+const MAIL_PASS = '.12ab**[]//zxysn.';
+const MAIL_PORT = 587;
+const SENDER_MAIL = 'mason.hows11@gmail.com';
+const SENDER_NAME = 'mason hows';
+
 // include database & make connect
  require "database/Database.php";
 // $conn = new \Database\Database();
