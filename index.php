@@ -92,7 +92,7 @@ function url($path): string
 
 }
 
-function view($path)
+function view(string $path)
 {
     $path = str_replace('.','/',$path);
     include_once(BASE_PATH.'/'."$path".'.php');

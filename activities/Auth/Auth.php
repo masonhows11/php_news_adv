@@ -86,7 +86,7 @@ class Auth
     public function register_form()
     {
 
-        require_once(BASE_PATH.'/template/auth/register.php');
+       view('template.auth.register');
     }
     
     
@@ -98,7 +98,7 @@ class Auth
     public function login_form()
     {
 
-        require_once (BASE_PATH.'/template/auth/login.php');
+        view('template.auth.login');
     }
 
 
