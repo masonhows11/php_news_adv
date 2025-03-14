@@ -275,12 +275,13 @@ uri('admin/setting', 'Admin\AdminSetting', 'index');
 uri('admin/setting/edit', 'Admin\AdminSetting', 'edit');
 uri('admin/setting/update', 'Admin\AdminSetting', 'update','POST');
 
-// auth routes
-uri('register','Admin\Auth','register_form');
-uri('register','Admin\Auth','register','POST');
-
-uri('login','Admin\Auth','login_form');
-uri('login','Admin\Auth','login','POST');
+//// auth routes
+// register
+uri('register','Auth\Auth','register_form');
+uri('register','Auth\Auth','register','POST');
+// login
+uri('login','Auth\Auth','login_form');
+uri('login','Auth\Auth','login','POST');
 echo "404 - Page not found";
 
 

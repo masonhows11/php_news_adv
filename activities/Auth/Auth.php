@@ -83,8 +83,10 @@ class Auth
 
 
     
-    public function register_form(){
-        
+    public function register_form()
+    {
+
+        require_once(BASE_PATH.'/template/auth/register.php');
     }
     
     
@@ -93,8 +95,10 @@ class Auth
     }
     
     
-    public function login_form(){
-        
+    public function login_form()
+    {
+
+        require_once (BASE_PATH.'/template/auth/login.php');
     }
 
 
