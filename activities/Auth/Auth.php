@@ -1,6 +1,6 @@
 <?php
 
-namespace auth;
+namespace Auth;
 
 
 use PHPMailer\PHPMailer\Exception;
@@ -81,5 +81,26 @@ class Auth
         }
     }
 
+
+    
+    public function register_form(){
+        
+    }
+    
+    
+    public function register(){
+        
+    }
+    
+    
+    public function login_form(){
+        
+    }
+
+
+    public function login()
+    {
+        
+    }
 
 }

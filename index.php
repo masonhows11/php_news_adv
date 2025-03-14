@@ -4,7 +4,7 @@
 // start session
 
 
-use auth\Auth;
+use Auth\Auth;
 
 session_start();
 
@@ -209,8 +209,8 @@ require "activities/Admin/AdminBanners.php";
 require "activities/Admin/AdminUsers.php";
 require "activities/Admin/AdminMenus.php";
 require "activities/Admin/AdminSetting.php";
-require "activities/auth/Mail.php";
-require "activities/auth/Auth.php";
+require "activities/Auth/Mail.php";
+require "activities/Auth/Auth.php";
 
 
 // uri('sendmail','auth\Mail','sendEmail');
@@ -275,6 +275,12 @@ uri('admin/setting', 'Admin\AdminSetting', 'index');
 uri('admin/setting/edit', 'Admin\AdminSetting', 'edit');
 uri('admin/setting/update', 'Admin\AdminSetting', 'update','POST');
 
+// auth routes
+uri('register','Admin\Auth','register_form');
+uri('register','Admin\Auth','register','POST');
+
+uri('login','Admin\Auth','login_form');
+uri('login','Admin\Auth','login','POST');
 echo "404 - Page not found";
 
 
