@@ -211,15 +211,20 @@ require "activities/Admin/AdminMenus.php";
 require "activities/Admin/AdminSetting.php";
 require "activities/Auth/Mail.php";
 require "activities/Auth/Auth.php";
+require "activities/Home.php";
 
 
 // uri('sendmail','auth\Mail','sendEmail');
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
-uri('admin', 'Admin\Home', 'index');
-// Admin is namespace in AdminCategory class
 
-//// categories
+// home/index route
+uri('/','Home','index');
+
+uri('admin', 'Admin\Home', 'index');
+//// Admin is namespace in AdminCategory class
+///
+// categories
 uri('admin/category', 'Admin\AdminCategory', 'index');
 
 uri('admin/category/create', 'Admin\AdminCategory', 'create');
