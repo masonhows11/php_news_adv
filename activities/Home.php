@@ -6,7 +6,7 @@ class Home{
 
     public function index(){
 
-        echo 'its home / index';
+        view('template.app.index');
     }
 
 }

@@ -92,6 +92,12 @@ function url($path): string
 
 }
 
+function view($path)
+{
+    $path = str_replace('.','/',$path);
+    include_once(BASE_PATH.'/'."$path".'.php');
+}
+
 function methodType()
 {
     return $_SERVER['REQUEST_METHOD'];
