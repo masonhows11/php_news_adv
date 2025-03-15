@@ -106,13 +106,17 @@ class Auth
 
         if (empty($_POST['email']) && empty($_POST['name']) && empty($_POST['password'])) {
 
+            flashMessage('register_error','تمامی فیلدها الزامی می باشند');
             $this->redirectBack();
 
         } elseif (strlen($_POST['password']) < 8) {
 
+            flashMessage('register_error','رمز عبور وارد شده حداقل 8 کاراکتر باید باشد');
             $this->redirectBack();
 
         } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+
+            flashMessage('register_error','ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
 
         } else {
@@ -122,6 +126,7 @@ class Auth
 
             if (!empty($user))
             {
+                flashMessage('register_error','ایمیل وارد شده تکراری  است');
                 $this->redirectBack();
 
             } else {
@@ -135,6 +140,7 @@ class Auth
                     $this->redirect('login');
                 } else {
                     // if email not send user redirect back
+                    flashMessage('register_error','ارسال ایمیل موفقیت آمیز نبوده');
                     $this->redirectBack();
                 }
 

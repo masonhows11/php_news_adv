@@ -1,9 +1,10 @@
 <?php
-include_once(BASE_PATH."/template/app/layouts/header.php");
+include_once(BASE_PATH . "/template/app/layouts/header.php");
 ?>
 <body>
 <main class="main-section">
-    <div class="breadcrumb-section" style="background-image: url(../../public/front_assets/img/section-img/about-us/about-bg.png);">
+    <div class="breadcrumb-section"
+         style="background-image: url(../../public/front_assets/img/section-img/about-us/about-bg.png);">
         <div class="container custom-container">
             <div class="row">
                 <div class="col-lg-12">
@@ -27,15 +28,26 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                         <h4 class="title">Sign Up</h4>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
+                                <?php
+                                $messages = flashMessage('register_error');
+                                if (!empty($messages)) : ?>
+                                    <div class="mt-2 alert alert-danger text-center" style="font-weight:bold;font-size:1.5rem">
+                                        <strong class="form-text text-danger">
+                                        <?= $messages ?>
+                                        </strong>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>User Name <span>*</span></label>
-                                    <input type="text" name="name" class="form-control"  aria-required="true">
+                                    <input type="text" name="name" class="form-control" aria-required="true">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Email Address <span>*</span></label>
-                                    <input type="text" name="email" class="form-control"  aria-required="true">
+                                    <input type="text" name="email" class="form-control" aria-required="true">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
@@ -44,15 +56,15 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                     <input type="password" name="password" class="form-control" aria-required="true">
                                 </div>
                             </div>
-                           <!-- <div class="col-md-12 col-sm-12">
-                                <div class="form-group">
-                                    <label>Re-Enter Password  <span>*</span></label>
-                                    <input type="password" name="fname" class="form-control" required="" aria-required="true">
-                                </div>
-                            </div>-->
+                            <!-- <div class="col-md-12 col-sm-12">
+                                 <div class="form-group">
+                                     <label>Re-Enter Password  <span>*</span></label>
+                                     <input type="password" name="fname" class="form-control" required="" aria-required="true">
+                                 </div>
+                             </div>-->
                         </div>
                         <div class="btn-wrap">
-                            <button type="submit"  class="boxed-btn submit-btn">Sign Up</button>
+                            <button type="submit" class="boxed-btn submit-btn">Sign Up</button>
                         </div>
                     </form>
                     <p>Already have an account? <a href="<?= url('login') ?>">Login In</a></p>
@@ -62,5 +74,5 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
     </section>
 </main>
 <?php
-include_once(BASE_PATH."/template/app/layouts/footer.php");
+include_once(BASE_PATH . "/template/app/layouts/footer.php");
 ?>
