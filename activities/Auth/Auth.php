@@ -119,8 +119,9 @@ class Auth
 
             $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ?', array($request['email']))->fetch();
-            if (empty($user)) {
 
+            if (!empty($user))
+            {
                 $this->redirectBack();
 
             } else {
