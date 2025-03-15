@@ -8,23 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Newsim HTML-5 Template</title>
     <!-- favicon -->
-    <link rel="icon" href="../../public/front_assets/img/favicon.png" sizes="20x20" type="image/png" />
+    <link rel="icon" href="<?= assets('public/front_assets/img/favicon.png') ?>" sizes="20x20" type="image/png" />
     <!-- animate -->
-    <link rel="stylesheet" href="../../public/front_assets/css/animate.css" />
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/animate.css') ?>" />
     <!-- bootstrap -->
-    <link rel="stylesheet" href="../../public/front_assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/bootstrap.min.css') ?>" />
     <!-- magnific popup -->
-    <link rel="stylesheet" href="../../public/front_assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/magnific-popup.css') ?>" />
     <!-- Nice Select -->
-    <link rel="stylesheet" href="../../public/front_assets/css/nice-select.css">
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/nice-select.css') ?>">
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="../../public/front_assets/css/slick.css">
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/slick.css') ?>">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="../../public/front_assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/font-awesome.min.css') ?>" />
     <!-- Flaticon -->
-    <link rel="stylesheet" href="../../public/front_assets/css/flaticon.css">
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/flaticon.css') ?>">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../../public/front_assets/css/style.css" />
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/style.css') ?>" />
     <!-- Responsive Css -->
-    <link rel="stylesheet" href="../../public/front_assets/css/responsive.css">
+    <link rel="stylesheet" href="<?= assets('public/front_assets/css/responsive.css') ?>">
 </head>
