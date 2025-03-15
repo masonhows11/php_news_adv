@@ -25,6 +25,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
+
                     <form action="<?= url('login/user') ?>" method="post" class="contact-page-form login">
                         <h4 class="title">Login In</h4>
                         <div class="row">
@@ -52,6 +53,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             <button type="submit" class="boxed-btn submit-btn">Login In</button>
                         </div>
                     </form>
+
+                    <p class="text-center mt-4">If you don't have an account? <a href="<?= url('register') ?>">Sign up</a></p>
                 </div>
             </div>
         </div>

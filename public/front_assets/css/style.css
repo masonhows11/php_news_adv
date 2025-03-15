@@ -8412,6 +8412,12 @@ label[for=wp-comment-cookies-consent] {
   font-weight: 700;
 }
 
+.login-section-area p a {
+  text-decoration: underline;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
 .product-section-area {
   position: relative;
   z-index: 0;

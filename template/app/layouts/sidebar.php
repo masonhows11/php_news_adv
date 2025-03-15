@@ -34,12 +34,10 @@
                         </div>
                         <ul class="navigation">
                             <li class="menu-has-child">
-                                <a class="" href="#">Home</a>
-                                <ul class="has-sub-menu">
-                                    <li><a href="index.html">Home one</a></li>
-                                    <li><a href="index-02.html">Home two</a></li>
-                                    <li><a href="index-03.html">Home three</a></li>
-                                </ul>
+                                <a class="" href="<?= url('/') ?>">Home</a>
+                            </li>
+                            <li>
+                                <a href="<?= url('login') ?>">login</a>
                             </li>
                             <li>
                                 <a href="business.html">Archive</a>
