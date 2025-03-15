@@ -45,8 +45,8 @@ class Auth
     public function activationMessage($user, $token): string
     {
         return "<h1>فعال سازس حساب کاربری</h1><br>" .
-            "<p>'.$user.'عزیز برای فعال سازی حساب کاربری خود روی لینک زیر کلیک کنید</p>" .
-            "<div><a href='فعال سازی حساب کابری'></a></div>";
+               "<p style='font-weight: bold'> عزیز برای فعال سازی حساب کاربری خود روی لینک زیر کلیک کنید $user  </p> ".
+               "<div><a style='font-weight: bold' href=''>فعال سازی حساب کابری</a></div>";
     }
 
     private function sendMail($email, $subject, $body, array $attachment = [])
