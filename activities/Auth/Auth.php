@@ -126,8 +126,8 @@ class Auth
 
             } else {
                 $randomToken = $this->random();
-                $activationMessage = $this->activationMessage($user['name'], $randomToken);
-                $result = $this->sendMail($user['email'], 'فعال سازی حساب کاربری', $activationMessage);
+                $activationMessage = $this->activationMessage($request['name'], $randomToken);
+                $result = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
                 if ($result) {
                     $request['verify_token'] = $randomToken;
                     $request['password'] = $this->hash($request['password']);
