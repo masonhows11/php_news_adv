@@ -12,6 +12,7 @@
     "minimum-stability": "stable",
     "require": {
         "morilog/jalali": "3.*",
-        "phpmailer/phpmailer": "^6.9"
+        "phpmailer/phpmailer": "^6.9",
+      "ext-pdo": "*"
     }
 }

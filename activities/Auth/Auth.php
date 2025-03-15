@@ -94,14 +94,14 @@ class Auth
     }
 
 
-    public function register_form()
+    public function register_form(): void
     {
 
         view('template.auth.register');
     }
 
 
-    public function register($request)
+    public function register($request): void
     {
 
         if (empty($_POST['email']) && empty($_POST['name']) && empty($_POST['password'])) {
@@ -112,15 +112,18 @@ class Auth
 
             $this->redirectBack();
 
-        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL))
+        {
             $this->redirectBack();
+
         } else {
 
             $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ?', $request['email'])->fetch();
-            if (!empty($user)) {
+            if (empty($user)) {
 
                 $this->redirectBack();
+
             } else {
                 $randomToken = $this->random();
                 $activationMessage = $this->activationMessage($user['name'], $randomToken);
@@ -141,7 +144,7 @@ class Auth
     }
 
 
-    public function login_form()
+    public function login_form(): void
     {
 
         view('template.auth.login');
