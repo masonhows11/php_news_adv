@@ -38,7 +38,7 @@ class Database
     }
 
 
-    public function select($sql, $values = null)
+    public function select($sql, $values = []): bool|\PDOStatement
     {
         try {
 
@@ -52,8 +52,8 @@ class Database
 
                 $state->execute($values);
             }
-            $result = $state;
-            return $result;
+
+            return $state;
 
         } catch (PDOException $e) {
             # code...

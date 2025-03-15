@@ -34,7 +34,7 @@ class Auth
 
     private function hash($password)
     {
-      return  $hashPassword = password_hash($password, PASSWORD_DEFAULT);
+        return $hashPassword = password_hash($password, PASSWORD_DEFAULT);
     }
 
     private function random(): string
@@ -69,14 +69,14 @@ class Auth
         //Recipients
         $mail->setFrom(SENDER_MAIL, SENDER_NAME);
         $mail->addAddress('mason.hows11@gmail.com', 'Mason hows');     //Add a recipient
-//            $mail->addAddress('ellen@example.com');               //Name is optional
-//            $mail->addReplyTo('info@example.com', 'Information');
-//            $mail->addCC('cc@example.com');
-//            $mail->addBCC('bcc@example.com');
+        //            $mail->addAddress('ellen@example.com');               //Name is optional
+        //            $mail->addReplyTo('info@example.com', 'Information');
+        //            $mail->addCC('cc@example.com');
+        //            $mail->addBCC('bcc@example.com');
 
         //Attachments
-//            $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-//            $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+        //      $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+        //      $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
@@ -112,14 +112,13 @@ class Auth
 
             $this->redirectBack();
 
-        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL))
-        {
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
             $this->redirectBack();
 
         } else {
 
             $db = new Database();
-            $user = $db->select('SELECT * FROM users WHERE email = ?', $request['email'])->fetch();
+            $user = $db->select('SELECT * FROM users WHERE email = ?', array($request['email']))->fetch();
             if (empty($user)) {
 
                 $this->redirectBack();
@@ -131,9 +130,9 @@ class Auth
                 if ($result) {
                     $request['verify_token'] = $randomToken;
                     $request['password'] = $this->hash($request['password']);
-                    $db->insert('users',array_keys($request),$request);
+                    $db->insert('users', array_keys($request), $request);
                     $this->redirect('login');
-                }else{
+                } else {
                     // if email not send user redirect back
                     $this->redirectBack();
                 }
