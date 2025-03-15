@@ -29,19 +29,19 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>User Name <span>*</span></label>
-                                    <input type="text" name="lname" class="form-control" required="" aria-required="true">
+                                    <input type="text" name="name" class="form-control"  aria-required="true">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Email Address <span>*</span></label>
-                                    <input type="text" name="lname" class="form-control" required="" aria-required="true">
+                                    <input type="text" name="email" class="form-control"  aria-required="true">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Password <span>*</span></label>
-                                    <input type="password" name="fname" class="form-control" required="" aria-required="true">
+                                    <input type="password" name="password" class="form-control" aria-required="true">
                                 </div>
                             </div>
                            <!-- <div class="col-md-12 col-sm-12">

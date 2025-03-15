@@ -3,6 +3,7 @@
 namespace Auth;
 
 
+use Database\Database;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -33,11 +34,22 @@ class Auth
 
     private function hash($password)
     {
-        $hashPassword = password_hash($password, PASSWORD_DEFAULT);
+      return  $hashPassword = password_hash($password, PASSWORD_DEFAULT);
     }
 
+    private function random(): string
+    {
+        return bin2hex(openssl_random_pseudo_bytes(32));
+    }
 
-    public function sendMail($email, $subject, $body, array $attachment = [])
+    public function activationMessage($user, $token): string
+    {
+        return "<h1>فعال سازس حساب کاربری</h1><br>" .
+            "<p>'.$user.'عزیز برای فعال سازی حساب کاربری خود روی لینک زیر کلیک کنید</p>" .
+            "<div><a href='فعال سازی حساب کابری'></a></div>";
+    }
+
+    private function sendMail($email, $subject, $body, array $attachment = [])
     {
         $mail = new PHPMailer(true);
 
@@ -82,30 +94,59 @@ class Auth
     }
 
 
-    
     public function register_form()
     {
 
-       view('template.auth.register');
+        view('template.auth.register');
     }
-    
-    
+
+
     public function register($request)
     {
 
+        if (empty($_POST['email']) && empty($_POST['name']) && empty($_POST['password'])) {
+
+            $this->redirectBack();
+
+        } elseif (strlen($_POST['password']) < 8) {
+
+            $this->redirectBack();
+
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+            $this->redirectBack();
+        } else {
+
+            $db = new Database();
+            $user = $db->select('SELECT * FROM users WHERE email = ?', $request['email'])->fetch();
+            if (!empty($user)) {
+
+                $this->redirectBack();
+            } else {
+                $randomToken = $this->random();
+                $activationMessage = $this->activationMessage($user['name'], $randomToken);
+                $result = $this->sendMail($user['email'], 'فعال سازی حساب کاربری', $activationMessage);
+                if ($result) {
+                    $request['verify_token'] = $randomToken;
+                    $request['password'] = $this->hash($request['password']);
+                    $db->insert('users',array_keys($request),$request);
+                }
+
+            }
+        }
+
     }
-    
-    
+
+
     public function login_form()
     {
 
-      view('template.auth.login');
+        view('template.auth.login');
     }
 
 
     public function login($request)
     {
-       
+
     }
 
 }
