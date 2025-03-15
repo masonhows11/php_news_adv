@@ -90,8 +90,9 @@ class Auth
     }
     
     
-    public function register(){
-        
+    public function register()
+    {
+        dd('reg user');
     }
     
     
@@ -104,7 +105,7 @@ class Auth
 
     public function login()
     {
-        
+        dd('login user');
     }
 
 }

@@ -28,7 +28,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <form action="#" class="contact-page-form login">
+                    <form action="<?= url('login/user') ?>" method="post" class="contact-page-form login">
                         <h4 class="title">Login In</h4>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
@@ -52,7 +52,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             <p>Forgot your password? </p>
                         </div>
                         <div class="btn-wrap">
-                            <a href="#" class="boxed-btn submit-btn">Login In</a>
+                            <button type="submit" class="boxed-btn submit-btn">Login In</button>
                         </div>
                     </form>
                 </div>

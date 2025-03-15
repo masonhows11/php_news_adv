@@ -289,10 +289,10 @@ uri('admin/setting/update', 'Admin\AdminSetting', 'update','POST');
 //// auth routes
 // register
 uri('register','Auth\Auth','register_form');
-uri('register','Auth\Auth','register','POST');
+uri('register/store','Auth\Auth','register','POST');
 // login
 uri('login','Auth\Auth','login_form');
-uri('login','Auth\Auth','login','POST');
+uri('login/user','Auth\Auth','login','POST');
 
 echo "404 - Page not found";
 
