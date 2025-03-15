@@ -90,9 +90,9 @@ class Auth
     }
     
     
-    public function register()
+    public function register($request)
     {
-        dd('reg user');
+
     }
     
     
@@ -103,9 +103,9 @@ class Auth
     }
 
 
-    public function login()
+    public function login($request)
     {
-        dd('login user');
+       
     }
 
 }

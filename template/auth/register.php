@@ -10,12 +10,9 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                     <div class="breadcrumb-wrap">
                         <div class="breadcrumb-content">
                             <ul class="page-list">
-                                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                                <li><a href="signup.html">Sign up</a></li>
+                                <li><a href="<?= url('/') ?>"><i class="fas fa-home"></i>Home</a></li>
+                                <li><a href="<?= url('register') ?>">Sign up</a></li>
                             </ul>
-                        </div>
-                        <div class="advertise-banner">
-                            <img src="../../public/front_assets/img/section-img/advertise/advertise-bg-01.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -47,18 +44,18 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                     <input type="password" name="fname" class="form-control" required="" aria-required="true">
                                 </div>
                             </div>
-                            <div class="col-md-12 col-sm-12">
+                           <!-- <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Re-Enter Password  <span>*</span></label>
                                     <input type="password" name="fname" class="form-control" required="" aria-required="true">
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="btn-wrap">
                             <button type="submit"  class="boxed-btn submit-btn">Sign Up</button>
                         </div>
                     </form>
-                    <p>Already have an account? <a href="login.html">Login In</a></p>
+                    <p>Already have an account? <a href="<?= url('login') ?>">Login In</a></p>
                 </div>
             </div>
         </div>

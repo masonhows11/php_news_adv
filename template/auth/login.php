@@ -11,12 +11,9 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                     <div class="breadcrumb-wrap">
                         <div class="breadcrumb-content">
                             <ul class="page-list">
-                                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                                <li><a href="login.html">Log in</a></li>
+                                <li><a href="<?= url('/') ?>"><i class="fas fa-home"></i>Home</a></li>
+                                <li><a href="<?= url('login') ?>">Log in</a></li>
                             </ul>
-                        </div>
-                        <div class="advertise-banner">
-                            <img src="../../public/front_assets/img/section-img/advertise/advertise-bg-01.png" alt="">
                         </div>
                     </div>
                 </div>

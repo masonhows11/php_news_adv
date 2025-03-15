@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Newsim HTML-5 Template</title>
+    <title>News web</title>
     <!-- favicon -->
     <link rel="icon" href="<?= assets('public/front_assets/img/favicon.png') ?>" sizes="20x20" type="image/png" />
     <!-- animate -->
