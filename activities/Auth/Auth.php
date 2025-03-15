@@ -129,6 +129,10 @@ class Auth
                     $request['verify_token'] = $randomToken;
                     $request['password'] = $this->hash($request['password']);
                     $db->insert('users',array_keys($request),$request);
+                    $this->redirect('login');
+                }else{
+                    // if email not send user redirect back
+                    $this->redirectBack();
                 }
 
             }
