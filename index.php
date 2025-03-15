@@ -293,6 +293,7 @@ uri('register','Auth\Auth','register','POST');
 // login
 uri('login','Auth\Auth','login_form');
 uri('login','Auth\Auth','login','POST');
+
 echo "404 - Page not found";
 
 

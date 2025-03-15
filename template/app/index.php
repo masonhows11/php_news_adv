@@ -2,31 +2,21 @@
 include_once(BASE_PATH."/template/app/layouts/header.php");
 ?>
 <body>
-<!-- preloader area start -->
+
 <!--<div class="preloader" id="preloader">-->
 <!--    <div class="preloader-inner">-->
 <!---->
 <!--    </div>-->
 <!--</div>-->
-<!-- preloader area end -->
 
-<!-- Main Section Start Here -->
 <main class="main-section">
-    <!-- main  navbar area start -->
+
     <?php
     include_once(BASE_PATH."/template/app/layouts/navbar.php");
     include_once(BASE_PATH."/template/app/layouts/cart.php");
     include_once(BASE_PATH."/template/app/layouts/sidebar.php");
     ?>
-    <!-- main navbar area end -->
-    <!-- Cart area start Here -->
-    <!-- Cart area End Here -->
 
-    <!-- Header Section Area Start Here -->
-    
-    <!-- Header Section Area End Here -->
-
-    <!-- Latest News Section Strat Here -->
     <section class="latest-news-section style-02">
         <div class="container custom-container-02">
             <div class="row">
@@ -481,9 +471,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
             </div>
         </div>
     </section>
-    <!-- Latest News Section End Here -->
 
-    <!-- Latest Videos Section Start Here -->
     <section class="latest-videos-section">
         <div class="container custom-container-02">
             <div class="theme-heading-title">
@@ -595,9 +583,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
             </div>
         </div>
     </section>
-    <!-- Latest Videos Section End Here -->
 
-    <!-- Call To Action Section Start Here -->
     <section class="call-to-section-area style-01 bg-image" style="background-image: url(../../public/front_assets/img/section-img/cta/cta-bg.png);">
         <div class="container custom-container-02">
             <div class="row">
@@ -652,13 +638,12 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
             </div>
         </div>
     </section>
-    <!-- Call To Action Section End Here -->
-</main>
-<!-- Main Section End Here -->
 
-<!-- footer area start -->
+</main>
+
+
+
 <?php
 include_once(BASE_PATH."/template/app/layouts/footer.php");
 ?>
-<!-- footer area end -->
 

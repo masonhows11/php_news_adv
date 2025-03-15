@@ -2,17 +2,7 @@
 include_once(BASE_PATH."/template/app/layouts/header.php");
 ?>
 <body>
-<!--<div class="preloader" id="preloader">-->
-<!--    <div class="preloader-inner">-->
-<!---->
-<!--    </div>-->
-<!--</div>-->
 <main class="main-section">
-    <?php
-    include_once(BASE_PATH."/template/app/layouts/navbar.php");
-    include_once(BASE_PATH."/template/app/layouts/cart.php");
-    include_once(BASE_PATH."/template/app/layouts/sidebar.php");
-    ?>
     <div class="breadcrumb-section" style="background-image: url(../../public/front_assets/img/section-img/about-us/about-bg.png);">
         <div class="container custom-container">
             <div class="row">

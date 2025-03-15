@@ -98,7 +98,7 @@ class Auth
     public function login_form()
     {
 
-        view('template.auth.login');
+      view('template.auth.login');
     }
 
 
