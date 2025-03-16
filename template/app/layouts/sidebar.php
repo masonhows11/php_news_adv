@@ -72,7 +72,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="<?= url('contact_us') ?>">Contact</a>
+                            </li>
+                            <li>
+                                <a href="<?= url('about_us') ?>">About</a>
                             </li>
                         </ul>
                     </nav>
@@ -87,6 +90,7 @@
                     <!-- Sidebar navbar area end -->
                 </div>
             </div>
+            
             <div class="main-content">
                 <div class="image-box-wrapper">
                     <div class="row">

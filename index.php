@@ -296,6 +296,10 @@ uri('login/user','Auth\Auth','login','POST');
 
 uri('activation/{token}','Auth\Auth','activation');
 
+// front routes
+uri('about_us','Home','aboutUs');
+uri('contact_us','Home','contactUs');
+
 echo "404 - Page not found";
 
 

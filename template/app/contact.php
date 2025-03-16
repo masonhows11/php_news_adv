@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Newsim HTML-5 Template</title>
-    <!-- favicon -->
-    <link rel="icon" href="../../public/front_assets/img/favicon.png" sizes="20x20" type="image/png" />
-    <!-- animate -->
-    <link rel="stylesheet" href="../../public/front_assets/css/animate.css" />
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="../../public/front_assets/css/bootstrap.min.css" />
-    <!-- magnific popup -->
-    <link rel="stylesheet" href="../../public/front_assets/css/magnific-popup.css" />
-    <!-- Nice Select -->
-    <link rel="stylesheet" href="../../public/front_assets/css/nice-select.css">
-    <!-- Slick Slider -->
-    <link rel="stylesheet" href="../../public/front_assets/css/slick.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="../../public/front_assets/css/font-awesome.min.css" />
-    <!-- Flaticon -->
-    <link rel="stylesheet" href="../../public/front_assets/css/flaticon.css">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../../public/front_assets/css/style.css" />
-    <!-- Responsive css -->
-    <link rel="stylesheet" href="../../public/front_assets/css/responsive.css">
-</head>
+<?php
+include_once(BASE_PATH."/template/app/layouts/header.php");
+?>
 
 <body>
     <!-- preloader area start -->
@@ -61,7 +34,7 @@
                             <div class="topbar-inner">
                                 <div class="left-contnet">
                                     <div class="logo-wrapper">
-                                        <a href="index.html"><img src="../../public/front_assets/img/logo/logo-black.svg" alt=""></a>
+                                        <a href="index.html"><img src="assets/img/logo/logo-black.svg" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="right-contnet">
@@ -91,7 +64,7 @@
                     <div class="responsive-menu">
                         <div class="logo-wrapper d-lg-none d-md-block">
                             <a href="index.html" class="logo">
-                                <img src="../../public/front_assets/img/logo/logo-white.svg" alt="" />
+                                <img src="assets/img/logo/logo-white.svg" alt="" />
                             </a>
                         </div>
                         <button class="navbar-toggler navbar-bs-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#themeim_main_menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,7 +142,7 @@
                 <div class="sibebar-header">
                     <div class="logo-wrapper">
                         <a href="index.html">
-                            <img src="../../public/front_assets/img/logo/logo-white.svg" alt="">
+                            <img src="assets/img/logo/logo-white.svg" alt="">
                         </a>
                     </div>
                     <div class="close-btn-02">
@@ -189,43 +162,43 @@
                     <div class="gallery-items-wraapper">
                         <div class="gallery-single-items">
                             <div class="thumb">
-                                <a class="image-popup" href="../../public/front_assets/img/section-img/gallery/instra-mini-01.png">
-                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-01.png" alt="">
+                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-01.png">
+                                    <img src="assets/img/section-img/gallery/instra-big-01.png" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="gallery-single-items">
                             <div class="thumb">
-                                <a class="image-popup" href="../../public/front_assets/img/section-img/gallery/instra-mini-02.png">
-                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-02.png" alt="">
+                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-02.png">
+                                    <img src="assets/img/section-img/gallery/instra-big-02.png" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="gallery-single-items">
                             <div class="thumb">
-                                <a class="image-popup" href="../../public/front_assets/img/section-img/gallery/instra-mini-03.png">
-                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-03.png" alt="">
+                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-03.png">
+                                    <img src="assets/img/section-img/gallery/instra-big-03.png" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="gallery-single-items">
                             <div class="thumb">
-                                <a class="image-popup" href="../../public/front_assets/img/section-img/gallery/instra-mini-01.png">
-                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-01.png" alt="">
+                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-01.png">
+                                    <img src="assets/img/section-img/gallery/instra-big-01.png" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="gallery-single-items">
                             <div class="thumb">
-                                <a class="image-popup" href="../../public/front_assets/img/section-img/gallery/instra-mini-02.png">
-                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-02.png" alt="">
+                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-02.png">
+                                    <img src="assets/img/section-img/gallery/instra-big-02.png" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="gallery-single-items">
                             <div class="thumb">
-                                <a class="image-popup" href="../../public/front_assets/img/section-img/gallery/instra-mini-03.png">
-                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-03.png" alt="">
+                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-03.png">
+                                    <img src="assets/img/section-img/gallery/instra-big-03.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -287,7 +260,7 @@
                 </div>
                 <div class="cart-single-item">
                     <div class="thumbnail">
-                        <img src="../../public/front_assets/img/section-img/products/cart-02.png" alt="">
+                        <img src="assets/img/section-img/products/cart-02.png" alt="">
                         <i class="flaticon-close remove-cart"></i>
                     </div>
                     <div class="content">
@@ -297,7 +270,7 @@
                 </div>
                 <div class="cart-single-item">
                     <div class="thumbnail">
-                        <img src="../../public/front_assets/img/section-img/products/cart-03.png" alt="">
+                        <img src="assets/img/section-img/products/cart-03.png" alt="">
                         <i class="flaticon-close remove-cart"></i>
                     </div>
                     <div class="content">
@@ -307,7 +280,7 @@
                 </div>
                 <div class="cart-single-item">
                     <div class="thumbnail">
-                        <img src="../../public/front_assets/img/section-img/products/cart-04.png" alt="">
+                        <img src="assets/img/section-img/products/cart-04.png" alt="">
                         <i class="flaticon-close remove-cart"></i>
                     </div>
                     <div class="content">
@@ -326,7 +299,7 @@
         <!-- Cart area End Here -->
 
         <!-- Breadcrumb Section Start Here -->
-        <div class="breadcrumb-section" style="background-image: url(../../public/front_assets/img/section-img/about-us/about-bg.png);">
+        <div class="breadcrumb-section" style="background-image: url(assets/img/section-img/about-us/about-bg.png);">
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -338,7 +311,7 @@
                                 </ul>
                             </div>
                             <div class="advertise-banner">
-                                <img src="../../public/front_assets/img/section-img/advertise/advertise-bg-01.png" alt="">
+                                <img src="assets/img/section-img/advertise/advertise-bg-01.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -453,7 +426,7 @@
         <!-- Contact Form Section End Here -->
 
         <!-- Newslatter Section Start Here -->
-        <div class="news-latter-section style-02 bg-image" style="background-image: url(../../public/front_assets/img/section-img/cta/cta-bg.png);">
+        <div class="news-latter-section style-02 bg-image" style="background-image: url(assets/img/section-img/cta/cta-bg.png);">
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -479,145 +452,6 @@
     <!-- Main Section End Here -->
     
     <!-- footer area start -->
-    <footer class="footer-area">
-        <div class="footer-top padding-top-80 padding-bottom-50">
-            <div class="container custom-container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer-widget widget ">
-                            <h4 class="widget-headline">About Newsim</h4>
-                            <p class="widget-para">Maecenas posuere neque et volutpat accumsan. Aliquam hendrerit tincidunt diam eu imperdiet. Etiam dictum suscipit tempus Vestibulum egetpelleor.</p>
-                            <ul class="contact_info_list">
-                                <li class="single-info-item-02">
-                                    <div class="details">
-                                        <p><span>Email : </span>contactnewsim.info@gmail.com</p>
-                                    </div>
-                                </li>
-                                <li class="single-info-item-02">
-                                    <div class="details">
-                                        <a href="tel:1234567890"><span>Fax : </span> +91 0369 2599 003</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-widget widget">
-                            <div id="tag_cloud-2" class="widget_tag_cloud">
-                                <h2 class="widget-headline">Popular Tags <span></span></h2>
-                                <div class="tagcloud">
-                                    <a href="#">Fashion</a>
-                                    <a href="#">Food</a>
-                                    <a href="#">Business</a>
-                                    <a href="#">Music</a>
-                                    <a href="#">Technology</a>
-                                    <a href="#">Travel</a>
-                                    <a href="#">Fashion</a>
-                                    <a href="#">Food</a>
-                                    <a href="#">Business</a>
-                                    <a href="#">Music</a>
-                                    <a href="#">Technology</a>
-                                    <a href="#">Travel</a>
-                                    <a href="#">Fashion</a>
-                                    <a href="#">Food</a>
-                                    <a href="#">Business</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-widget widget">
-                            <div class="widget-footer-news">
-                                <h4 class="widget-headline">Latest News</h4>
-                                <ul>
-                                    <li>
-                                        <div class="content">
-                                            <h4 class="title"><a href="business-02.html">Sub penthouse at <br> for One Bloor goes</a></h4>
-                                            <div class="post-meta">
-                                                <a href="#" class="admin">By <span>Admin</span></a>
-                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="content ml-sm-6">
-                                            <h4 class="title"><a href="#"> Cava producers are <br> looking good</a></h4>
-                                            <div class="post-meta">
-                                                <a href="#" class="admin">By <span>Admin</span></a>
-                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="footer-widget widget widget_nav_menu">
-                            <h4 class="widget-headline">Useful Links</h4>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Work With Us</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Pitch Guidelines</a></li>
-                                <li><a href="#">Commenting</a></li>
-                                <li><a href="#">Customer Care</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-area">
-            <div class="container custom-container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-area-inner">
-                           <div class="logo-wrapper">
-                               <a href="index.html" class="">
-                                   <img src="../../public/front_assets/img/logo/logo-white.svg" alt="">
-                               </a>
-                           </div>
-                           <div class="copyright">
-                               Copyrights © 2022 Newsim. All Rights Reserved. 
-                           </div>
-                           <div class="social-wrapper">
-                               <ul class="social-icon style-02">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                           </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer area end -->
-
-    <!-- back to top area start -->
-    <div class="back-to-top">
-        <span class="back-top"><i class="fa fa-angle-up"></i></span>
-    </div>
-    <!-- back to top area end -->
-
-    <script src="../../public/front_assets/js/jquery-3.6.0.min.js"></script>
-    <!-- bootstrap -->
-    <script src="../../public/front_assets/js/bootstrap.min.js"></script>
-    <!-- magnific popup -->
-    <script src="../../public/front_assets/js/jquery.magnific-popup.js"></script>
-    <!-- wow -->
-    <script src="../../public/front_assets/js/wow.min.js"></script>
-    <!-- Nice Select -->
-    <script src="../../public/front_assets/js/jquery.nice-select.js"></script>
-    <!-- Slick Slider -->
-    <script src="../../public/front_assets/js/slick.min.js"></script>
-    <!-- Marquee Js -->
-    <script src="../../public/front_assets/js/jquery.marquee.min.js"></script>
-    <!-- main js -->
-    <script src="../../public/front_assets/js/main.js"></script>
-</body>
-
-</html>
+<?php
+include_once(BASE_PATH."/template/app/layouts/footer.php");
+?>
