@@ -13,12 +13,7 @@
                     <div class="collapse navbar-collapse" id="themeim_main_menu">
                         <ul class="navbar-nav">
                             <li class="menu-item-has-children current-menu-item">
-                                <a href="#">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home one</a></li>
-                                    <li><a href="index-02.html">Home two</a></li>
-                                    <li><a href="index-03.html">Home three</a></li>
-                                </ul>
+                                <a href="<?php echo url('/')?>">Home</a>
                             </li>
                             <li><a href="business.html">Archive</a></li>
                             <li class="menu-item-has-children">
@@ -47,8 +42,8 @@
                                     <li><a href="cart.html">Cart</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?= url('contact_us') ?>">Contact</a></li>
-                            <li><a href="<?= url('about_us') ?>">About</a></li>
+                            <li><a href="<?php echo url('contact_us')?>">Contact</a></li>
+                            <li><a href="<?php echo url('about_us')?>">About</a></li>
                         </ul>
                     </div>
                     <div class="nav-right-content">
