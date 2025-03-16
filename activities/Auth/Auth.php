@@ -204,7 +204,8 @@ class Auth
                 if (password_verify($request['password'], $user['password']) && $user['is_active'] == 1)
                 {
                     $_SESSION['auth_user'] = $user['email'];
-                    $this->redirect('admin');
+                    $this->redirect('');
+                    //$this->redirect('admin');
 
                 } else {
                     flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد یا فال نشده است');

@@ -222,6 +222,7 @@ require "activities/Home.php";
 
 // home/index route
 uri('/','Home','index');
+// uri('home','Home','index');
 
 uri('admin', 'Admin\Home', 'index');
 //// Admin is namespace in AdminCategory class
