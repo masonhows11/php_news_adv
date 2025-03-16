@@ -1,11 +1,7 @@
 <?php
-
-
 // start session
-
-
 use Auth\Auth;
-
+ob_start();
 session_start();
 
 // add autoload class

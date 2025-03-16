@@ -44,10 +44,10 @@ class Auth
 
     public function activationMessage($user, $token): string
     {
-        $url = url('activation/'.$token);
+        $url = url('activation/' . $token);
         return "<h1>فعال سازس حساب کاربری</h1><br>" .
-               "<p style='font-weight: bold'> عزیز برای فعال سازی حساب کاربری خود روی لینک زیر کلیک کنید $user  </p> ".
-               "<div><a style='font-weight: bold' href='$url'>فعال سازی حساب کابری</a></div>";
+            "<p style='font-weight: bold'> عزیز برای فعال سازی حساب کاربری خود روی لینک زیر کلیک کنید $user  </p> " .
+            "<div><a style='font-weight: bold' href='$url'>فعال سازی حساب کابری</a></div>";
     }
 
     private function sendMail($email, $subject, $body, array $attachment = [])
@@ -107,17 +107,17 @@ class Auth
 
         if (empty($_POST['email']) && empty($_POST['name']) && empty($_POST['password'])) {
 
-            flashMessage('register_error','تمامی فیلدها الزامی می باشند');
+            flashMessage('register_error', 'تمامی فیلدها الزامی می باشند');
             $this->redirectBack();
 
         } elseif (strlen($_POST['password']) < 8) {
 
-            flashMessage('register_error','رمز عبور وارد شده حداقل 8 کاراکتر باید باشد');
+            flashMessage('register_error', 'رمز عبور وارد شده حداقل 8 کاراکتر باید باشد');
             $this->redirectBack();
 
         } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
 
-            flashMessage('register_error','ایمیل وارد شده معتبر نمی باشد');
+            flashMessage('register_error', 'ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
 
         } else {
@@ -125,25 +125,23 @@ class Auth
             $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ?', array($request['email']))->fetch();
 
-            if (!empty($user))
-            {
-                flashMessage('register_error','ایمیل وارد شده تکراری  است');
+            if (!empty($user)) {
+                flashMessage('register_error', 'ایمیل وارد شده تکراری  است');
                 $this->redirectBack();
 
             } else {
                 $randomToken = $this->random();
                 $activationMessage = $this->activationMessage($request['name'], $randomToken);
                 $result = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
-                 // if email send user register & redirect to login page
-                if ($result) 
-                {
+                // if email send user register & redirect to login page
+                if ($result) {
                     $request['verify_token'] = $randomToken;
                     $request['password'] = $this->hash($request['password']);
                     $db->insert('users', array_keys($request), $request);
                     $this->redirect('login');
                 } else {
                     // if email not send user redirect back
-                    flashMessage('register_error','ارسال ایمیل موفقیت آمیز نبوده');
+                    flashMessage('register_error', 'ارسال ایمیل موفقیت آمیز نبوده');
                     $this->redirectBack();
                 }
 
@@ -162,25 +160,49 @@ class Auth
 
     public function activation($token)
     {
-       $db = new  Database();
-       $user = $db->select("SELECT * FROM users WHERE verify_token = ? AND is_active = 0",[$token])->fetch();
-       if(empty($user)){
+        $db = new  Database();
+        $user = $db->select("SELECT * FROM users WHERE verify_token = ? AND is_active = 0", [$token])->fetch();
+        if (empty($user)) {
 
-           $this->redirect('login');
+            $this->redirect('login');
 
-       }else{
+        } else {
 
-           flashMessage('register_success','حساب کاربری با موفقیت فعال شد');
-           $db->update('users',$user['id'],['is_active'],[1]);
-           $this->redirect('login');
-       }
+            flashMessage('register_success', 'حساب کاربری با موفقیت فعال شد');
+            $db->update('users', $user['id'], ['is_active'], [1]);
+            $this->redirect('login');
+        }
 
     }
 
 
     public function login($request)
     {
+        if (empty($_POST['email']) && empty($_POST['password'])) {
 
+            flashMessage('login_error', 'تمامی فیلدها الزامی می باشند');
+            $this->redirectBack();
+
+        } elseif (strlen($_POST['password']) < 8) {
+
+            flashMessage('login_error', 'رمز عبور وارد شده حداقل 8 کاراکتر باید باشد');
+            $this->redirectBack();
+
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+
+            flashMessage('login_error', 'ایمیل وارد شده معتبر نمی باشد');
+            $this->redirectBack();
+
+        } else {
+            $db = new  Database();
+            $user = $db->select('SELECT * FROM users WHERE enmail = ? ', [$request['email']]);
+            if (empty($user))
+            {
+                flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد');
+                $this->redirectBack();
+            }
+            $this->redirect('login');
+        }
     }
 
 }

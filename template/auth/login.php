@@ -39,17 +39,26 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                         </strong>
                                     </div>
                                 <?php endif; ?>
+                                <?php
+                                $messages = flashMessage('login_error');
+                                if (!empty($messages)) : ?>
+                                    <div class="mt-2 alert alert-success text-center" style="font-weight:bold;font-size:1.5rem">
+                                        <strong class="form-text text-success">
+                                            <?= $messages ?>
+                                        </strong>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label>Enter Adress <span>*</span></label>
-                                    <input type="email" name="lname" class="form-control" required="" aria-required="true">
+                                    <label>Email<span>*</span></label>
+                                    <input type="email" name="email" class="form-control" required="" aria-required="true">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Password <span>*</span></label>
-                                    <input type="password" name="fname" class="form-control" required="" aria-required="true">
+                                    <input type="password" name="password" class="form-control" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>
