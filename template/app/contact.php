@@ -1,304 +1,38 @@
 <?php
-include_once(BASE_PATH."/template/app/layouts/header.php");
+    include_once BASE_PATH . "/template/app/layouts/header.php";
 ?>
-
 <body>
     <!-- preloader area start -->
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
         <div class="preloader-inner">
 
         </div>
-    </div>
+    </div> -->
     <!-- preloader area end -->
-
-    <!-- Main Section Start Here -->
     <main class="main-section">
-        <!--  search Popup start -->
-        <div class="body-overlay" id="body-overlay"></div>
-        <div class="search-popup" id="search-popup">
-            <form action="index.html" class="search-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search.....">
-                </div>
-                <button class="close-btn border-none"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-        <!-- Search Popup End -->
-
+        <?php
+            include_once BASE_PATH . "/template/app/partials/searchbar.php";
+        ?>
         <div class="header-style-01">
-            <!-- top bar area start -->
-            <div class="topbar-area">
-                <div class="container custom-container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="topbar-inner">
-                                <div class="left-contnet">
-                                    <div class="logo-wrapper">
-                                        <a href="index.html"><img src="assets/img/logo/logo-black.svg" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="right-contnet">
-                                    <div class="date-item">
-                                        <p><i class="fas fa-calendar-alt"></i> JANUARY 14, 2022</p>
-                                    </div>
-                                    <div class="social-wrapper">
-                                        <span>FOLLOW US:</span>
-                                        <ul class="social-icon">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- top bar areda end -->
-
-            <!-- main  navbar area start -->
-            <nav class="navbar navbar-area navbar-expand-lg navigation-style-01 m-menu">
-                <div class="container custom-container">
-                    <div class="responsive-menu">
-                        <div class="logo-wrapper d-lg-none d-md-block">
-                            <a href="index.html" class="logo">
-                                <img src="assets/img/logo/logo-white.svg" alt="" />
-                            </a>
-                        </div>
-                        <button class="navbar-toggler navbar-bs-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#themeim_main_menu" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="themeim_main_menu">
-                        <ul class="navbar-nav">
-                            <li class="menu-item-has-children current-menu-item">
-                                <a href="#">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home one</a></li>
-                                    <li><a href="index-02.html">Home two</a></li>
-                                    <li><a href="index-03.html">Home three</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="business.html">Archive</a></li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Post Picks</a>
-                                <ul class="sub-menu">
-                                    <li><a href="business.html">Business</a></li>
-                                    <li><a href="business-02.html">Business two</a></li>
-                                    <li><a href="sport.html">Sports</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="financial.html">Financial Post</a></li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="author.html">Author</a></li>
-                                    <li><a href="login.html">Log In</a></li>
-                                    <li><a href="signup.html">Sing In</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="product-details.html">Products Details</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-right-content">
-                        <div class="cart-icon open-cart">
-                            <ul>
-                                <li><a href="javascript:void(0)"><i class="flaticon-trolley"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="icon-part">
-                            <ul>
-                                <li id="search"><a href="javascript:void(0)"><i class="flaticon-search"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="menu-icon open-sidebar">
-                            <ul>
-                                <li><a href="javascript:void(0)"><i class="flaticon-more"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- main navbar area end -->
-
-            <!-- navbar area end -->
+            <?php
+                include_once BASE_PATH . "/template/app/partials/topbar.php";
+            ?>
+            <?php
+                include_once BASE_PATH . "/template/app/partials/navbar.php";
+            ?>
         </div>
+        <?php
+            include_once BASE_PATH . "/template/app/partials/sidebar.php";
+        ?>
 
-        <!-- Sidebar area start Here -->
-        <div class="side-menu-overlay"></div>
-        <div class="sidebar-menu-wrap">
-            <div class="content-wrapper">
-                <div class="sibebar-header">
-                    <div class="logo-wrapper">
-                        <a href="index.html">
-                            <img src="assets/img/logo/logo-white.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="close-btn-02">
-                        <a href="javascript:void(0)">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <h3 class="title">About Us</h3>
-                    <p>Anthony Rotolo, a professor from Syracuse University is offering the. Ahen an unknown printerAnthony Rotolo, a professor from Syracuse University is offering the.</p>
-                </div>
-
-                <div class="insta-gallery">
-                    <h4 class="title">Instagram</h4>
-                    <div class="gallery-items-wraapper">
-                        <div class="gallery-single-items">
-                            <div class="thumb">
-                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-01.png">
-                                    <img src="assets/img/section-img/gallery/instra-big-01.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="gallery-single-items">
-                            <div class="thumb">
-                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-02.png">
-                                    <img src="assets/img/section-img/gallery/instra-big-02.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="gallery-single-items">
-                            <div class="thumb">
-                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-03.png">
-                                    <img src="assets/img/section-img/gallery/instra-big-03.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="gallery-single-items">
-                            <div class="thumb">
-                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-01.png">
-                                    <img src="assets/img/section-img/gallery/instra-big-01.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="gallery-single-items">
-                            <div class="thumb">
-                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-02.png">
-                                    <img src="assets/img/section-img/gallery/instra-big-02.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="gallery-single-items">
-                            <div class="thumb">
-                                <a class="image-popup" href="assets/img/section-img/gallery/instra-mini-03.png">
-                                    <img src="assets/img/section-img/gallery/instra-big-03.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    
-                <div class="side-menu-footer">
-                    <h3 class="title">Contact Info</h3>
-                    <ul class="info-items-wrap">
-                        <li>
-                            <div class="info-item">
-                                <div class="icon">
-                                    <i class="fas fa-location-arrow"></i>
-                                </div>
-                                <div class="content">
-                                    <h6 class="title">666 Brooklyn Kings Street</h6>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="content">
-                                    <h6 class="title">info.help@consultim.com</h6>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info-item">
-                                <div class="icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="content">
-                                    <h6 class="title"><a href="tel:1234567890">+12 3 456 7890</a></h6>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Sidebar area End Here -->
 
         <!-- Cart area start Here -->
-        <div class="cart-menu-overlay"></div>
-        <div class="cart-menu-wrap">
-            <div class="content-wrapper">
-                <div class="cart-header">
-                    <div class="content">
-                        <h6 class="title">Cart</h6>
-                    </div>
-                    <div class="close-btn-03">
-                        <a href="javascript:void(0)">
-                            <i class="flaticon-close"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="cart-single-item">
-                    <div class="thumbnail">
-                        <img src="assets/img/section-img/products/cart-02.png" alt="">
-                        <i class="flaticon-close remove-cart"></i>
-                    </div>
-                    <div class="content">
-                        <h6 class="title">Smart Air Bag</h6>
-                        <p class="price">$225.00</p>
-                    </div>
-                </div>
-                <div class="cart-single-item">
-                    <div class="thumbnail">
-                        <img src="assets/img/section-img/products/cart-03.png" alt="">
-                        <i class="flaticon-close remove-cart"></i>
-                    </div>
-                    <div class="content">
-                        <h6 class="title">Travel Suitcase</h6>
-                        <p class="price">$375.00</p>
-                    </div>
-                </div>
-                <div class="cart-single-item">
-                    <div class="thumbnail">
-                        <img src="assets/img/section-img/products/cart-04.png" alt="">
-                        <i class="flaticon-close remove-cart"></i>
-                    </div>
-                    <div class="content">
-                        <h6 class="title">Travel Slipping</h6>
-                        <p class="price">$332.00</p>
-                    </div>
-                </div>
-                <div class="cart-footer">
-                    <div class="content">
-                        <h4 class="subtotal">Subtotal</h4>
-                        <p class="price">$932.00</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+            include_once BASE_PATH . "/template/app/partials/cart.php";
+        ?>
         <!-- Cart area End Here -->
 
-        <!-- Breadcrumb Section Start Here -->
+     
         <div class="breadcrumb-section" style="background-image: url(assets/img/section-img/about-us/about-bg.png);">
             <div class="container custom-container">
                 <div class="row">
@@ -306,8 +40,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                         <div class="breadcrumb-wrap">
                             <div class="breadcrumb-content">
                                 <ul class="page-list">
-                                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="<?php echo url('/')?>"><i class="fas fa-home"></i>Home</a></li>
+                                    <li><a href="<?php echo url('contact_us')?>">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="advertise-banner">
@@ -318,25 +52,12 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                 </div>
             </div>
         </div>
-        <!-- Breadcrumb Section Start Here -->
+     
 
-        <!-- Map Section Star Here -->
-        <div class="map-section">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="contact_map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d233667.8223908687!2d90.27923710646989!3d23.780887457084543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1588510922243!5m2!1sen!2sbd" style="border:0; width: 100%; height: 100%;"
-                                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Map Section End Here -->
+
 
         <!-- Contact Section Start Here -->
-        <div class="contact-section-area">
+        <div class="contact-section-area mt-5">
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
@@ -444,14 +165,14 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <!-- Newslatter Section End Here -->
     </main>
     <!-- Main Section End Here -->
-    
+
     <!-- footer area start -->
 <?php
-include_once(BASE_PATH."/template/app/layouts/footer.php");
+    include_once BASE_PATH . "/template/app/layouts/footer.php";
 ?>
