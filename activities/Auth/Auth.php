@@ -195,13 +195,24 @@ class Auth
 
         } else {
             $db = new  Database();
-            $user = $db->select('SELECT * FROM users WHERE enmail = ? ', [$request['email']]);
-            if (empty($user))
-            {
+            $user = $db->select('SELECT * FROM users WHERE email = ? ', [$request['email']])->fetch();
+            if (empty($user)) {
                 flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد');
                 $this->redirectBack();
+
+            } else {
+                if (password_verify($request['password'], $user['password']) && $user['is_active'] == 1)
+                {
+                    $_SESSION['auth_user'] = $user['email'];
+                    $this->redirect('admin');
+
+                } else {
+                    flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد یا فال نشده است');
+                    $this->redirect('login');
+                }
+
             }
-            $this->redirect('login');
+
         }
     }
 

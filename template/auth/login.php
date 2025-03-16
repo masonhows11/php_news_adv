@@ -42,8 +42,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                 <?php
                                 $messages = flashMessage('login_error');
                                 if (!empty($messages)) : ?>
-                                    <div class="mt-2 alert alert-success text-center" style="font-weight:bold;font-size:1.5rem">
-                                        <strong class="form-text text-success">
+                                    <div class="mt-2 alert alert-danger text-center" style="font-weight:bold;font-size:1.5rem">
+                                        <strong class="form-text text-danger">
                                             <?= $messages ?>
                                         </strong>
                                     </div>
