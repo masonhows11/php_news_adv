@@ -30,6 +30,17 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                         <h4 class="title">Login In</h4>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
+                                <?php
+                                $messages = flashMessage('register_success');
+                                if (!empty($messages)) : ?>
+                                    <div class="mt-2 alert alert-success text-center" style="font-weight:bold;font-size:1.5rem">
+                                        <strong class="form-text text-success">
+                                            <?= $messages ?>
+                                        </strong>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Enter Adress <span>*</span></label>
                                     <input type="email" name="lname" class="form-control" required="" aria-required="true">

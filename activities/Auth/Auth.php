@@ -44,9 +44,10 @@ class Auth
 
     public function activationMessage($user, $token): string
     {
+        $url = url('activation/'.$token);
         return "<h1>فعال سازس حساب کاربری</h1><br>" .
                "<p style='font-weight: bold'> عزیز برای فعال سازی حساب کاربری خود روی لینک زیر کلیک کنید $user  </p> ".
-               "<div><a style='font-weight: bold' href=''>فعال سازی حساب کابری</a></div>";
+               "<div><a style='font-weight: bold' href='$url'>فعال سازی حساب کابری</a></div>";
     }
 
     private function sendMail($email, $subject, $body, array $attachment = [])
@@ -133,7 +134,9 @@ class Auth
                 $randomToken = $this->random();
                 $activationMessage = $this->activationMessage($request['name'], $randomToken);
                 $result = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
-                if ($result) {
+                 // if email send user register & redirect to login page
+                if ($result) 
+                {
                     $request['verify_token'] = $randomToken;
                     $request['password'] = $this->hash($request['password']);
                     $db->insert('users', array_keys($request), $request);
@@ -154,6 +157,24 @@ class Auth
     {
 
         view('template.auth.login');
+    }
+
+
+    public function activation($token)
+    {
+       $db = new  Database();
+       $user = $db->select("SELECT * FROM users WHERE verify_token = ? AND is_active = 0",[$token])->fetch();
+       if(empty($user)){
+
+           $this->redirect('login');
+
+       }else{
+
+           flashMessage('register_success','حساب کاربری با موفقیت فعال شد');
+           $db->update('users',$user['id'],['is_active'],[1]);
+           $this->redirect('login');
+       }
+
     }
 
 

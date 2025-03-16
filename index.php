@@ -294,6 +294,8 @@ uri('register/store','Auth\Auth','register','POST');
 uri('login','Auth\Auth','login_form');
 uri('login/user','Auth\Auth','login','POST');
 
+uri('activation/{token}','Auth\Auth','activation');
+
 echo "404 - Page not found";
 
 
