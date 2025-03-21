@@ -1,9 +1,6 @@
+<?php $title = 'مدیریت پست ها' ?>
 <?php include(BASE_PATH . '/template/admin/layouts/header.php') ?>
-
 <?php include(BASE_PATH . '/template/admin/layouts/subheader.php') ?>
-
-
-<!--begin::Sidebar-->
 <?php include(BASE_PATH . '/template/admin/layouts/sidebar.php') ?>
 
 <!--end::Sidebar-->

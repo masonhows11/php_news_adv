@@ -217,4 +217,10 @@ class Auth
         }
     }
 
+
+    public function checkAdmin()
+    {
+        
+    }    
+
 }
