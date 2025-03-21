@@ -4,7 +4,8 @@ namespace Admin;
 
 use Database\Database;
 
-class Home
+
+class Home extends AdminBase
 {
 
 
