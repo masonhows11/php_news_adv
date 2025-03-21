@@ -222,15 +222,25 @@ class Auth
         if (isset($_SESSION['auth_user'])) {
             $db = new  Database();
             $user = $db->select('SELECT * FROM users WHERE email = ? ', [$_SESSION['auth_user']])->fetch();
-            if (!empty($user))
-            {
+            if (!empty($user)) {
                 if ($user['permission'] != 'admin') {
                     $this->redirect('');
                 }
-            } else
-            {
+            } else {
                 $this->redirect('');
             }
+        } else {
+            $this->redirect('');
+        }
+    }
+
+    public function logout()
+    {
+        if (isset($_SESSION['auth_user'])) {
+
+            unset($_SESSION['auth_user']);
+            session_unset();
+            $this->redirect('');
         } else {
             $this->redirect('');
         }

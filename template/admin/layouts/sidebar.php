@@ -72,6 +72,10 @@
                         <p>تنظیمات</p>
                     </a>
                 </li>
+                <li class="nav-item"> <a href="<?= url('logout') ?>" class="nav-link"><i class="bi bi-box-arrow-right"></i>
+                        <p>خروج</p>
+                    </a>
+                </li>
 
 
             </ul> <!--end::Sidebar Menu-->

@@ -291,6 +291,8 @@ uri('register/store','Auth\Auth','register','POST');
 uri('login','Auth\Auth','login_form');
 uri('login/user','Auth\Auth','login','POST');
 
+uri('logout','Auth\Auth','logout');
+
 uri('activation/{token}','Auth\Auth','activation');
 
 // front routes
