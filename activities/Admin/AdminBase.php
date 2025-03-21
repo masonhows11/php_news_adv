@@ -1,6 +1,8 @@
 <?php
 
 namespace Admin;
+use Auth\Auth;
+
 class AdminBase
 {
 
@@ -9,6 +11,8 @@ class AdminBase
 
     public function __construct()
     {
+        $auth = new Auth();
+        $auth->checkAdmin();
         $this->currentDomain = CURRENT_DOMAIN;
         $this->basePath = BASE_PATH;
     }

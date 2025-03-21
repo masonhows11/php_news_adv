@@ -201,8 +201,7 @@ class Auth
                 $this->redirectBack();
 
             } else {
-                if (password_verify($request['password'], $user['password']) && $user['is_active'] == 1)
-                {
+                if (password_verify($request['password'], $user['password']) && $user['is_active'] == 1) {
                     $_SESSION['auth_user'] = $user['email'];
                     $this->redirect('');
                     //$this->redirect('admin');
@@ -220,7 +219,21 @@ class Auth
 
     public function checkAdmin()
     {
-        
-    }    
+        if (isset($_SESSION['auth_user'])) {
+            $db = new  Database();
+            $user = $db->select('SELECT * FROM users WHERE email = ? ', [$_SESSION['auth_user']])->fetch();
+            if (!empty($user))
+            {
+                if ($user['permission'] != 'admin') {
+                    $this->redirect('/');
+                }
+            } else
+            {
+                $this->redirect('/');
+            }
+        } else {
+            $this->redirect('/');
+        }
+    }
 
 }
