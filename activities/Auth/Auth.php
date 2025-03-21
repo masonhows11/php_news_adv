@@ -217,7 +217,7 @@ class Auth
     }
 
 
-    public function checkAdmin()
+    public function checkAdmin(): void
     {
         if (isset($_SESSION['auth_user'])) {
             $db = new  Database();
@@ -225,14 +225,14 @@ class Auth
             if (!empty($user))
             {
                 if ($user['permission'] != 'admin') {
-                    $this->redirect('/');
+                    $this->redirect('');
                 }
             } else
             {
-                $this->redirect('/');
+                $this->redirect('');
             }
         } else {
-            $this->redirect('/');
+            $this->redirect('');
         }
     }
 

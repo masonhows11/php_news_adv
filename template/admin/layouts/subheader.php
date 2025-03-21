@@ -3,7 +3,7 @@
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i
                             class="bi bi-list"></i> </a></li>
-            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item d-none d-md-block"><a href="<?= url('') ?>" class="nav-link">صفحه اصلی سایت</a></li>
             <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -95,6 +95,7 @@
                     <span class="d-none d-md-inline">
                         <?php if(isset($user)): ?>
                             <?= $user['name'] ?>
+                            <?= $user['permission'] ?>
                         <?php else: ?>
                             کاربر ادمین
                         <?php endif; ?>
