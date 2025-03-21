@@ -1,3 +1,4 @@
+<?php $title = 'پنل مدیریت' ?>
 <?php include(BASE_PATH.'/template/admin/layouts/header.php') ?>
 
 <?php include(BASE_PATH.'/template/admin/layouts/subheader.php') ?>
