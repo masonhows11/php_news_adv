@@ -3,9 +3,9 @@
 namespace Admin;
 
 use Database\Database;
+require "AdminBase.php";
 
-
-class Home extends AdminBase
+class AdminHome extends AdminBase
 {
 
 

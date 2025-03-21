@@ -5,7 +5,7 @@ namespace Admin;
 
 use database\Database;
 
-require "AdminBase.php";
+//require "AdminBase.php";
 
 
 class AdminCategory extends AdminBase

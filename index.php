@@ -203,7 +203,7 @@ function dd($var)
 }
 
 
-require "activities/Admin/Home.php";
+require "activities/Admin/AdminHome.php";
 require "activities/Admin/AdminCategory.php";
 require "activities/Admin/AdminPosts.php";
 require "activities/Admin/AdminComments.php";
@@ -224,7 +224,7 @@ require "activities/Home.php";
 uri('/','Home','index');
 // uri('home','Home','index');
 
-uri('admin', 'Admin\Home', 'index');
+uri('admin', 'Admin\AdminHome', 'index');
 //// Admin is namespace in AdminCategory class
 ///
 // categories

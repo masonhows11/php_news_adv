@@ -92,25 +92,29 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     <img src="<?= assets('public/admin_assets/assets/img/user2-160x160.jpg') ?>"
                          class="user-image rounded-circle shadow" alt="User Image">
-                    <span class="d-none d-md-inline">
-                        <?php if(isset($user)): ?>
-                            <?= $user['name'] ?>
-                            <?= $user['permission'] ?>
-                        <?php else: ?>
-                            کاربر ادمین
-                        <?php endif; ?>
-                    </span>
+                    <?php if (isset($user)): ?>
+                        <span class="d-none d-md-inline"><?= $user['name'] ?></span>
+                        <span class="d-none d-md-inline">  <?= $user['permission'] ?></span>
+                    <?php else: ?>
+                        <span class="d-none d-md-inline">کاربر ادمین</span>
+                    <?php endif; ?>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                    <li class="user-header text-bg-primary"><img
-                                src="<?= assets('public/admin_assets/assets/img/user2-160x160.jpg') ?>"
-                                class="rounded-circle shadow" alt="User Image">
+                    <li class="user-header text-bg-primary">
+                        <img src="<?= assets('public/admin_assets/assets/img/user2-160x160.jpg') ?>" class="rounded-circle shadow" alt="User Image">
+                        <?php if (isset($user)): ?>
+                            <p>
+                                <?= $user['name'] ?>
+                                <small> <?= $user['permission'] ?> </small>
+                                <small> Member since Nov. 2023 </small>
+                            </p>
+                        <?php else: ?>
                         <p>
-                            Alexander Pierce - Web Developer
-                            <small>Member since Nov. 2023</small>
+                          کاربر ادمین
+                            <small> Member since Nov. 2023 </small>
                         </p>
+                        <?php endif; ?>
                     </li>
-                    >
                     <li class="user-body">
                         <div class="row">
                             <div class="col-4 text-center"><a href="#">Followers</a></div>
