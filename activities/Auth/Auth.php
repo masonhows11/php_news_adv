@@ -301,9 +301,15 @@ class Auth
         }
     }
 
-    public function changePasswordForm($request)
+    public function changePasswordForm($token)
     {
-        // dd($request);
+        view('template.auth.reset_password');
+    }
+
+
+    public function resetPassword($request)
+    {
+        # code...
     }
 
 }

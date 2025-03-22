@@ -302,10 +302,12 @@ uri('login/user','Auth\Auth','login','POST');
 
 uri('logout','Auth\Auth','logout');
 
+// change password
 uri('forgot_password','Auth\Auth','forgotPassword');
 uri('forgot_request','Auth\Auth','forgotRequest','POST');
 
 uri('change_password/{token}','Auth\Auth','changePasswordForm');
+uri('reset_password/{token}','Auth\Auth','resetPassword','POST');
 
 uri('activation/{token}','Auth\Auth','activation');
 
