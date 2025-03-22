@@ -1,10 +1,11 @@
 <?php
-include_once(BASE_PATH."/template/app/layouts/header.php");
+include_once(BASE_PATH . "/template/app/layouts/header.php");
 ?>
 <body>
 <main class="main-section">
 
-    <div class="breadcrumb-section" style="background-image: url(../../public/front_assets/img/section-img/about-us/about-bg.png);">
+    <div class="breadcrumb-section"
+         style="background-image: url(../../public/front_assets/img/section-img/about-us/about-bg.png);">
         <div class="container custom-container">
             <div class="row">
                 <div class="col-lg-12">
@@ -29,21 +30,23 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                     <form action="<?= url('forgot_request') ?>" method="post" class="contact-page-form login">
                         <h4 class="title">Forgot Password</h4>
                         <div class="row">
-                           <!-- <div class="col-md-12 col-sm-12">
+                            <div class="col-md-12 col-sm-12">
                                 <?php
-/*                                $messages = flashMessage('register_success');
-                                if (!empty($messages)) : */?>
-                                    <div class="mt-2 alert alert-success text-center" style="font-weight:bold;font-size:1.5rem">
+                                $messages = flashMessage('forgot_error');
+                                if (!empty($messages)) : ?>
+                                    <div class="mt-2 alert alert-success text-center"
+                                         style="font-weight:bold;font-size:1.5rem">
                                         <strong class="form-text text-success">
-                                            <?php /*= $messages */?>
+                                            <?php echo $messages  ?>
                                         </strong>
                                     </div>
-                                <?php /*endif; */?>
-                            </div>-->
+                                <?php endif; ?>
+                            </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Email<span>*</span></label>
-                                    <input type="email" name="email" class="form-control" required="" aria-required="true">
+                                    <input type="email" name="email" class="form-control" required=""
+                                           aria-required="true">
                                 </div>
                             </div>
 
@@ -54,13 +57,14 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                         </div>
                     </form>
 
-                    <p class="text-center mt-4">If you don't have an account? <a href="<?= url('register') ?>">Sign up</a></p>
+                    <p class="text-center mt-4">If you don't have an account? <a href="<?= url('register') ?>">Sign
+                            up</a></p>
                 </div>
             </div>
         </div>
     </section>
 </main>
 <?php
-include_once(BASE_PATH."/template/app/layouts/footer.php");
+include_once(BASE_PATH . "/template/app/layouts/footer.php");
 ?>
 

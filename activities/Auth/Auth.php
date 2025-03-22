@@ -262,7 +262,11 @@ class Auth
 
     public function forgotRequest($request)
     {
-       
+        if(empty($request['email']))
+        {
+            flashMessage('forgot_error','ایمیل وارد شده وجود ندارد');
+            $this->redirectBack();
+        }
     }
 
 }
