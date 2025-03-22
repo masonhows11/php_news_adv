@@ -264,7 +264,10 @@ class Auth
     {
         if(empty($request['email']))
         {
-            flashMessage('forgot_error','ایمیل وارد شده وجود ندارد');
+            flashMessage('forgot_error','ایمیل الزامی می باشد');
+            $this->redirectBack();
+        }elseif (!filter_var($request['email'],FILTER_VALIDATE_EMAIL)){
+            flashMessage('forgot_error','ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
         }
     }

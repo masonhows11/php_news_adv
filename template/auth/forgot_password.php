@@ -34,9 +34,9 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                 <?php
                                 $messages = flashMessage('forgot_error');
                                 if (!empty($messages)) : ?>
-                                    <div class="mt-2 alert alert-success text-center"
+                                    <div class="mt-2 alert alert-warning text-center"
                                          style="font-weight:bold;font-size:1.5rem">
-                                        <strong class="form-text text-success">
+                                        <strong class="form-text text-dark">
                                             <?php echo $messages  ?>
                                         </strong>
                                     </div>
@@ -45,8 +45,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Email<span>*</span></label>
-                                    <input type="email" name="email" class="form-control" required=""
-                                           aria-required="true">
+                                    <input type="email" name="email" class="form-control" aria-required="true">
                                 </div>
                             </div>
 
