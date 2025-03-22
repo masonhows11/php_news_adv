@@ -255,4 +255,14 @@ class Auth
         }
     }
 
+    public function forgotPassword(): void
+    {
+        view('template.auth.forgot_password');
+    }
+
+    public function forgotRequest($request)
+    {
+        dd($request);
+    }
+
 }

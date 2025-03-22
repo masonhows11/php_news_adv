@@ -302,6 +302,9 @@ uri('login/user','Auth\Auth','login','POST');
 
 uri('logout','Auth\Auth','logout');
 
+uri('forgot_password','Auth\Auth','forgotPassword');
+uri('forgot_request','Auth\Auth','forgotRequest','POST');
+
 uri('activation/{token}','Auth\Auth','activation');
 
 // front routes
