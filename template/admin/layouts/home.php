@@ -118,7 +118,7 @@
                     </table>
                 </div>
 
-                <div class="col-sm-3 table-responsive">
+                <div class="col-sm-3">
                     <h5>دیدگا ها</h5>
                     <table class="table ">
                         <thead>
@@ -133,8 +133,8 @@
                         <tr>
                             <td>John</td>
                             <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
+                            <td>Doe</td>
+                            <td>Doe</td>
                         </tr>
                         </tbody>
                     </table>
