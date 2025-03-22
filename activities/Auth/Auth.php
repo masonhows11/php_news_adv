@@ -303,13 +303,14 @@ class Auth
 
     public function changePasswordForm($token)
     {
-        view('template.auth.reset_password');
+        $token = $token;
+        require_once(BASE_PATH.'/template/auth/reset_password.php');
     }
 
 
-    public function resetPassword($request)
+    public function resetPassword($request,$token)
     {
-        # code...
+       print_r([$token,$request]);
     }
 
 }

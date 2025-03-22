@@ -27,7 +27,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
             <div class="row justify-content-center">
                 <div class="col-lg-6">
 
-                    <form action="<?= url('forgot_request') ?>" method="post" class="contact-page-form login">
+                    <form action="<?= url('reset_password/'.$token) ?>" method="post" class="contact-page-form login">
                         <h4 class="title">Reset Password</h4>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
