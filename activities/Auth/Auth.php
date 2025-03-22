@@ -262,7 +262,7 @@ class Auth
 
     public function forgotRequest($request)
     {
-        dd($request);
+       
     }
 
 }
