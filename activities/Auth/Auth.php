@@ -313,7 +313,7 @@ class Auth
         $pass = $request['password'];
 
         // dd($pass);
-        if ( !isset($request['password']) || strlen($request['password']) < 8 ) {
+        if (!isset($request['password']) || strlen($request['password']) < 8) {
 
             flashMessage('change_error',
                 'رمز عبور وارد شده باید بیشتر از 8 کاراکتر باشد');
@@ -330,22 +330,14 @@ class Auth
 
             } else {
 
-                if ($user['forgot_token_expire'] < date('Y-m-d H:i:s'))
-                {
-
+                if ($user['forgot_token_expire'] < date('Y-m-d H:i:s')) {
                     flashMessage('change_error', 'توکن ارسال شده معتبر نمی باشد');
                     $this->redirectBack();
                 }
-                if ($user)
-                {
-                    $db->update('users', $user['id'], ['password'], [$this->hash($pass)]);
-                    $this->redirect('login');
 
-                }else{
+                $db->update('users', $user['id'], ['password'], [$this->hash($pass)]);
+                $this->redirect('login');
                     
-                    flashMessage('change_error', 'کاربری یافت نشد');
-                    $this->redirectBack();
-                }
             }
 
         }
