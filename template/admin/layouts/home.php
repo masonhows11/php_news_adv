@@ -39,6 +39,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body d-flex flex-column">
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body d-flex flex-column">
@@ -57,6 +59,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body d-flex flex-column">
@@ -72,16 +75,17 @@
                 </div>
 
             </div>
-            <div class="row mt-5 gap-3">
 
-                <div class="col">
+            <div class="row mt-4 gap-3">
+
+                <div class="col-sm-3">
                     <h5 class="h5">مقالات پر بازدید</h5>
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
+                            <th>#</th>
+                            <th>عنوان</th>
+                            <th>بازدید</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -94,14 +98,14 @@
                     </table>
                 </div>
 
-                <div class="col">
+                <div class="col-sm-3">
                     <h5>بیشترین پست های نظر داده شده</h5>
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
+                            <th>#</th>
+                            <th>عنوان</th>
+                            <th>دیدگاه</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -114,20 +118,22 @@
                     </table>
                 </div>
 
-                <div class="col">
+                <div class="col-sm-3 table-responsive">
                     <h5>دیدگا ها</h5>
-                    <table class="table">
+                    <table class="table ">
                         <thead>
                         <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
+                            <th>#</th>
+                            <th>نام کاربر</th>
+                            <th>دیدگاه</th>
+                            <th>وضعیت</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td>John</td>
                             <td>Doe</td>
+                            <td>john@example.com</td>
                             <td>john@example.com</td>
                         </tr>
                         </tbody>
