@@ -274,6 +274,11 @@ class Auth
             if (empty($user)){
                 flashMessage('forgot_error', 'کاربری با ایمیل وارد شده وجود ندارد');
                 $this->redirectBack();
+            }else{
+
+                $randomToken = $this->random();
+                $activationMessage = $this->activationMessage($request['name'], $randomToken);
+                $result = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
             }
         }
     }
