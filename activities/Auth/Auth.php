@@ -234,7 +234,16 @@ class Auth
         }
     }
 
-    public function logout()
+    public function checkAuth(): bool
+    {
+        if (isset($_SESSION['auth_user'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function logout(): void
     {
         if (isset($_SESSION['auth_user'])) {
 

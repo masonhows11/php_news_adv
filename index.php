@@ -94,6 +94,14 @@ function view(string $path)
     include_once(BASE_PATH.'/'."$path".'.php');
 }
 
+function checkAuth(): bool
+{
+    if (isset($_SESSION['auth_user'])) {
+        return true;
+    } else {
+        return false;
+    }
+}
 function methodType()
 {
     return $_SERVER['REQUEST_METHOD'];
@@ -114,6 +122,7 @@ function displayError($displayError): void
         error_reporting(0);
     }
 }
+
 
 
 displayError(DISPLAY_ERROR);

@@ -36,9 +36,15 @@
                             <li class="menu-has-child">
                                 <a class="" href="<?= url('/') ?>">Home</a>
                             </li>
-                            <li>
-                                <a href="<?= url('login') ?>">login</a>
-                            </li>
+                            <?php if(checkAuth()):  ?>
+                                <li>
+                                    <a href="<?= url('logout') ?>">logout</a>
+                                </li>
+                            <?php else: ?>
+                                <li>
+                                    <a href="<?= url('login') ?>">login</a>
+                                </li>
+                            <?php endif; ?>
                             <li>
                                 <a href="business.html">Archive</a>
                             </li>
