@@ -208,7 +208,7 @@ class Auth
                     //$this->redirect('admin');
 
                 } else {
-                    flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد یا فال نشده است');
+                    flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد یا فعال نشده است');
                     $this->redirect('login');
                 }
 
@@ -260,7 +260,7 @@ class Auth
         view('template.auth.forgot_password');
     }
 
-    public function forgotRequest($request)
+    public function forgotRequest($request): void
     {
         if (empty($request['email'])) {
 
