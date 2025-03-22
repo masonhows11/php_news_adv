@@ -305,6 +305,8 @@ uri('logout','Auth\Auth','logout');
 uri('forgot_password','Auth\Auth','forgotPassword');
 uri('forgot_request','Auth\Auth','forgotRequest','POST');
 
+uri('change_password/{token}','Auth\Auth','changePasswordForm');
+
 uri('activation/{token}','Auth\Auth','activation');
 
 // front routes

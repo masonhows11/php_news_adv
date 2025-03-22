@@ -50,6 +50,14 @@ class Auth
             "<div><a style='font-weight: bold' href='$url'>فعال سازی حساب کابری</a></div>";
     }
 
+    public function forgotMessage($user,$token) : string
+    {
+        $url = url('change_password/' . $token);
+        return "<h1>فراموشی رمز عبور</h1><br>" .
+            "<p style='font-weight: bold'> عزیز برای تغییر رمز عبور حساب کاربری خود روی لینک زیر کلیک کنید $user  </p> " .
+            "<div><a style='font-weight: bold' href='$url'>تغییر رمز عیور</a></div>";
+    }
+
     private function sendMail($email, $subject, $body, array $attachment = [])
     {
         $mail = new PHPMailer(true);
@@ -277,10 +285,25 @@ class Auth
             }else{
 
                 $randomToken = $this->random();
-                $activationMessage = $this->activationMessage($request['name'], $randomToken);
-                $result = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
+                $forgotMessage = $this->forgotMessage($request['name'], $randomToken);
+                $result = $this->sendMail($request['email'], 'بازیابی رمز عبور', $forgotMessage);
+                if($result){
+                    $db = new  Database();
+                    // add 15 minutes to forgot_token_expire
+                    $user = $db->update('users',$user['id'],['forgot_token','forgot_token_expire'],
+                        [$randomToken,date('Y-m-d H:i:s',strtotime('+15 minutes'))]);
+                    $this->redirect('login');
+                }else{
+                    flashMessage('forgot_error', 'ارسال ایمیل انجام نشد');
+                    $this->redirectBack();
+                }
             }
         }
+    }
+
+    public function changePasswordForm($request)
+    {
+        dd($request);
     }
 
 }
