@@ -21,6 +21,9 @@ class AdminHome extends AdminBase
         $comments_count = $db->select('SELECT COUNT(*) FROM comments')->fetch();
         $unseen_count = $db->select('SELECT COUNT(*) FROM comments WHERE status = "unseen"')->fetch();
         $approved_count = $db->select('SELECT COUNT(*) FROM comments WHERE status = "approved"')->fetch();
+
+        $most_viewed_posts = $db->select('SELECT * FROM posts ORDER BY views DESC LIMIT 0,5')->fetchAll();
+        print_r($most_viewed_posts);
         require_once (BASE_PATH.'/template/admin/layouts/home.php');
     }
     
