@@ -262,13 +262,19 @@ class Auth
 
     public function forgotRequest($request)
     {
-        if(empty($request['email']))
-        {
-            flashMessage('forgot_error','ایمیل الزامی می باشد');
+        if (empty($request['email'])) {
+            flashMessage('forgot_error', 'ایمیل الزامی می باشد');
             $this->redirectBack();
-        }elseif (!filter_var($request['email'],FILTER_VALIDATE_EMAIL)){
-            flashMessage('forgot_error','ایمیل وارد شده معتبر نمی باشد');
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+            flashMessage('forgot_error', 'ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
+        } else {
+            $db = new  Database();
+            $user = $db->select('SELECT * FROM users WHERE email = ? ', [$request['email']])->fetch();
+            if (empty($user)){
+                flashMessage('forgot_error', 'کاربری با ایمیل وارد شده وجود ندارد');
+                $this->redirectBack();
+            }
         }
     }
 
