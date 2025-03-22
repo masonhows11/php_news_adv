@@ -326,6 +326,13 @@ class Auth
             $db   = new Database();
             $user = $db->select('SELECT * FROM users WHERE forgot_token = ? ', [$token])->fetch();
 
+            if(empty($user))
+            {
+                flashMessage('change_error','کاربری یافت نشد');
+                $this->redirectBack();
+    
+            }
+
         }
        
     }
