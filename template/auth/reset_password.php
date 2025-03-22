@@ -44,8 +44,8 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label>Email<span>*</span></label>
-                                    <input type="email" name="email" class="form-control" aria-required="true">
+                                    <label>Password<span>*</span></label>
+                                    <input type="text" name="password" class="form-control" aria-required="true">
                                 </div>
                             </div>
 

@@ -310,7 +310,24 @@ class Auth
 
     public function resetPassword($request,$token)
     {
-       print_r([$token,$request]);
+
+        $pass = $request['password'];
+
+        // dd($pass);
+        if(!isset($pass) && strlen($pass < 8))
+        {
+
+            flashMessage('change_error', 
+            'رمز عبور وارد شده باید بیشتر از 8 کاراکتر باشد');
+            $this->redirectBack();
+
+        } else {
+
+            $db   = new Database();
+            $user = $db->select('SELECT * FROM users WHERE forgot_token = ? ', [$token])->fetch();
+
+        }
+       
     }
 
 }
