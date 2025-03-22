@@ -330,6 +330,8 @@ class Auth
 
             } else {
 
+                // set timezone is very important
+                date_default_timezone_set('Asia/Tehran');
                 if ($user['forgot_token_expire'] < date('Y-m-d H:i:s')) {
                     flashMessage('change_error', 'توکن ارسال شده معتبر نمی باشد');
                     $this->redirectBack();
@@ -337,7 +339,7 @@ class Auth
 
                 $db->update('users', $user['id'], ['password'], [$this->hash($pass)]);
                 $this->redirect('login');
-                    
+
             }
 
         }
