@@ -1,4 +1,5 @@
 <?php
+
 namespace Auth;
 
 use Database\Database;
@@ -15,7 +16,7 @@ class Auth
     public function __construct()
     {
         $this->currentDomain = CURRENT_DOMAIN;
-        $this->basePath      = BASE_PATH;
+        $this->basePath = BASE_PATH;
     }
 
     protected function redirect($url): void
@@ -60,34 +61,34 @@ class Auth
     {
         $mail = new PHPMailer(true);
 
-                                               //Server settings
+        //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
-        $mail->CharSet   = 'UTF-8';
+        $mail->CharSet = 'UTF-8';
         $mail->isSMTP();                 //Send using SMTP
-        $mail->Host     = MAIL_HOST;     //Set the SMTP server to send through
+        $mail->Host = MAIL_HOST;     //Set the SMTP server to send through
         $mail->SMTPAuth = SMTP_AUTH;     //Enable SMTP authentication
         $mail->Username = MAIL_USERNAME; //SMTP username
         $mail->Password = MAIL_PASS;     //SMTP password
-                                         //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->SMTPSecure = 'tls';
-        $mail->Port       = MAIL_PORT; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port = MAIL_PORT; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom(SENDER_MAIL, SENDER_NAME);
         $mail->addAddress('mason.hows11@gmail.com', 'Mason hows'); //Add a recipient
-                                                                   //            $mail->addAddress('ellen@example.com');               //Name is optional
-                                                                   //            $mail->addReplyTo('info@example.com', 'Information');
-                                                                   //            $mail->addCC('cc@example.com');
-                                                                   //            $mail->addBCC('bcc@example.com');
+        //            $mail->addAddress('ellen@example.com');               //Name is optional
+        //            $mail->addReplyTo('info@example.com', 'Information');
+        //            $mail->addCC('cc@example.com');
+        //            $mail->addBCC('bcc@example.com');
 
         //Attachments
         //      $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
         //      $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
-                             //Content
+        //Content
         $mail->isHTML(true); //Set email format to HTML
         $mail->Subject = $subject;
-        $mail->Body    = $body;
+        $mail->Body = $body;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         try {
             $mail->send();
@@ -118,28 +119,28 @@ class Auth
             flashMessage('register_error', 'رمز عبور وارد شده حداقل 8 کاراکتر باید باشد');
             $this->redirectBack();
 
-        } elseif (! filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
 
             flashMessage('register_error', 'ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
 
         } else {
 
-            $db   = new Database();
+            $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ?', [$request['email']])->fetch();
 
-            if (! empty($user)) {
+            if (!empty($user)) {
                 flashMessage('register_error', 'ایمیل وارد شده تکراری  است');
                 $this->redirectBack();
 
             } else {
-                $randomToken       = $this->random();
+                $randomToken = $this->random();
                 $activationMessage = $this->activationMessage($request['name'], $randomToken);
-                $result            = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
+                $result = $this->sendMail($request['email'], 'فعال سازی حساب کاربری', $activationMessage);
                 // if email send user register & redirect to login page
                 if ($result) {
                     $request['verify_token'] = $randomToken;
-                    $request['password']     = $this->hash($request['password']);
+                    $request['password'] = $this->hash($request['password']);
                     $db->insert('users', array_keys($request), $request);
                     $this->redirect('login');
                 } else {
@@ -161,7 +162,7 @@ class Auth
 
     public function activation($token)
     {
-        $db   = new Database();
+        $db = new Database();
         $user = $db->select("SELECT * FROM users WHERE verify_token = ? AND is_active = 0", [$token])->fetch();
         if (empty($user)) {
 
@@ -188,13 +189,13 @@ class Auth
             flashMessage('login_error', 'رمز عبور وارد شده حداقل 8 کاراکتر باید باشد');
             $this->redirectBack();
 
-        } elseif (! filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
 
             flashMessage('login_error', 'ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
 
         } else {
-            $db   = new Database();
+            $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ? ', [$request['email']])->fetch();
             if (empty($user)) {
                 flashMessage('login_error', 'کاربری با ایمیل وارد شده وجود ندارد');
@@ -219,9 +220,9 @@ class Auth
     public function checkAdmin(): void
     {
         if (isset($_SESSION['auth_user'])) {
-            $db   = new Database();
+            $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ? ', [$_SESSION['auth_user']])->fetch();
-            if (! empty($user)) {
+            if (!empty($user)) {
                 if ($user['permission'] != 'admin') {
                     $this->redirect('');
                 }
@@ -266,14 +267,14 @@ class Auth
             flashMessage('forgot_error', 'ایمیل الزامی می باشد');
 
             $this->redirectBack();
-        } elseif (! filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
 
             flashMessage('forgot_error', 'ایمیل وارد شده معتبر نمی باشد');
             $this->redirectBack();
 
         } else {
 
-            $db   = new Database();
+            $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE email = ? ', [$request['email']])->fetch();
 
             if (empty($user)) {
@@ -283,15 +284,15 @@ class Auth
 
             } else {
 
-                $randomToken   = $this->random();
+                $randomToken = $this->random();
                 $forgotMessage = $this->forgotMessage($user['name'], $randomToken);
-                $result        = $this->sendMail($request['email'], 'بازیابی رمز عبور', $forgotMessage);
+                $result = $this->sendMail($request['email'], 'بازیابی رمز عبور', $forgotMessage);
                 if ($result) {
                     $db = new Database();
                     date_default_timezone_set('Asia/Tehran');
                     // add 15 minutes to forgot_token_expire
                     $user = $db->update('users', $user['id'], ['forgot_token', 'forgot_token_expire'],
-                        [$randomToken, date('Y-m-d H:i:s', strtotime('+15 minutes'))]);
+                        [$randomToken, date('Y-m-d H:i:s', strtotime('+3 minutes'))]);
                     $this->redirect('login');
                 } else {
                     flashMessage('forgot_error', 'ارسال ایمیل انجام نشد');
@@ -301,40 +302,48 @@ class Auth
         }
     }
 
-    public function changePasswordForm($token)
+    public function changePasswordForm($token): void
     {
-        $token = $token;
-        require_once(BASE_PATH.'/template/auth/reset_password.php');
+        require_once BASE_PATH . '/template/auth/reset_password.php';
     }
 
-
-    public function resetPassword($request,$token)
+    public function resetPassword($request, $token): void
     {
 
         $pass = $request['password'];
 
         // dd($pass);
-        if(!isset($pass) && strlen($pass < 8))
-        {
+        if ( !isset($request['password']) || strlen($request['password']) < 8 ) {
 
-            flashMessage('change_error', 
-            'رمز عبور وارد شده باید بیشتر از 8 کاراکتر باشد');
+            flashMessage('change_error',
+                'رمز عبور وارد شده باید بیشتر از 8 کاراکتر باشد');
             $this->redirectBack();
 
         } else {
 
-            $db   = new Database();
+            $db = new Database();
             $user = $db->select('SELECT * FROM users WHERE forgot_token = ? ', [$token])->fetch();
 
-            if(empty($user))
-            {
-                flashMessage('change_error','کاربری یافت نشد');
+            if (empty($user)) {
+                flashMessage('change_error', 'کاربری یافت نشد');
                 $this->redirectBack();
-    
+
+            } else {
+                if ($user['forget_token_expire'] < date('Y-m-d H:i:s')) {
+                    flashMessage('change_error', 'توکن ارسال شده معتبر نمی باشد');
+                    $this->redirectBack();
+                }
+                if ($user) {
+                    $db->update('users', $user['id'], ['password'], [$this->hash($pass)]);
+                    $this->redirect('login');
+                }else{
+                    flashMessage('change_error', 'کاربری یافت نشد');
+                    $this->redirectBack();
+                }
             }
 
         }
-       
+
     }
 
 }
