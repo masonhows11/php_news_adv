@@ -329,14 +329,20 @@ class Auth
                 $this->redirectBack();
 
             } else {
-                if ($user['forget_token_expire'] < date('Y-m-d H:i:s')) {
+
+                if ($user['forgot_token_expire'] < date('Y-m-d H:i:s'))
+                {
+
                     flashMessage('change_error', 'توکن ارسال شده معتبر نمی باشد');
                     $this->redirectBack();
                 }
-                if ($user) {
+                if ($user)
+                {
                     $db->update('users', $user['id'], ['password'], [$this->hash($pass)]);
                     $this->redirect('login');
+
                 }else{
+                    
                     flashMessage('change_error', 'کاربری یافت نشد');
                     $this->redirectBack();
                 }
