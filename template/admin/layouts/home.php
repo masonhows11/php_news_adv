@@ -115,7 +115,7 @@
                             <tr>
                                 <td><?= $item['id'] ?></td>
                                 <td><?= $item['title'] ?></td>
-                                <td><?= $item['comments_count'] ?></td>
+                                <td><span class="badge text-bg-info"><?= $item['comments_count'] ?></span></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -128,18 +128,23 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>نام کاربر</th>
-                            <th>دیدگاه</th>
                             <th>وضعیت</th>
+                            <th>دیدگاه</th>
+                            <th>نام کاربر</th>
+
+
                         </tr>
                         </thead>
                         <tbody>
+
+                        <?php foreach ($last_comments as $comment): ?>
                         <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>Doe</td>
-                            <td>Doe</td>
+                            <td><?= $comment['id'] ?></td>
+                            <td><?= $comment['status'] ?></td>
+                            <td><?= $comment['comment'] ?></td>
+                            <td><?= $comment['name'] ?></td>
                         </tr>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
