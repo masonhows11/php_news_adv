@@ -122,7 +122,7 @@
                     </table>
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-sm-3 table-responsive">
                     <h5>دیدگا ها</h5>
                     <table class="table ">
                         <thead>
