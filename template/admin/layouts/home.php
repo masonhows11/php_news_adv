@@ -89,11 +89,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php foreach ($most_viewed_posts  as $item): ?>
                         <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
+                            <td><?= $item['id'] ?></td>
+                            <td><?= $item['title'] ?></td>
+                            <td><?= $item['views'] ?></td>
                         </tr>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -109,11 +111,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                        </tr>
+                        <?php foreach ($post_comments  as $item): ?>
+                            <tr>
+                                <td><?= $item['id'] ?></td>
+                                <td><?= $item['title'] ?></td>
+                                <td><?= $item['comments_count'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
