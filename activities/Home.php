@@ -19,7 +19,7 @@ class Home
     {
         $db = new \Database\Database();
         $setting = $db->select('SELECT * FROM settings')->fetch();
-        view('template.app.index',['setting'=>$setting]);
+        view('template.app.index',['setting'=>$setting , 'list' => ['dsd','sdss','sdsd']]);
     }
 
     #[NoReturn] protected function redirect($url): void

@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title></title>
+
+    <?php if (isset($title)): ?>
+        <title><?= $title ?></title>
+    <?php else: ?>
+        <title>بدون عنون</title>
+    <?php endif; ?>
     <!-- favicon -->
     <link rel="icon" href="<?= assets('public/front_assets/img/favicon.png') ?>" sizes="20x20" type="image/png" />
     <!-- animate -->
