@@ -315,6 +315,12 @@ uri('activation/{token}','Auth\Auth','activation');
 uri('about_us','Home','aboutUs');
 uri('contact_us','Home','contactUs');
 
+uri('post/{post}','Home','show');
+
+uri('post/{category}','Home','category');
+
+uri('comment_store','Home','commentStore','POST');
+
 echo "404 - Page not found";
 
 

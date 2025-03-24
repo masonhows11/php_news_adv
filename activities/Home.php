@@ -20,7 +20,7 @@ class Home extends \Admin\AdminBase
     }
 
 
-    public function store_comment($request)
+    public function commentStore($request)
     {
 
     }
