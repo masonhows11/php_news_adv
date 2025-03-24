@@ -91,9 +91,13 @@ function url($path): string
 function view(string $path,$data = []): void
 {
     // می خواهیم آرایه را با همان نام به فایل مورد نظرمون پاس بدیم
+    //    $my_array = array("a" => "Cat","b" => "Dog", "c" => "Horse");
+    //    extract($my_array);
+    //    echo $a;
 
     $array_data = $data;
     extract($array_data);
+    echo $setting['title'];
     $path = str_replace('.','/',$path);
     include_once(BASE_PATH.'/'."$path".'.php');
 }
