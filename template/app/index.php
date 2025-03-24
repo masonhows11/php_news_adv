@@ -20,6 +20,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
     <section class="latest-news-section style-02">
         <div class="container custom-container-02">
             <div class="row">
+
                 <div class="col-lg-3 col-md-6">
                     <div class="top-sticky-wrapper">
                         <div class="theme-heading-title">
@@ -116,10 +117,13 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6 col-md-6">
+
                     <div class="theme-heading-title">
                         <div class="title">Latest News</div>
                     </div>
+
                     <div class="image-box-item-four style-01">
                         <div class="thumbnail">
                             <img src="../../public/front_assets/img/section-img/news/news-08.png" alt="">
@@ -148,7 +152,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
-                    <div class="image-box-item-four style-01">
+                    
+                   <!-- <div class="image-box-item-four style-01">
                         <div class="thumbnail">
                             <img src="../../public/front_assets/img/section-img/news/news-09.png" alt="">
                         </div>
@@ -287,8 +292,9 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
+
                 <div class="col-lg-3">
                     <div class="top-sticky-wrapper">
                         <div class="theme-heading-title">
@@ -474,9 +480,11 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
 
     <section class="latest-videos-section">
         <div class="container custom-container-02">
+
             <div class="theme-heading-title">
                 <div class="title">Latest Videos</div>
             </div>
+
             <div class="video-slider-wrap">
                 <div class="video-slider-one">
                     <div class="image-box-item-five bg-image-02" style="background-image: url(../../public/front_assets/img/section-img/videos/videos-01.png);">
