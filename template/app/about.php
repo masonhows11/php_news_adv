@@ -38,7 +38,7 @@
 
 
 
-        <div class="breadcrumb-section" style="background-image: url(<?= url('front_assets/img/section-img/about-us/about-bg.png') ?>) ;">
+        <div class="breadcrumb-section" style="background-image: url('<?php echo assets('public/front_assets/img/section-img/about-us/about-bg.png') ?>') ">
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-lg-12">
