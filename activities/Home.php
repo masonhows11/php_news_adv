@@ -1,12 +1,28 @@
 <?php
 
-class Home
+class Home extends \Admin\AdminBase
 {
 
     public function index()
     {
 
         view('template.app.index');
+    }
+
+    public function show($post)
+    {
+
+    }
+
+    public function category($category)
+    {
+
+    }
+
+
+    public function store_comment($request)
+    {
+
     }
 
     public function aboutUs()
