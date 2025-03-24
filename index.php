@@ -88,8 +88,9 @@ function url($path): string
 
 }
 
-function view(string $path)
+function view(string $path,array $data = [])
 {
+    extract(['data' => $data]);
     $path = str_replace('.','/',$path);
     include_once(BASE_PATH.'/'."$path".'.php');
 }

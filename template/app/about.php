@@ -38,6 +38,7 @@
 
 
         <div class="breadcrumb-section" style="background-image: url(assets/img/section-img/about-us/about-bg.png);">
+            <?= print_r($data) ?>
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -92,7 +93,7 @@
 
 
         <!-- Team Section Start Here -->
-        <section class="team-section-area">
+      <!--  <section class="team-section-area">
             <div class="container custom-container">
                 <div class="theme-heading-title desktop-center">
                     <h6 class="subtitle">Our Team</h6>
@@ -155,11 +156,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- Team Section End Here -->
 
         <!-- Newslatter Section Start Here -->
-        <div class="news-latter-section style-01 bg-image" style="background-image: url(assets/img/section-img/cta/cta-bg.png);">
+       <!-- <div class="news-latter-section style-01 bg-image" style="background-image: url(assets/img/section-img/cta/cta-bg.png);">
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -179,7 +180,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Newslatter Section End Here -->
     </main>
     <!-- Main Section End Here -->

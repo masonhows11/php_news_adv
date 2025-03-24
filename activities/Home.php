@@ -25,12 +25,13 @@ class Home extends \Admin\AdminBase
 
     }
 
-    public function aboutUs()
+    public function aboutUs(): void
     {
-        view('template.app.about');
+
+        view('template.app.about',['hh',222,'dddd']);
     }
 
-    public function contactUs()
+    public function contactUs(): void
     {
         view('template.app.contact');
     }
