@@ -17,7 +17,9 @@ class Home
     }
     public function index(): void
     {
-        view('template.app.index');
+        $db = new \Database\Database();
+        $setting = $db->select('SELECT * FROM settings')->fetch();
+        view('template.app.index',['setting'=>$setting]);
     }
 
     #[NoReturn] protected function redirect($url): void
