@@ -1,5 +1,7 @@
 <?php
 $title = $setting['title'];
+$description = $setting['description'] ?? '';
+$keywords = $setting['keywords'] ? str_replace('-',',',$setting['keywords']) : '' ;
 include_once(BASE_PATH."/template/app/layouts/header.php");
 ?>
 <body>

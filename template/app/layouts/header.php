@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="John Doe">
+    <meta name="description" content="<?= $description ?>">
+    <meta name="keywords" content="<?= $keywords ?>">
+    <meta name="author" content="<?= $title ?? '' ?>">
     <?php if (isset($title)): ?>
         <title><?= $title ?></title>
     <?php else: ?>
