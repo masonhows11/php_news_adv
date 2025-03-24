@@ -1,6 +1,5 @@
 <?php
-$title = $array_data['setting']['title'];
-
+$title = $setting['title'];
 include_once(BASE_PATH."/template/app/layouts/header.php");
 ?>
 <body>

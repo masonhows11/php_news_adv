@@ -97,7 +97,6 @@ function view(string $path,$data = []): void
 
     $array_data = $data;
     extract($array_data);
-    echo $setting['title'];
     $path = str_replace('.','/',$path);
     include_once(BASE_PATH.'/'."$path".'.php');
 }
