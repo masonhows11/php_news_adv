@@ -90,6 +90,7 @@ function url($path): string
 
 function view(string $path,$data = []): void
 {
+    // می خواهیم آرایه را با همان نام به فایل مورد نظرمون پاس بدیم
 
     $array_data = $data;
     extract($array_data);

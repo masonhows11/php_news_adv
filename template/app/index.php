@@ -1,5 +1,5 @@
 <?php
-$title = 'خانه';
+$title = $array_data['setting']['title'];
 
 include_once(BASE_PATH."/template/app/layouts/header.php");
 ?>
