@@ -88,7 +88,7 @@ function url($path): string
 
 }
 
-function view(string $path,array $data = [])
+function view(string $path,array $data = []): void
 {
     extract(['data' => $data]);
     $path = str_replace('.','/',$path);
@@ -232,11 +232,11 @@ require "activities/Home.php";
 
 // home/index route
 uri('/','Home','index');
-// uri('home','Home','index');
+
 
 uri('admin', 'Admin\AdminHome', 'index');
 //// Admin is namespace in AdminCategory class
-///
+
 // categories
 uri('admin/category', 'Admin\AdminCategory', 'index');
 
