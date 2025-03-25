@@ -36,8 +36,17 @@ class Home
         (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
         FROM posts ORDER BY created_at DESC LIMIT 0,6')->fetchAll();
 
+        $banner = $db->select('SELECT * FROM banners  LIMIT 0,1')->fetch();
+
+        $mostVisited = $db->select('SELECT posts.*,
+        (SELECT COUNT(*) FROM comments WHERE comments.post_id = posts.id) AS comments_count ,
+        (SELECT name FROM users WHERE users.id = posts.user_id) AS user_name,
+        (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
+        FROM posts ORDER BY views DESC LIMIT 0,3')->fetchAll();
+
         view('template.app.index',['setting'=>$setting , 'menus' => $menus ,
-            'topSelectedPosts' => $topSelectedPosts ,'breakingNews' => $breakingNews ,'lastNews' => $lastNews]);
+            'topSelectedPosts' => $topSelectedPosts ,'breakingNews' => $breakingNews ,
+            'lastNews' => $lastNews , 'banner' => $banner , 'mostVisited' => $mostVisited ]);
     }
 
     #[NoReturn] protected function redirect($url): void

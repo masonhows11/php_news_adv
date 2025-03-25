@@ -33,15 +33,15 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                     <!-- 3 box top -->
                     <div class="image-box-wrapper">
                         <div class="row">
-                             <div class="col-lg-12">
-                                 <h3 class="h3"><strong>Editor's Choice</strong></h3>
-                             </div>
+                            <div class="col-lg-12">
+                                <h3 class="h3"><strong>Editor's Choice</strong></h3>
+                            </div>
                             <?php if (!empty($topSelectedPosts)): ?>
                                 <?php foreach ($topSelectedPosts as $post): ?>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="image-box-item-three">
                                             <div class="thumbnail">
-                                                <!--                                        <img src="../../public/front_assets/img/section-img/recent/recent-21.png" alt="">-->
+                                                <!--   <img src="../../public/front_assets/img/section-img/recent/recent-21.png" alt="">-->
                                                 <img src="<?= assets($post['image']) ?>" alt="">
                                             </div>
                                             <div class="content style-01">
@@ -155,14 +155,15 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                         <div class="col-lg-12">
                             <h3 class="h3"><strong>Breaking News</strong></h3>
                         </div>
-                        <?php if(!empty($breakingNews)): ?>
-                        <?php foreach ($breakingNews as $news): ?>
+                        <?php if (!empty($breakingNews)): ?>
+                            <?php foreach ($breakingNews as $news): ?>
                                 <div class="col-lg-6">
                                     <div class="image-box-item-five bg-image"
                                          style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
                                         <div class="content">
                                             <span class="tag-02 style-01"><?= $news['title'] ?></span>
-                                            <h4 class="title"><a href="#"><?= $news['summary'] ?><br> <?= $news['title'] ?></a></h4>
+                                            <h4 class="title"><a href="#"><?= $news['summary'] ?>
+                                                    <br> <?= $news['title'] ?></a></h4>
                                             <ul class="post-meta">
                                                 <li class="style-01">
                                                     <a href="#">By <span class="white">Admin</span></a>
@@ -179,54 +180,54 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                         </div>
                                     </div>
                                 </div>
-                        <?php endforeach; ?>
-                         <?php else: ?>
-                        <div class="col-lg-6">
-                            <div class="image-box-item-five bg-image"
-                                 style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
-                                <div class="content">
-                                    <span class="tag-02 style-01">LIFE STYLE</span>
-                                    <h4 class="title"><a href="#">Sanctions against Russia benefit
-                                            Canadian <br> farmers and commodity producers</a></h4>
-                                    <ul class="post-meta">
-                                        <li class="style-01">
-                                            <a href="#">By <span class="white">Admin</span></a>
-                                        </li>
-                                        <li>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="col-lg-6">
+                                <div class="image-box-item-five bg-image"
+                                     style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
+                                    <div class="content">
+                                        <span class="tag-02 style-01">LIFE STYLE</span>
+                                        <h4 class="title"><a href="#">Sanctions against Russia benefit
+                                                Canadian <br> farmers and commodity producers</a></h4>
+                                        <ul class="post-meta">
+                                            <li class="style-01">
+                                                <a href="#">By <span class="white">Admin</span></a>
+                                            </li>
+                                            <li>
                                                 <span class="posted-on">
                                                     <a href="#" rel="bookmark">
                                                         <span class="entry-date style-01 published updated"><i
                                                                     class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
                                                     </a>
                                                 </span>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="image-box-item-five bg-image"
-                                 style="background-image: url(../../public/front_assets/img/header/header-bg-03.png);">
-                                <div class="content">
-                                    <span class="tag-02 style-01">LIFE STYLE</span>
-                                    <h4 class="title"><a href="#">Sanctions against Russia benefit
-                                            Canadian <br> farmers and commodity producers</a></h4>
-                                    <ul class="post-meta">
-                                        <li class="style-01">
-                                            <a href="#">By <span class="white">Admin</span></a>
-                                        </li>
-                                        <li>
+                            <div class="col-lg-6">
+                                <div class="image-box-item-five bg-image"
+                                     style="background-image: url(../../public/front_assets/img/header/header-bg-03.png);">
+                                    <div class="content">
+                                        <span class="tag-02 style-01">LIFE STYLE</span>
+                                        <h4 class="title"><a href="#">Sanctions against Russia benefit
+                                                Canadian <br> farmers and commodity producers</a></h4>
+                                        <ul class="post-meta">
+                                            <li class="style-01">
+                                                <a href="#">By <span class="white">Admin</span></a>
+                                            </li>
+                                            <li>
                                                 <span class="posted-on">
                                                     <a href="#" rel="bookmark">
                                                         <span class="entry-date style-01 published updated"><i
                                                                     class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
                                                     </a>
                                                 </span>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <?php endif; ?>
 
                     </div>
@@ -850,7 +851,13 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                     <div class="call-to-action-03">
                         <div class="row">
                             <div class="col-lg-12">
-                                <img src="../../public/front_assets/img/section-img/cta/cta-bg-03.png" alt="">
+                                <?php if (!empty($banner)): ?>
+                                    <img src="<?= assets($banner['image']) ?>" class="" height="350px"
+                                         alt="banner-news">
+                                <?php else: ?>
+                                    <img src="../../public/front_assets/img/section-img/cta/cta-bg-03.png"
+                                         alt="banner-news">
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -867,33 +874,65 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                 <!-- Don't Miss section -->
                 <div class="col-lg-3 col-md-6">
                     <div class="top-sticky-wrapper">
+
                         <div class="theme-heading-title">
-                            <div class="title">Don't Miss</div>
+                            <div class="title">Most visited</div>
                         </div>
                         <!-- Image Box Items Start -->
-                        <div class="header-image-box-item">
-                            <div class="thumbnail style-01">
-                                <img src="../../public/front_assets/img/section-img/recent/recent-08.png" alt="">
-                            </div>
-                            <div class="content">
-                                <span class="tag-02">fashion</span>
-                                <a href="business-02.html"><h4 class="title style-01">The Surprising Ret urn of a
-                                        Forgotten</h4></a>
-                                <ul class="post-meta">
-                                    <li>
-                                        <a href="#">By <span>Admin</span></a>
-                                    </li>
-                                    <li>
+                        <?php if (!empty($mostVisited)): ?>
+                            <?php foreach ($mostVisited as $post): ?>
+                                <div class="header-image-box-item">
+                                    <div class="thumbnail style-01">
+                                        <?php if($post['image'] != null): ?>
+                                            <img src="<?= $post['image'] ?>" alt="">
+                                        <?php else: ?>
+                                            <img src="../../public/front_assets/img/section-img/recent/recent-08.png" alt="">
+                                        <?php endif; ?>
+
+                                    </div>
+                                    <div class="content">
+                                        <span class="tag-02"><?= $post['category_name'] ?></span>
+                                        <a href="#"><h4 class="title style-01"><?= $post['title'] ?></h4></a>
+                                        <ul class="post-meta">
+                                            <li>
+                                                <a href="#">By <span<?= $post['user_name'] ?></span></a>
+                                            </li>
+                                            <li>
                                             <span class="posted-on">
                                                 <a href="#" rel="bookmark">
                                                     <span class="entry-date published updated"><i
-                                                                class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                                class="fas fa-calendar-alt"></i><?= jdate($news['created_at'])->format('%B %d, %Y') ?></span>
                                                 </a>
                                             </span>
-                                    </li>
-                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="header-image-box-item">
+                                <div class="thumbnail style-01">
+                                    <img src="../../public/front_assets/img/section-img/recent/recent-08.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <span class="tag-02">Test Title</span>
+                                    <a href="#"><h4 class="title style-01">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4></a>
+                                    <ul class="post-meta">
+                                        <li>
+                                            <a href="#">By <span>Test Author</span></a>
+                                        </li>
+                                        <li>
+                                            <span class="posted-on">
+                                                <a href="#" rel="bookmark">
+                                                    <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                </a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
+
                     </div>
                 </div>
 
@@ -902,12 +941,12 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                     <div class="theme-heading-title">
                         <div class="title">Latest News</div>
                     </div>
-                    <?php if(!empty($lastNews)): ?>
-                    <?php foreach ($lastNews as $news): ?>
+                    <?php if (!empty($lastNews)): ?>
+                        <?php foreach ($lastNews as $news): ?>
                             <div class="image-box-item-four style-01">
                                 <div class="thumbnail">
-                                         <img src="<?= assets($news['image']) ?>" alt="">
-<!--                                    <img src="../../public/front_assets/img/section-img/news/news-08.png" alt="">-->
+                                    <img src="<?= assets($news['image']) ?>" alt="">
+                                    <!--                                    <img src="../../public/front_assets/img/section-img/news/news-08.png" alt="">-->
                                 </div>
                                 <div class="content ml-xl-4 ml-sm-6">
                                     <span class="tag-02"><?= $news['category_name'] ?></span>
@@ -919,7 +958,8 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                         <li>
                                     <span class="posted-on">
                                             <a href="#" rel="bookmark">
-                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i><?= jdate($news['created_at'])->format('%B %d, %Y') ?></span>
+                                                <span class="entry-date published updated"><i
+                                                            class="fas fa-calendar-alt"></i><?= jdate($news['created_at'])->format('%B %d, %Y') ?></span>
                                             </a>
                                     </span>
                                         </li>
@@ -933,7 +973,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                     </div>
                                 </div>
                             </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                     <?php else: ?>
                         <div class="image-box-item-four style-01">
                             <div class="thumbnail">
@@ -941,7 +981,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                             </div>
                             <div class="content ml-xl-4 ml-sm-6">
                                 <span class="tag-02">Test Title</span>
-                                <a href="business-02.html"><h4 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4></a>
+                                <a href="#"><h4 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4></a>
                                 <ul class="post-meta">
                                     <li>
                                         <a href="#">By <span>Test Author</span></a>
@@ -949,12 +989,14 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                     <li>
                                     <span class="posted-on">
                                             <a href="#" rel="bookmark">
-                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                <span class="entry-date published updated"><i
+                                                            class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
                                             </a>
                                     </span>
                                     </li>
                                 </ul>
-                                <p>Anthony Rotolo, a professor from Syracuse University is offering the. Ahen an unknown</p>
+                                <p>Anthony Rotolo, a professor from Syracuse University is offering the. Ahen an
+                                    unknown</p>
                                 <div class="btn-wrap">
                                     <a href="service-single.html" class="boxed-btn news-btn">
                                         Read More
