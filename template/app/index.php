@@ -157,9 +157,11 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                         </div>
                         <?php if (!empty($breakingNews)): ?>
                             <?php foreach ($breakingNews as $news): ?>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6"> <!-- url(../../public/front_assets/img/header/header-bg-02.png) -->
                                     <div class="image-box-item-five bg-image"
-                                         style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
+                                         style="background-image: url('<?php echo assets($news['image']) ?>');
+                                                 background-position: center ;
+                                                 background-size: contain">
                                         <div class="content">
                                             <span class="tag-02 style-01"><?= $news['title'] ?></span>
                                             <h4 class="title"><a href="#"><?= $news['summary'] ?>
@@ -270,12 +272,14 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                     </div>
 
                     <!-- What’s New -->
+                    <!-- most commented posts -->
                     <div class="whats-new-section">
                         <div class="new-wrapper">
                             <div class="theme-heading-title">
-                                <div class="title">What’s New</div>
+                                <!--  <div class="title">What’s New</div>-->
+                                <div class="title">Most Commented</div>
                             </div>
-                            <ul class="nav nav-pills">
+                           <!-- <ul class="nav nav-pills">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" data-bs-toggle="pill" data-bs-target="#travel">Travel</a>
                                 </li>
@@ -288,10 +292,133 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                 <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="pill" data-bs-target="#health">Health</a>
                                 </li>
-                            </ul>
+                            </ul>-->
                         </div>
+
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="travel">
+                            <!-- class="tab-pane show" -->
+                            <div class="" id="politics">
+                                <div class="row">
+                                    <?php if(!empty($mostCommented)): ?>
+                                    <?php foreach ($mostCommented as $post): ?>
+                                            <div class="col-lg-4 col-md-6">
+                                                <div class="blog-grid-item-01 margin-bottom-30">
+                                                    <div class="thumb">
+                                                        <img src="../../public/front_assets/img/section-img/gallery/instra-big-06.png"
+                                                             alt="">
+                                                    </div>
+                                                    <span class="tag">Products</span>
+                                                    <div class="content">
+                                                        <a href="business-02.html"><h4 class="title">Animal Nation Are Strugling
+                                                                To Save Their Wildlife</h4></a>
+                                                        <p>Anthony Rotolo, a professor from Syracuse University is offering the.
+                                                            Ahen an unknown</p>
+                                                        <ul class="post-meta">
+                                                            <li>
+                                                                <a href="#">By <span>Admin</span></a>
+                                                            </li>
+                                                            <li>
+                                                            <span class="posted-on">
+                                                                <a href="#" rel="bookmark">
+                                                                    <span class="entry-date published updated"><i
+                                                                                class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                                </a>
+                                                            </span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="blog-grid-item-01 margin-bottom-30">
+                                                <div class="thumb">
+                                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-06.png"
+                                                         alt="">
+                                                </div>
+                                                <span class="tag">Products</span>
+                                                <div class="content">
+                                                    <a href="business-02.html"><h4 class="title">Animal Nation Are Strugling
+                                                            To Save Their Wildlife</h4></a>
+                                                    <p>Anthony Rotolo, a professor from Syracuse University is offering the.
+                                                        Ahen an unknown</p>
+                                                    <ul class="post-meta">
+                                                        <li>
+                                                            <a href="#">By <span>Admin</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <span class="posted-on">
+                                                                <a href="#" rel="bookmark">
+                                                                    <span class="entry-date published updated"><i
+                                                                                class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="blog-grid-item-01 margin-bottom-30">
+                                                <div class="thumb">
+                                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-04.png"
+                                                         alt="">
+                                                </div>
+                                                <span class="tag style-02">Health</span>
+                                                <div class="content">
+                                                    <a href="business-02.html"><h4 class="title">How childhood viral
+                                                            infections may year 2021</h4></a>
+                                                    <p>Anthony Rotolo, a professor from Syracuse University is offering the.
+                                                        Ahen an unknown</p>
+                                                    <ul class="post-meta">
+                                                        <li>
+                                                            <a href="#">By <span>Admin</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <span class="posted-on">
+                                                                <a href="#" rel="bookmark">
+                                                                    <span class="entry-date published updated"><i
+                                                                                class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="blog-grid-item-01 margin-bottom-30">
+                                                <div class="thumb">
+                                                    <img src="../../public/front_assets/img/section-img/gallery/instra-big-05.png"
+                                                         alt="">
+                                                </div>
+                                                <span class="tag style-01">Politics</span>
+                                                <div class="content">
+                                                    <a href="business-02.html"><h4 class="title">If you went round the world
+                                                            which places could</h4></a>
+                                                    <p>Anthony Rotolo, a professor from Syracuse University is offering the.
+                                                        Ahen an unknown</p>
+                                                    <ul class="post-meta">
+                                                        <li>
+                                                            <a href="#">By <span>Admin</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <span class="posted-on">
+                                                                <a href="#" rel="bookmark">
+                                                                    <span class="entry-date published updated"><i
+                                                                                class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                           <!-- <div class="tab-pane fade show active" id="travel">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6">
                                         <div class="blog-grid-item-01 margin-bottom-30">
@@ -642,7 +769,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
 
@@ -895,7 +1022,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                         <a href="#"><h4 class="title style-01"><?= $post['title'] ?></h4></a>
                                         <ul class="post-meta">
                                             <li>
-                                                <a href="#">By <span<?= $post['user_name'] ?></span></a>
+                                                <a href="#">By <span><?= $post['user_name'] ?></span></a>
                                             </li>
                                             <li>
                                             <span class="posted-on">
