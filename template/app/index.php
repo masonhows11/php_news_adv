@@ -307,21 +307,19 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                                         <img src="../../public/front_assets/img/section-img/gallery/instra-big-06.png"
                                                              alt="">
                                                     </div>
-                                                    <span class="tag">Products</span>
+                                                    <span class="tag"><?= $post['category_name'] ?></span>
                                                     <div class="content">
-                                                        <a href="business-02.html"><h4 class="title">Animal Nation Are Strugling
-                                                                To Save Their Wildlife</h4></a>
-                                                        <p>Anthony Rotolo, a professor from Syracuse University is offering the.
-                                                            Ahen an unknown</p>
+                                                        <a href="#"><h4 class="title"><?= $post['title'] ?></h4></a>
+                                                        <p><?= $post['summary'] ?></p>
                                                         <ul class="post-meta">
                                                             <li>
-                                                                <a href="#">By <span>Admin</span></a>
+                                                                <a href="#">By <span><?= $post['user_name'] ?></span></a>
                                                             </li>
                                                             <li>
                                                             <span class="posted-on">
                                                                 <a href="#" rel="bookmark">
                                                                     <span class="entry-date published updated"><i
-                                                                                class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                                                class="fas fa-calendar-alt"></i><?= jdate($post['created_at'])->format('%B %d, %Y') ?></span>
                                                                 </a>
                                                             </span>
                                                             </li>
