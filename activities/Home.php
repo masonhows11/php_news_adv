@@ -73,7 +73,10 @@ class Home
 
     public function show($post)
     {
+        $db = new \Database\Database();
+        $post = $db->select('SELECT * FROM posts WHERE id = ?',[$post])->fetch();
 
+        view('template.app.single',['post' => $post]);
     }
 
     public function category($category)

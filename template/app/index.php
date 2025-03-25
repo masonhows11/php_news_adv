@@ -46,7 +46,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                             </div>
                                             <div class="content style-01">
                                                 <span class="tag-02"><?= $post['category_name'] ?></span>
-                                                <a href="<?= url('show/'.$post['id']) ?>"><h4 class="title"><?= $post['summary'] ?>
+                                                <a href="<?= url('post/'.$post['id']) ?>"><h4 class="title"><?= $post['summary'] ?>
                                                         <span><?= $post['title'] ?></span></h4></a>
                                                 <ul class="post-meta">
                                                     <li>
@@ -164,7 +164,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                                  background-size: contain">
                                         <div class="content">
                                             <span class="tag-02 style-01"><?= $news['title'] ?></span>
-                                            <h4 class="title"><a href="<?= url('show/'.$news['id']) ?>"><?= $news['summary'] ?>
+                                            <h4 class="title"><a href="<?= url('post/'.$news['id']) ?>"><?= $news['summary'] ?>
                                                     <br> <?= $news['title'] ?></a></h4>
                                             <ul class="post-meta">
                                                 <li class="style-01">
@@ -296,7 +296,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                         </div>
 
                         <div class="tab-content" id="pills-tabContent">
-                            <!-- class="tab-pane show" -->
+                            <!-- class="tab-pane post" -->
                             <div class="" id="politics">
                                 <div class="row">
                                     <?php if(!empty($mostCommented)): ?>
@@ -313,14 +313,14 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                                     </div>
                                                     <span class="tag"><?= $post['category_name'] ?></span>
                                                     <div class="content">
-                                                        <a href="<?= url('show/'.$post['id']) ?>"><h4 class="title"><?= $post['title'] ?></h4></a>
+                                                        <a href="<?= url('post/'.$post['id']) ?>"><h4 class="title"><?= $post['title'] ?></h4></a>
                                                         <p><?= $post['summary'] ?></p>
                                                         <ul class="post-meta">
                                                             <li>
                                                                 <i class="far fa-comment-alt"></i>  <span style="font-family: Amiri, Georgia, "Times New Roman", serif" ><?= $post['comments_count'] ?> </span>
                                                             </li>
                                                             <li>
-                                                                <a href="<?= url('show/'.$post['id']) ?>">By <span><?= $post['user_name'] ?></span></a>
+                                                                <a href="<?= url('post/'.$post['id']) ?>">By <span><?= $post['user_name'] ?></span></a>
                                                             </li>
                                                             <li>
                                                             <span class="posted-on">
@@ -672,7 +672,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                     </div>
                                     <div class="content">
                                         <span class="tag-02"><?= $post['category_name'] ?></span>
-                                        <a href="<?= url('show/'.$post['id']) ?>"><h4 class="title style-01"><?= $post['title'] ?></h4></a>
+                                        <a href="<?= url('post/'.$post['id']) ?>"><h4 class="title style-01"><?= $post['title'] ?></h4></a>
                                         <ul class="post-meta">
                                             <li>
                                                 <a href="#">By <span><?= $post['user_name'] ?></span></a>
@@ -730,7 +730,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                 </div>
                                 <div class="content ml-xl-4 ml-sm-6">
                                     <span class="tag-02"><?= $news['category_name'] ?></span>
-                                    <a href="<?= url('show/'.$post['id']) ?>"><h4 class="title"><?= $news['title'] ?></h4></a>
+                                    <a href="<?= url('post/'.$news['id']) ?>"><h4 class="title"><?= $news['title'] ?></h4></a>
                                     <ul class="post-meta">
                                         <li>
                                             <a href="#">By <span><?= $news['user_name'] ?></span></a>
