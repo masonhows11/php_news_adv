@@ -304,8 +304,12 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="blog-grid-item-01 margin-bottom-30">
                                                     <div class="thumb">
-                                                        <img src="../../public/front_assets/img/section-img/gallery/instra-big-06.png"
-                                                             alt="">
+                                                        <?php if ($post['image'] != null): ?>
+                                                        <img src="<?= assets($post['image']) ?>" alt="post-image">
+                                                        <?php else: ?>
+                                                        <img src="../../public/front_assets/img/section-img/gallery/instra-big-06.png" alt="post-image">
+                                                        <?php endif; ?>
+
                                                     </div>
                                                     <span class="tag"><?= $post['category_name'] ?></span>
                                                     <div class="content">
