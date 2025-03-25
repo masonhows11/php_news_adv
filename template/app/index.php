@@ -152,12 +152,41 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
 
                     <!-- 2 big  box top -->
                     <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="h3"><strong>Breaking News</strong></h3>
+                        </div>
+                        <?php if(!empty($breakingNews)): ?>
+                        <?php foreach ($breakingNews as $news): ?>
+                                <div class="col-lg-6">
+                                    <div class="image-box-item-five bg-image"
+                                         style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
+                                        <div class="content">
+                                            <span class="tag-02 style-01"><?= $news['title'] ?></span>
+                                            <h4 class="title"><a href="#"><?= $news['summary'] ?><br> <?= $news['title'] ?></a></h4>
+                                            <ul class="post-meta">
+                                                <li class="style-01">
+                                                    <a href="#">By <span class="white">Admin</span></a>
+                                                </li>
+                                                <li>
+                                                <span class="posted-on">
+                                                    <a href="#" rel="bookmark">
+                                                        <span class="entry-date style-01 published updated"><i
+                                                                    class="fas fa-calendar-alt"></i><?= jdate($news['created_at'])->format('%B %d, %Y') ?></span>
+                                                    </a>
+                                                </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php endforeach; ?>
+                         <?php else: ?>
                         <div class="col-lg-6">
                             <div class="image-box-item-five bg-image"
                                  style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
                                 <div class="content">
                                     <span class="tag-02 style-01">LIFE STYLE</span>
-                                    <h4 class="title"><a href="business-02.html">Sanctions against Russia benefit
+                                    <h4 class="title"><a href="#">Sanctions against Russia benefit
                                             Canadian <br> farmers and commodity producers</a></h4>
                                     <ul class="post-meta">
                                         <li class="style-01">
@@ -180,7 +209,7 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                  style="background-image: url(../../public/front_assets/img/header/header-bg-03.png);">
                                 <div class="content">
                                     <span class="tag-02 style-01">LIFE STYLE</span>
-                                    <h4 class="title"><a href="business-02.html">Sanctions against Russia benefit
+                                    <h4 class="title"><a href="#">Sanctions against Russia benefit
                                             Canadian <br> farmers and commodity producers</a></h4>
                                     <ul class="post-meta">
                                         <li class="style-01">
@@ -198,6 +227,8 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                 </div>
                             </div>
                         </div>
+                        <?php endif; ?>
+
                     </div>
 
                     <!-- hot categories -->
