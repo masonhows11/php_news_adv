@@ -317,6 +317,9 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                                         <p><?= $post['summary'] ?></p>
                                                         <ul class="post-meta">
                                                             <li>
+                                                                <i class="far fa-comment-alt"></i>  <span style="font-family: Amiri, Georgia, "Times New Roman", serif" ><?= $post['comments_count'] ?> </span>
+                                                            </li>
+                                                            <li>
                                                                 <a href="#">By <span><?= $post['user_name'] ?></span></a>
                                                             </li>
                                                             <li>
