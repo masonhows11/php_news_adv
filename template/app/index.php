@@ -29,6 +29,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                 ?>
                 <!--end sidebar -->
                 <div class="main-content">
+
+                    <!-- 3 box top -->
                     <div class="image-box-wrapper">
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
@@ -102,6 +104,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
+                    <!-- 2 big  box top -->
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="image-box-item-five bg-image" style="background-image: url(../../public/front_assets/img/header/header-bg-02.png);">
@@ -144,6 +148,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
+                    <!-- hot categories -->
                     <div class="news-slider-wrapper">
                         <div class="theme-heading-title">
                             <div class="title">Hot Categories</div>
@@ -175,6 +181,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
+                    <!-- What’s New -->
                     <div class="whats-new-section">
                         <div class="new-wrapper">
                             <div class="theme-heading-title">
@@ -502,6 +510,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
+                    <!-- slider -->
                     <div class="life-style-slider-wrap">
                         <div class="life-style-slider">
                             <div class="image-box-item-five style-01 bg-image" style="background-image: url(../../public/front_assets/img/section-img/life-style/life-style-03.png);">
@@ -542,6 +552,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
+                    <!-- 6 box middle post -->
                     <div class="popular-news-section style-01">
                         <div class="row">
                             <div class="col-lg-4 col-md-12">
@@ -681,6 +693,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
+                    <!-- banner -->
                     <div class="call-to-action-03">
                         <div class="row">
                             <div class="col-lg-12">
@@ -688,6 +702,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
