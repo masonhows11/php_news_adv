@@ -33,6 +33,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                     <!-- 3 box top -->
                     <div class="image-box-wrapper">
                         <div class="row">
+
                             <div class="col-lg-4 col-md-6">
                                 <div class="image-box-item-three">
                                     <div class="thumbnail">
@@ -56,7 +57,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
+
+                         <!--   <div class="col-lg-4 col-md-6">
                                 <div class="image-box-item-three">
                                     <div class="thumbnail">
                                         <img src="../../public/front_assets/img/section-img/recent/recent-22.png" alt="">
@@ -79,6 +81,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-4 col-md-6">
                                 <div class="image-box-item-three">
                                     <div class="thumbnail">
@@ -101,7 +104,8 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+
                         </div>
                     </div>
 
