@@ -47,7 +47,8 @@
                             <?php endif; ?>
                             <?php foreach ($menus as $menu): ?>
                                 <li>
-                                    <a href="business.html">Archive</a>
+<!--                                    <a href="--><?php //= url($menu['url']) ?><!--">--><?php //= $menu['name'] ?><!--</a>-->
+                                    <a href="<?= $menu['url'] ?>"><?= $menu['name'] ?></a>
                                 </li>
                             <?php endforeach; ?>
                            <!-- <li>
