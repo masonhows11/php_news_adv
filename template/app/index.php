@@ -34,17 +34,18 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                     <div class="image-box-wrapper">
                         <div class="row">
 
+                            <?php foreach ($topSelectedPosts as $post ): ?>
                             <div class="col-lg-4 col-md-6">
                                 <div class="image-box-item-three">
                                     <div class="thumbnail">
                                         <img src="../../public/front_assets/img/section-img/recent/recent-21.png" alt="">
                                     </div>
                                     <div class="content style-01">
-                                        <span class="tag-02">life style</span>
-                                        <a href="business-02.html"><h4 class="title">Winterized motorho me turns family <span>Moon They</span></h4></a>
+                                        <span class="tag-02"><?= $post['category_name'] ?></span>
+                                        <a href="business-02.html"><h4 class="title"><?= $post['summary'] ?><span><?= $post['title'] ?></span></h4></a>
                                         <ul class="post-meta">
                                             <li>
-                                                <a href="#">By <span>Admin</span></a>
+                                                <a href="#">By <span><?= $post['user_name'] ?></span></a>
                                             </li>
                                             <li>
                                                     <span class="posted-on">
@@ -57,6 +58,7 @@ include_once(BASE_PATH."/template/app/layouts/header.php");
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
 
                          <!--   <div class="col-lg-4 col-md-6">
                                 <div class="image-box-item-three">
