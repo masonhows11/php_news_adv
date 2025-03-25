@@ -45,10 +45,15 @@
                                     <a href="<?= url('login') ?>">login</a>
                                 </li>
                             <?php endif; ?>
-                            <li>
+                            <?php foreach ($menus as $menu): ?>
+                                <li>
+                                    <a href="business.html">Archive</a>
+                                </li>
+                            <?php endforeach; ?>
+                           <!-- <li>
                                 <a href="business.html">Archive</a>
-                            </li>
-                            <li class="menu-has-child">
+                            </li>-->
+                            <!--<li class="menu-has-child">
                                 <a href="#">Post Picks</a>
                                 <ul class="has-sub-menu">
                                     <li><a href="business.html">Business</a></li>
@@ -66,9 +71,6 @@
                                     <li><a href="signup.html">Sign up</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#">Features</a>
-                            </li>
                             <li class="menu-has-child">
                                 <a href="#">Shop</a>
                                 <ul class="has-sub-menu">
@@ -76,7 +78,7 @@
                                     <li><a href="product-details.html">Products Details</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li>
                                 <a href="<?= url('contact_us') ?>">Contact</a>
                             </li>

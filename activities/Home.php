@@ -19,7 +19,8 @@ class Home
     {
         $db = new \Database\Database();
         $setting = $db->select('SELECT * FROM settings')->fetch();
-        view('template.app.index',['setting'=>$setting , 'list' => ['dsd','sdss','sdsd']]);
+        $menus = $db->select('SELECT * FROM menus WHERE parent_id IS NULL')->fetchAll();
+        view('template.app.index',['setting'=>$setting , 'menus' => $menus]);
     }
 
     #[NoReturn] protected function redirect($url): void

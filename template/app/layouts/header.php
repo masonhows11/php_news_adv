@@ -15,7 +15,8 @@
         <title>بدون عنون</title>
     <?php endif; ?>
     <!-- favicon -->
-    <link rel="icon" href="<?= assets('public/front_assets/img/favicon.png') ?>" sizes="20x20" type="image/png" />
+<!--    <link rel="icon" href="--><?php //= assets('public/front_assets/img/favicon.png') ?><!--" sizes="20x20" type="image/png" />-->
+    <link rel="icon" href="<?= assets($icon ?? 'public/front_assets/img/favicon.png' ) ?>" sizes="20x20" type="image/png" />
     <!-- animate -->
     <link rel="stylesheet" href="<?= assets('public/front_assets/css/animate.css') ?>" />
     <!-- bootstrap -->
