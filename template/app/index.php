@@ -902,36 +902,69 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                     <div class="theme-heading-title">
                         <div class="title">Latest News</div>
                     </div>
-                    <div class="image-box-item-four style-01">
-                        <div class="thumbnail">
-                            <img src="../../public/front_assets/img/section-img/news/news-08.png" alt="">
-                        </div>
-                        <div class="content ml-xl-4 ml-sm-6">
-                            <span class="tag-02">LIFE STYLE</span>
-                            <a href="business-02.html"><h4 class="title">Lexi Daken’s family 1 year later and how the
-                                    N.B. teen</h4></a>
-                            <ul class="post-meta">
-                                <li>
-                                    <a href="#">By <span>Admin</span></a>
-                                </li>
-                                <li>
-                                        <span class="posted-on">
+                    <?php if(!empty($lastNews)): ?>
+                    <?php foreach ($lastNews as $news): ?>
+                            <div class="image-box-item-four style-01">
+                                <div class="thumbnail">
+                                         <img src="<?= assets($news['image']) ?>" alt="">
+<!--                                    <img src="../../public/front_assets/img/section-img/news/news-08.png" alt="">-->
+                                </div>
+                                <div class="content ml-xl-4 ml-sm-6">
+                                    <span class="tag-02"><?= $news['category_name'] ?></span>
+                                    <a href="#"><h4 class="title"><?= $news['title'] ?></h4></a>
+                                    <ul class="post-meta">
+                                        <li>
+                                            <a href="#">By <span><?= $news['user_name'] ?></span></a>
+                                        </li>
+                                        <li>
+                                    <span class="posted-on">
                                             <a href="#" rel="bookmark">
-                                                <span class="entry-date published updated"><i
-                                                            class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i><?= jdate($news['created_at'])->format('%B %d, %Y') ?></span>
                                             </a>
-                                        </span>
-                                </li>
-                            </ul>
-                            <p>Anthony Rotolo, a professor from Syracuse University is offering the. Ahen an unknown</p>
-                            <div class="btn-wrap">
-                                <a href="service-single.html" class="boxed-btn news-btn">
-                                    Read More
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
+                                    </span>
+                                        </li>
+                                    </ul>
+                                    <p><?= $news['summary'] ?></p>
+                                    <div class="btn-wrap">
+                                        <a href="#" class="boxed-btn news-btn">
+                                            Read More
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="image-box-item-four style-01">
+                            <div class="thumbnail">
+                                <img src="../../public/front_assets/img/section-img/news/news-08.png" alt="">
+                            </div>
+                            <div class="content ml-xl-4 ml-sm-6">
+                                <span class="tag-02">Test Title</span>
+                                <a href="business-02.html"><h4 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4></a>
+                                <ul class="post-meta">
+                                    <li>
+                                        <a href="#">By <span>Test Author</span></a>
+                                    </li>
+                                    <li>
+                                    <span class="posted-on">
+                                            <a href="#" rel="bookmark">
+                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                            </a>
+                                    </span>
+                                    </li>
+                                </ul>
+                                <p>Anthony Rotolo, a professor from Syracuse University is offering the. Ahen an unknown</p>
+                                <div class="btn-wrap">
+                                    <a href="service-single.html" class="boxed-btn news-btn">
+                                        Read More
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
+
                 </div>
 
                 <!-- Top Stories section -->
