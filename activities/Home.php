@@ -104,7 +104,7 @@ class Home
 
         if(checkAuth())
         {
-            $this->redirect('');
+            $this->redirect('login');
         }
 
         if(empty($request['name']) || empty($request['comment'])){

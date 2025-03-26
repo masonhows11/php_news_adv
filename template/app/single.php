@@ -9,8 +9,6 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
     </div>
 </div> -->
 <!-- preloader area end -->
-
-
 <main class="main-section">
     <?php
     include_once BASE_PATH . "/template/app/partials/searchbar.php";
@@ -23,14 +21,11 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
         include_once BASE_PATH . "/template/app/partials/navbar.php";
         ?>
     </div>
-
     <!-- Cart area start Here -->
     <?php
     include_once BASE_PATH . "/template/app/partials/cart.php";
     ?>
     <!-- Cart area End Here -->
-
-
     <div class="breadcrumb-section" style="background-image: url('<?php echo assets('public/front_assets/img/section-img/about-us/about-bg.png') ?>');">
         <div class="container custom-container">
             <div class="row">
@@ -92,7 +87,6 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                     </div>
                     <!--end main article section -->
 
-
                     <!-- tags -->
                     <?php include_once(BASE_PATH . '/template/app/post/tags.php') ?>
 
@@ -107,36 +101,22 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores consequuntur corporis dolor dolores excepturi, impedit incidunt ipsam itaque laborum modi molestiae officiis porro praesentium, quos ullam ut veniam veritatis.</p>
                         </div>
                     </div>
-
-
-
                     <!-- related-post -->
                     <?php include_once(BASE_PATH . '/template/app/post/related_posts.php') ?>
-
                     <!--  comments -->
                     <?php include_once(BASE_PATH . '/template/app/post/comments.php') ?>
-
                     <!-- write comments -->
                     <?php include_once(BASE_PATH . '/template/app/post/write_comment.php') ?>
-
-
                 </div>
-
                 <!-- right sidebar in single page -->
                 <?php include_once(BASE_PATH . '/template/app/post/right_sidebar_single.php') ?>
             </div>
         </div>
     </section>
     <!-- end main content -->
-
-
-
-
-
 </main>
 <!-- Main Section End Here -->
 
-<!-- footer area start -->
 <?php
 include_once BASE_PATH . "/template/app/layouts/footer.php";
 ?>
