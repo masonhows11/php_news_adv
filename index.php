@@ -326,7 +326,7 @@ uri('post/{post}','Home','show');
 
 uri('post/category/{category}','Home','category');
 
-uri('comment_store','Home','commentStore','POST');
+uri('comment/store','Home','commentStore','POST');
 
 echo "404 - Page not found";
 

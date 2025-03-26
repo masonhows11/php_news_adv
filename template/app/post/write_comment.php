@@ -2,7 +2,7 @@
     <div class="theme-heading-title">
         <div class="title">Leave a comment</div>
     </div>
-    <form action="#" class="comment-form">
+    <form action="<?= url('comment/store') ?>" method="POST" class="comment-form">
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
