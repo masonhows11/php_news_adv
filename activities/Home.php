@@ -84,20 +84,26 @@ class Home
         (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
         FROM posts WHERE id = ? ORDER BY created_at DESC LIMIT 0,6',[$id])->fetch();
 
-//        $comments = $db->select('SELECT *,(SELECT name FROM users WHERE users.id = comments.user_id) AS user_name
-//        FROM comments WHERE post_id = ? AND status = "approved"',[$id])->fetchAll();
-//
+        //        $comments = $db->select('SELECT *,(SELECT name FROM users WHERE users.id = comments.user_id) AS user_name
+        //        FROM comments WHERE post_id = ? AND status = "approved"',[$id])->fetchAll();
+
         $comments = $db->select('SELECT * FROM comments WHERE comments.status = "approved" AND comments.post_id = ?',[$id])->fetchAll();
 
         view('template.app.single',['post' => $post ,'comments' => $comments]);
     }
 
-    public function category($category): void
+    public function category($id): void
     {
         $db = new \Database\Database();
-        $post = $db->select('SELECT * FROM posts WHERE id = ?',[$category])->fetchAll();
 
-        view('template.app.single',['post' => $post]);
+        $category = $db->select('SELECT * FROM categories WHERE id = ?',[$id])->fetch();
+
+        $posts = $db->select('SELECT posts.*,
+        (SELECT name FROM users WHERE users.id = posts.user_id) AS user_name,
+         FROM posts WHERE categories_id = ? ORDER BY created_at DESC',[$id])->fetchAll();
+
+        dd($posts);
+        view('template.app.categories',['posts' => $posts,'category' => $category]);
     }
 
 

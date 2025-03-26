@@ -333,7 +333,7 @@ uri('contact_us', 'Home', 'contactUs');
 
 uri('post/{post}', 'Home', 'show');
 
-uri('post/category/{category}', 'Home', 'category');
+uri('post/category/{id}', 'Home', 'category');
 
 uri('comment/store', 'Home', 'commentStore', 'POST');
 

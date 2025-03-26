@@ -94,7 +94,7 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                 </div>
 
                 <!-- right sidebar in single page -->
-                <?php include_once(BASE_PATH . '/template/app/partials/right_sidebar_single.php') ?>
+                <?php include_once(BASE_PATH . '/template/app/post/right_sidebar_single.php') ?>
             </div>
         </div>
     </section>
