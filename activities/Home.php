@@ -102,6 +102,10 @@ class Home
     public function commentStore($request)
     {
 
+        if(checkAuth())
+        {
+            $this->redirect('');
+        }
 
         if(empty($request['name']) || empty($request['comment'])){
             flashMessage('comment_error','فیلد نام و دیدگاه الزامی هستند');
