@@ -102,7 +102,7 @@ class Home
     #[NoReturn] public function commentStore($request): void
     {
 
-        if(checkAuth())
+        if(!checkAuth())
         {
             $this->redirect('login');
         }
