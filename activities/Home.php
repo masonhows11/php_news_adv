@@ -81,7 +81,10 @@ class Home
 
     public function category($category)
     {
+        $db = new \Database\Database();
+        $post = $db->select('SELECT * FROM posts WHERE id = ?',[$category])->fetchAll();
 
+        view('template.app.single',['post' => $post]);
     }
 
 
