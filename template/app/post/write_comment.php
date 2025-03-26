@@ -2,11 +2,17 @@
     <div class="theme-heading-title">
         <div class="title">Leave a comment</div>
     </div>
+    <?php if (!empty(flashMessage('comment_error'))): ?>
+    <div class="alert alert-danger" style="direction: rtl">
+       <?= flashMessage('comment_error') ?>
+    </div>
+    <?php  endif; ?>
+
     <form action="<?= url('comment/store') ?>" method="POST" class="comment-form">
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Name" class="form-control" required="" aria-required="true">
+                    <input type="text" name="name" placeholder="Name" class="form-control" aria-required="true">
                 </div>
             </div>
 

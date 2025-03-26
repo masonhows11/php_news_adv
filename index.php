@@ -151,9 +151,7 @@ function flashMessage($name, $value = null)
         $message = isset($flashMessage[$name]) ? $flashMessage[$name] : '';
         return $message;
     } else {
-
         $_SESSION['flash_message'][$name] = $value;
-
     }
 
 }

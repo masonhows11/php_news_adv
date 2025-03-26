@@ -96,7 +96,14 @@ class Home
 
     public function commentStore($request)
     {
-        dd($request);
+
+
+        if(empty($request['name']) || empty($request['comment'])){
+            flashMessage('comment_error','فیلد نام و دیدگاه الزامی هستند');
+            //dd($_SESSION);
+            $this->redirectBack();
+        }
+       
     }
 
     public function aboutUs(): void
