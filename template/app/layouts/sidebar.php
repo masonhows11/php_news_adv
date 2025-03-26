@@ -58,24 +58,6 @@
                         <li><a href="business-02.html">Business two</a></li>
                         <li><a href="sport.html">Sports</a></li>
                     </ul>
-                </li>
-                <li class="menu-has-child">
-                    <a href="#">Pages</a>
-                    <ul class="has-sub-menu">
-                        <li><a href="business.html">Business</a></li>
-                        <li><a href="business-02.html">Business two</a></li>
-                        <li><a href="financial.html">Financial</a></li>
-                        <li><a href="signup.html">Sign in</a></li>
-                        <li><a href="signup.html">Sign up</a></li>
-                    </ul>
-                </li>
-                <li class="menu-has-child">
-                    <a href="#">Shop</a>
-                    <ul class="has-sub-menu">
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="product-details.html">Products Details</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                    </ul>
                 </li>-->
                 <li>
                     <a href="<?= url('contact_us') ?>">Contact</a>

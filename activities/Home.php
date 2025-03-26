@@ -53,10 +53,12 @@ class Home
                 (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
                 FROM posts ORDER BY comments_count DESC LIMIT 0,3')->fetchAll();
 
+        $categories = $db->select('SELECT * FROM categories')->fetchAll();
+
         view('template.app.index', ['setting' => $setting, 'menus' => $menus,
             'topSelectedPosts' => $topSelectedPosts, 'breakingNews' => $breakingNews,
             'lastNews' => $lastNews, 'banner' => $banner, 'mostVisited' => $mostVisited,
-            'mostCommented' => $mostCommented]);
+            'mostCommented' => $mostCommented , 'categories' => $categories]);
     }
 
     #[NoReturn] protected function redirect($url): void

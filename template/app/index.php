@@ -240,38 +240,28 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                             <div class="title">Hot Categories</div>
                         </div>
                         <div class="news-slider-two">
-                            <div class="image-box-item-six bg-image"
-                                 style="background-image: url(../../public/front_assets/img/section-img/hot-catagory/hot-catagory-01.png);">
-                                <div class="content">
-                                    <a href="#"><h4 class="title">food</h4></a>
+                            <?php if (!empty($categories)): ?>
+                            <?php foreach ($categories as $category): ?>
+                                    <div class="image-box-item-six bg-image"
+                                         style="background-image: url(../../public/front_assets/img/section-img/hot-catagory/hot-catagory-01.png);">
+                                        <div class="content">
+                                            <a href="<?= url('post/category/'.$category['id']) ?>"><h4 class="title"><?= $category['title'] ?></h4></a>
+                                        </div>
+                                <!--   <span class="box-number">03</span>-->
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="image-box-item-six bg-image"
+                                     style="background-image: url(../../public/front_assets/img/section-img/hot-catagory/hot-catagory-01.png);">
+                                    <div class="content">
+                                        <a href="#"><h4 class="title">food</h4></a>
+                                    </div>
+                                    <span class="box-number">03</span>
                                 </div>
-                                <span class="box-number">03</span>
-                            </div>
-                            <div class="image-box-item-six bg-image"
-                                 style="background-image: url(../../public/front_assets/img/section-img/hot-catagory/hot-catagory-02.png);">
-                                <div class="content">
-                                    <a href="#"><h4 class="title">life style</h4></a>
-                                </div>
-                                <span class="box-number">05</span>
-                            </div>
-                            <div class="image-box-item-six bg-image"
-                                 style="background-image: url(../../public/front_assets/img/section-img/hot-catagory/hot-catagory-03.png);">
-                                <div class="content">
-                                    <a href="#"><h4 class="title">Business</h4></a>
-                                </div>
-                                <span class="box-number">07</span>
-                            </div>
-                            <div class="image-box-item-six bg-image"
-                                 style="background-image: url(../../public/front_assets/img/section-img/hot-catagory/hot-catagory-03.png);">
-                                <div class="content">
-                                    <a href="#"><h4 class="title">tech</h4></a>
-                                </div>
-                                <span class="box-number">09</span>
-                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
 
-                    <!-- What’s New -->
                     <!-- most commented posts -->
                     <div class="whats-new-section">
                         <div class="new-wrapper">
@@ -294,7 +284,6 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                                 </li>
                             </ul>-->
                         </div>
-
                         <div class="tab-content" id="pills-tabContent">
                             <!-- class="tab-pane post" -->
                             <div class="" id="politics">
@@ -426,206 +415,9 @@ include_once(BASE_PATH . "/template/app/layouts/header.php");
                         </div>
                     </div>
 
-                    <!-- slider -->
-                    <div class="life-style-slider-wrap">
-                        <div class="life-style-slider">
-                            <div class="image-box-item-five style-01 bg-image"
-                                 style="background-image: url(../../public/front_assets/img/section-img/life-style/life-style-03.png);">
-                                <div class="content">
-                                    <span class="tag-02 style-01">LIFE STYLE</span>
-                                    <h4 class="title"><a href="business-02.html">Our new national disgrace: haras<br>sing
-                                            TV journalists</a></h4>
-                                    <ul class="post-meta">
-                                        <li class="style-01">
-                                            <a href="#">By <span class="white">Admin</span></a>
-                                        </li>
-                                        <li>
-                                                <span class="posted-on">
-                                                    <a href="#" rel="bookmark">
-                                                        <span class="entry-date style-01 published updated"><i
-                                                                    class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                    </a>
-                                                </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="image-box-item-five style-01 bg-image"
-                                 style="background-image: url(../../public/front_assets/img/section-img/life-style/life-style-03.png);">
-                                <div class="content">
-                                    <span class="tag-02 style-01">LIFE STYLE</span>
-                                    <h4 class="title"><a href="#">Our new national disgrace: haras<br>sing
-                                            TV journalists</a></h4>
-                                    <ul class="post-meta">
-                                        <li class="style-01">
-                                            <a href="#">By <span class="white">Admin</span></a>
-                                        </li>
-                                        <li>
-                                                <span class="posted-on">
-                                                    <a href="#" rel="bookmark">
-                                                        <span class="entry-date style-01 published updated"><i
-                                                                    class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                    </a>
-                                                </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- slider 6 box middle post -->
+                   <?php  include_once(BASE_PATH.'/template/app/partials/static_post.php'); ?>
 
-                    <!-- 6 box middle post -->
-                    <div class="popular-news-section style-01">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-12">
-                                <div class="image-box-item-three style-01">
-                                    <div class="thumbnail">
-                                        <img src="../../public/front_assets/img/section-img/news/popular-02.png" alt="">
-                                    </div>
-                                    <div class="content style-01">
-                                        <span class="tag-02">business</span>
-                                        <a href="#"><h4 class="title">Winterized motorho me turns family
-                                                <span>February</span></h4></a>
-                                        <ul class="post-meta">
-                                            <li>
-                                                <a href="#">By <span>Admin</span></a>
-                                            </li>
-                                            <li>
-                                                    <span class="posted-on">
-                                                        <a href="#" rel="bookmark">
-                                                            <span class="entry-date published updated"><i
-                                                                        class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                        </a>
-                                                    </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="image-box-item-three style-01">
-                                    <div class="thumbnail">
-                                        <img src="../../public/front_assets/img/section-img/news/popular-03.png" alt="">
-                                    </div>
-                                    <div class="content style-01">
-                                        <span class="tag-02">food</span>
-                                        <a href="#"><h4 class="title">Sarah Polley hopes her Jian qusu
-                                                <span>Winterized</span></h4></a>
-                                        <ul class="post-meta">
-                                            <li>
-                                                <a href="#">By <span>Admin</span></a>
-                                            </li>
-                                            <li>
-                                                    <span class="posted-on">
-                                                        <a href="#" rel="bookmark">
-                                                            <span class="entry-date published updated"><i
-                                                                        class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                        </a>
-                                                    </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="image-box-item-three style-01">
-                                    <div class="thumbnail">
-                                        <img src="../../public/front_assets/img/section-img/news/popular-03.png" alt="">
-                                    </div>
-                                    <div class="content style-01">
-                                        <span class="tag-02">fashion</span>
-                                        <a href="#"><h4 class="title">In Toronto, February market starts
-                                                <span>penthouse</span></h4></a>
-                                        <ul class="post-meta">
-                                            <li>
-                                                <a href="#">By <span>Admin</span></a>
-                                            </li>
-                                            <li>
-                                                    <span class="posted-on">
-                                                        <a href="#" rel="bookmark">
-                                                            <span class="entry-date published updated"><i
-                                                                        class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                        </a>
-                                                    </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <div class="thumbnail middle">
-                                    <img src="../../public/front_assets/img/section-img/news/popular-09.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <div class="image-box-item-three style-01">
-                                    <div class="thumbnail">
-                                        <img src="../../public/front_assets/img/section-img/news/popular-05.png" alt="">
-                                    </div>
-                                    <div class="content style-01">
-                                        <span class="tag-02">technology</span>
-                                        <a href="#"><h4 class="title">Sub penthouse at for One Bloor goes
-                                                <span>Winterized</span></h4></a>
-                                        <ul class="post-meta">
-                                            <li>
-                                                <a href="#">By <span>Admin</span></a>
-                                            </li>
-                                            <li>
-                                                    <span class="posted-on">
-                                                        <a href="#" rel="bookmark">
-                                                            <span class="entry-date published updated"><i
-                                                                        class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                        </a>
-                                                    </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="image-box-item-three style-01">
-                                    <div class="thumbnail">
-                                        <img src="../../public/front_assets/img/section-img/news/popular-06.png" alt="">
-                                    </div>
-                                    <div class="content style-01">
-                                        <span class="tag-02">life Style</span>
-                                        <a href="#"><h4 class="title">Cava producers are looking good
-                                                <span>penthouse</span></h4></a>
-                                        <ul class="post-meta">
-                                            <li>
-                                                <a href="#">By <span>Admin</span></a>
-                                            </li>
-                                            <li>
-                                                    <span class="posted-on">
-                                                        <a href="#" rel="bookmark">
-                                                            <span class="entry-date published updated"><i
-                                                                        class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                        </a>
-                                                    </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="image-box-item-three style-01">
-                                    <div class="thumbnail">
-                                        <img src="../../public/front_assets/img/section-img/news/popular-07.png" alt="">
-                                    </div>
-                                    <div class="content style-01">
-                                        <span class="tag-02">health</span>
-                                        <a href="#"><h4 class="title">Mortgage Rundown The countdown
-                                                <span>producers</span></h4></a>
-                                        <ul class="post-meta">
-                                            <li>
-                                                <a href="#">By <span>Admin</span></a>
-                                            </li>
-                                            <li>
-                                                    <span class="posted-on">
-                                                        <a href="#" rel="bookmark">
-                                                            <span class="entry-date published updated"><i
-                                                                        class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
-                                                        </a>
-                                                    </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- banner -->
                     <div class="call-to-action-03">
