@@ -59,18 +59,23 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                     <!-- main article section -->
                     <div class="blog-grid-item-02 style-01 margin-bottom-30">
                         <div class="thumb">
-                            <img src="assets/img/section-img/business/business-details-01.png" alt="">
+                            <?php if($post['image'] != null): ?>
+                                <img src="<?= assets($post['image']) ?>" alt="post-image">
+                            <?php else: ?>
+                                <img src="assets/img/section-img/business/business-details-01.png" alt="post-image">
+                            <?php endif; ?>
+
                         </div>
                         <div class="content">
-                            <a href="business-02.html"><h4 class="title">If you went round the world which places could Animal nation are struggling</h4></a>
+                            <a href="business-02.html"><h4 class="title"><?= $post['body'] ?></h4></a>
                             <ul class="post-meta">
                                 <li>
-                                    <a href="#">By <span>Admin</span></a>
+                                    <a href="#">By <span><?= $post['user_name'] ?></span></a>
                                 </li>
                                 <li>
                                         <span class="posted-on">
                                             <a href="#" rel="bookmark">
-                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i>JAN 14, 2022</span>
+                                                <span class="entry-date published updated"><i class="fas fa-calendar-alt"></i><?= jdate($post['created_at'])->format('%B %d, %Y') ?></span>
                                             </a>
                                         </span>
                                 </li>
@@ -172,6 +177,7 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                             </div>
                         </div>
                     </div>
+                    
                     <!-- comments -->
                     <div class="comment-form-area">
                         <div class="theme-heading-title">

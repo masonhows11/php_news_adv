@@ -74,8 +74,11 @@ class Home
     public function show($post)
     {
         $db = new \Database\Database();
-        $post = $db->select('SELECT * FROM posts WHERE id = ?',[$post])->fetch();
-
+        $post = $db->select('SELECT posts.*,
+        (SELECT COUNT(*) FROM comments WHERE comments.post_id = posts.id) AS comments_count ,
+        (SELECT name FROM users WHERE users.id = posts.user_id) AS user_name,
+        (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
+        FROM posts WHERE posts.id = ? ORDER BY created_at DESC LIMIT 0,6',[$post])->fetch();
         view('template.app.single',['post' => $post]);
     }
 
