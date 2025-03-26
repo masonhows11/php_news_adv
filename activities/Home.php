@@ -90,7 +90,7 @@ class Home
         view('template.app.single',['post' => $post ,'comments' => $comments]);
     }
 
-    public function category($category)
+    public function category($category): void
     {
         $db = new \Database\Database();
         $post = $db->select('SELECT * FROM posts WHERE id = ?',[$category])->fetchAll();
@@ -111,8 +111,8 @@ class Home
         $db = new \Database\Database();
         $db->insert('comments',
             ['name','comment','user_id','post_id'],
-            [$request['name'],$request['comment'],$request['post'],$request['user']]);
-
+            [$request['name'],$request['comment'],$request['user'],$request['post']]);
+        flashMessage('comment_success','دیدگاه شما با موفقیت ذخیره شد');
         $this->redirectBack();
        
     }

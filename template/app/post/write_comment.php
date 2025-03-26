@@ -8,6 +8,12 @@
     </div>
     <?php  endif; ?>
 
+    <?php if (!empty(flashMessage('comment_success'))): ?>
+        <div class="alert alert-success" style="direction: rtl">
+            <?= flashMessage('comment_success') ?>
+        </div>
+    <?php  endif; ?>
+
     <form action="<?= url('comment/store') ?>" method="POST" class="comment-form">
         <div class="row">
 

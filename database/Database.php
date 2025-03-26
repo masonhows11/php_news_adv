@@ -73,7 +73,7 @@ class Database
             // to create associative array for key => value
             // use array_combine
 
-
+            //return $state;
             $state->execute(array_combine($columns, $values));
             return true;
         } catch (PDOException $e) {
