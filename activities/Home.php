@@ -78,8 +78,10 @@ class Home
         $post = $db->select('SELECT posts.*,
         (SELECT COUNT(*) FROM comments WHERE comments.post_id = posts.id) AS comments_count ,
         (SELECT name FROM users WHERE users.id = posts.user_id) AS user_name,
+        (SELECT id FROM users WHERE users.id = posts.user_id) AS user_id,
         (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
         FROM posts WHERE id = ? ORDER BY created_at DESC LIMIT 0,6',[$id])->fetch();
+
         $comments = $db->select('SELECT * FROM comments WHERE comments.post_id = ?',[$id])->fetchAll();
 
         view('template.app.single',['post' => $post ,'comments' => $comments]);
@@ -100,9 +102,13 @@ class Home
 
         if(empty($request['name']) || empty($request['comment'])){
             flashMessage('comment_error','فیلد نام و دیدگاه الزامی هستند');
-            //dd($_SESSION);
             $this->redirectBack();
         }
+
+        $db = new \Database\Database();
+        $db->insert('comments',['name','comment','user_id','post_id'],[[$request[''],$request[''],$request[''],$request['']]);
+
+
        
     }
 

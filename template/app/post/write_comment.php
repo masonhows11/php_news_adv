@@ -10,6 +10,11 @@
 
     <form action="<?= url('comment/store') ?>" method="POST" class="comment-form">
         <div class="row">
+
+
+            <input type="hidden" name="post" value="<?= $post['id'] ?>">
+            <input type="hidden" name="user" value="<?= $post['user_id'] ?>">
+
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Name" class="form-control" aria-required="true">
