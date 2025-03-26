@@ -177,7 +177,7 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- comments -->
                     <div class="comment-form-area">
                         <div class="theme-heading-title">
