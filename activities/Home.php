@@ -96,7 +96,7 @@ class Home
 
     public function commentStore($request)
     {
-
+        dd($request);
     }
 
     public function aboutUs(): void
