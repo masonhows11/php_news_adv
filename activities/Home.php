@@ -83,8 +83,8 @@ class Home
         FROM posts WHERE id = ? ORDER BY created_at DESC LIMIT 0,6',[$id])->fetch();
 
 //        $comments = $db->select('SELECT *,(SELECT name FROM users WHERE users.id = comments.user_id) AS user_name
-//        FROM comments WHERE post_id = ? AND status = "apptoved"',[$id])->fetchAll();
-//        
+//        FROM comments WHERE post_id = ? AND status = "approved"',[$id])->fetchAll();
+//
         $comments = $db->select('SELECT * FROM comments WHERE comments.status = "approved" AND comments.post_id = ?',[$id])->fetchAll();
 
         view('template.app.single',['post' => $post ,'comments' => $comments]);
