@@ -22,14 +22,13 @@ include "vendor/autoload.php";
 // root path project
 const BASE_PATH = __DIR__;
 
-
 // current domain
 // define("CURRENT_DOMAIN", currentDomain() . '/php_news/');
 define("CURRENT_DOMAIN", currentDomain());
 
 const DISPLAY_ERROR = true;
 
-const DB_HOST = '127.0.0.1';
+const DB_HOST     = '127.0.0.1';
 const DB_USERNAME = 'root';
 const DB_DATABASE = 'php_news';
 const DB_PASSWORD = '1289..//';
@@ -39,13 +38,13 @@ const DB_PASSWORD = '1289..//';
 //const SMTP_AUTH = true;
 //const MAIL_USERNAME = 'mason.hows11@gmail.com';
 //const MAIL_PASS = '.12ab**[]//zxysn.';
-const MAIL_HOST = 'sandbox.smtp.mailtrap.io';
-const SMTP_AUTH = true;
+const MAIL_HOST     = 'sandbox.smtp.mailtrap.io';
+const SMTP_AUTH     = true;
 const MAIL_USERNAME = '1480411f94b162';
-const MAIL_PASS = 'ed6618069fb09d';
-const MAIL_PORT = 2525;
-const SENDER_MAIL = 'mason.hows11@gmail.com';
-const SENDER_NAME = 'mason hows';
+const MAIL_PASS     = 'ed6618069fb09d';
+const MAIL_PORT     = 2525;
+const SENDER_MAIL   = 'mason.hows11@gmail.com';
+const SENDER_NAME   = 'mason hows';
 
 // include database & make connect
 require "database/Database.php";
@@ -70,7 +69,6 @@ function currentURL(): string
 {
     return currentDomain() . $_SERVER['REQUEST_URI'];
 }
-
 
 function assets($path): string
 {
@@ -99,7 +97,7 @@ function view(string $path, $data = []): void
     $array_data = $data;
     extract($array_data);
     $path = str_replace('.', '/', $path);
-    include_once(BASE_PATH . '/' . "$path" . '.php');
+    include_once BASE_PATH . '/' . "$path" . '.php';
 }
 
 function authUser()
@@ -143,9 +141,7 @@ function displayError($displayError): void
     }
 }
 
-
 displayError(DISPLAY_ERROR);
-
 
 global $flashMessage;
 if (isset($_SESSION['flash_message'])) {
@@ -153,7 +149,6 @@ if (isset($_SESSION['flash_message'])) {
     unset($_SESSION['flash_message']);
 
 }
-
 
 function flashMessage($name, $value = null)
 {
@@ -168,22 +163,27 @@ function flashMessage($name, $value = null)
 
 }
 
-
 // mini routing system
 function uri($route = null, $controller = null, $method = null, $requestMethodType = 'GET')
 {
     // current url array
-    $current_url = explode('?', currentURL())[0];
-    $current_url = str_replace(CURRENT_DOMAIN, ' ', $current_url);
-    $current_url = trim($current_url, '/ ');
+    $current_url       = explode('?', currentURL())[0];
+    $current_url       = str_replace(CURRENT_DOMAIN, ' ', $current_url);
+    $current_url       = trim($current_url, '/ ');
     $current_url_array = explode('/', $current_url);
     $current_url_array = array_filter($current_url_array);
+
+    // current url store in -> $current_url_array variable
+    // if current url has post method we throw an exception for method type
+    // not 404 error not found for current route
+
     // reserved url array
-    $reservedUrl = trim($route, '/ ');
+    $reservedUrl      = trim($route, '/ ');
     $reservedUrlArray = explode('/', $reservedUrl);
     $reservedUrlArray = array_filter($reservedUrlArray);
     // compare current_url_array & reservedUrlArray
     if (sizeof($current_url_array) != sizeof($reservedUrlArray) || methodType() != $requestMethodType) {
+
         return false;
     }
     // admin/category/create/{id} reserved
@@ -204,7 +204,7 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
         }
     }
     if (methodType() == "POST") {
-        $request = isset($_FILES) ? array_merge($_POST, $_FILES) : $_POST;
+        $request    = isset($_FILES) ? array_merge($_POST, $_FILES) : $_POST;
         $parameters = array_merge([$request], $parameters);
     }
     // create new obj from class/controller belongs to current route
@@ -215,10 +215,9 @@ function uri($route = null, $controller = null, $method = null, $requestMethodTy
     // the id or any parameter pass here
     // like
     // public function delete($id){}
-    call_user_func_array(array($object, $method), $parameters);
+    call_user_func_array([$object, $method], $parameters);
     exit();
 }
-
 
 function dd($var)
 {
@@ -226,7 +225,6 @@ function dd($var)
     var_dump($var);
     exit();
 }
-
 
 require "activities/Admin/AdminHome.php";
 require "activities/Admin/AdminCategory.php";
@@ -240,14 +238,12 @@ require "activities/Auth/Mail.php";
 require "activities/Auth/Auth.php";
 require "activities/Home.php";
 
-
 // uri('sendmail','auth\Mail','sendEmail');
 // uri('admin/category/create', 'adminCategory', 'create'); example
 // reserved uri/routes
 
 // home/index route
 uri('/', 'Home', 'index');
-
 
 uri('admin', 'Admin\AdminHome', 'index');
 //// Admin is namespace in AdminCategory class
@@ -276,7 +272,6 @@ uri('admin/comment/edit/{id}', 'Admin\AdminComments', 'edit');
 uri('admin/comment/update/{id}', 'Admin\AdminComments', 'update', 'POST');
 uri('admin/comment/approved/{id}', 'Admin\AdminComments', 'approved');
 uri('admin/comment/delete/{id}', 'Admin\AdminComments', 'delete');
-
 
 //// banners
 uri('admin/banners', 'Admin\AdminBanners', 'index');
@@ -338,7 +333,3 @@ uri('post/category/{id}', 'Home', 'category');
 uri('comment/store', 'Home', 'commentStore', 'POST');
 
 echo "404 - Page not found";
-
-
-
-
