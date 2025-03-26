@@ -181,7 +181,15 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                         </div>
                     </div>
 
-                    <!-- comments -->
+                    <!--  comments -->
+                    <div class="testimonial-items">
+                        <div class="content">
+                            <h4 class="title">Jenny Preston</h4>
+                            <p>Mravel orem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galleyof typed scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+
+                    <!-- write comments -->
                     <div class="comment-form-area">
                         <div class="theme-heading-title">
                             <div class="title">Leave a comment</div>
@@ -216,13 +224,7 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                         </form>
                     </div>
 
-                    <!-- list comment -->
-                    <div class="testimonial-items">
-                        <div class="content">
-                            <h4 class="title">Jenny Preston</h4>
-                            <p>Mravel orem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galleyof typed scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!-- right sidebar in single page -->
