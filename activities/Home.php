@@ -99,7 +99,7 @@ class Home
     }
 
 
-    public function commentStore($request)
+    #[NoReturn] public function commentStore($request): void
     {
 
         if(checkAuth())
