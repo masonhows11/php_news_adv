@@ -81,7 +81,7 @@ class Home
         (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
         FROM posts WHERE id = ? ORDER BY created_at DESC LIMIT 0,6',[$id])->fetch();
         $comments = $db->select('SELECT * FROM comments WHERE comments.post_id = ?',[$id])->fetchAll();
-        
+
         view('template.app.single',['post' => $post ,'comments' => $comments]);
     }
 

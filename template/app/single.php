@@ -115,13 +115,16 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                     <!-- author -->
                     <div class="testimonial-items">
                         <div class="thumbnail">
-                            <img src="assets/img/section-img/business/business-clinet.png" alt="">
+                            <img src="<?= assets('/public/front_assets/img/section-img/business/business-client.png') ?>"
+                                 alt="author-image">
                         </div>
                         <div class="content">
                             <h4 class="title">Jenny Preston</h4>
                             <p>Mravel orem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galleyof typed scrambled it to make a type specimen book.</p>
                         </div>
                     </div>
+
+
 
                     <!-- related-post -->
                     <div class="related-post">
@@ -211,6 +214,14 @@ include_once BASE_PATH . "/template/app/layouts/header.php";
                                 <a href="#" class="boxed-btn submit-btn">Post Comment</a>
                             </div>
                         </form>
+                    </div>
+
+                    <!-- list comment -->
+                    <div class="testimonial-items">
+                        <div class="content">
+                            <h4 class="title">Jenny Preston</h4>
+                            <p>Mravel orem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galleyof typed scrambled it to make a type specimen book.</p>
+                        </div>
                     </div>
                 </div>
 
