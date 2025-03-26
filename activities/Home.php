@@ -99,10 +99,10 @@ class Home
         $category = $db->select('SELECT * FROM categories WHERE id = ?',[$id])->fetch();
 
         $posts = $db->select('SELECT posts.*,
-        (SELECT name FROM users WHERE users.id = posts.user_id) AS user_name,
-         FROM posts WHERE categories_id = ? ORDER BY created_at DESC',[$id])->fetchAll();
-
-        dd($posts);
+                (SELECT COUNT(*) FROM comments WHERE comments.post_id = posts.id) AS comments_count ,
+                (SELECT name FROM users WHERE users.id = posts.user_id) AS user_name,
+                (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
+                FROM posts WHERE categories_id = ? ORDER BY created_at DESC',[$id])->fetchAll();
         view('template.app.categories',['posts' => $posts,'category' => $category]);
     }
 
