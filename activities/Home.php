@@ -82,7 +82,10 @@ class Home
         (SELECT title FROM categories WHERE categories.id = posts.categories_id) AS category_name 
         FROM posts WHERE id = ? ORDER BY created_at DESC LIMIT 0,6',[$id])->fetch();
 
-        $comments = $db->select('SELECT * FROM comments WHERE comments.post_id = ?',[$id])->fetchAll();
+//        $comments = $db->select('SELECT *,(SELECT name FROM users WHERE users.id = comments.user_id) AS user_name
+//        FROM comments WHERE post_id = ? AND status = "apptoved"',[$id])->fetchAll();
+//        
+        $comments = $db->select('SELECT * FROM comments WHERE comments.status = "approved" AND comments.post_id = ?',[$id])->fetchAll();
 
         view('template.app.single',['post' => $post ,'comments' => $comments]);
     }
@@ -106,9 +109,11 @@ class Home
         }
 
         $db = new \Database\Database();
-        $db->insert('comments',['name','comment','user_id','post_id'],[[$request[''],$request[''],$request[''],$request['']]);
+        $db->insert('comments',
+            ['name','comment','user_id','post_id'],
+            [$request['name'],$request['comment'],$request['post'],$request['user']]);
 
-
+        $this->redirectBack();
        
     }
 
